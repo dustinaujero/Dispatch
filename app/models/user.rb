@@ -4,7 +4,8 @@ class User < ApplicationRecord
     validates :password, length: {minimum: 6}, allow_nil: true
 
     attr_reader :password 
-    after_initialize :ensure_session_token
+    after_initialize :ensure_session_token, :ensure_img_url
+    
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
@@ -16,7 +17,13 @@ class User < ApplicationRecord
         self.update(session_token: User.generate_session_token)
         self.session_token
     end
-
+    def password=(password)
+        @password = password
+        self.password_digest = BCrypt::Password.create(password)
+    end
+    def is_password?(password)
+        BCrypt::Password.new(self.password_digest).is_password?(password)
+    end  
     private  
 
     def self.generate_session_token
@@ -27,13 +34,12 @@ class User < ApplicationRecord
         self.session_token ||= User.generate_session_token
     end   
     
-    def is_password?(password)
-        BCrypt::Password.new(self.password_digest).is_password?(password)
-    end    
-    
-    def password=(password)
-        @password = password
-        self.password_digest = BCrypt::Password.create(password)
+    def ensure_img_url
+        self.img_url ||= "img_url";
     end
+  
+    
+
+
 
 end
