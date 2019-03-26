@@ -18,12 +18,6 @@ class Api::UsersController < ApplicationController
             render json: @user.errors.full_messages, status: 401
         end
 
-
-        jibi 
-
-        iubuub
-        ouononoin ohooih  oimrsrfl p9uw   9-90h 
-        
     end
 
     private
