@@ -1,12 +1,38 @@
 .session-form {
     background-color: #36393f;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    margin: 0 auto;
+    border-radius: 5px;
     padding: 70px 40px 40px 40px;
-    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.8);
     color: #72767d;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
-    width: 300px;
+    width: 500px;
+}
+/* (Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif) */
+.session-form h1 {
+    color: #fff;
+}
+.session-form h3 {
+    color: #72767d;
+}
+.session-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.session-form form h1{
+    font-size: 26px;
+    color: black;
+    font-weight: 300;
+    text-align: center;
+
+}
+
+.session-form form label{
+    
 }
