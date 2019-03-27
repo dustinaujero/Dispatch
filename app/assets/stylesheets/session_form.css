@@ -57,10 +57,8 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.session-form form div:last-of-type{
-    padding-right: 255px;
-}
-.session-form form a {
+
+.session-form .session-link, form a {
     color: rgba(114, 137, 218, 0.65);
     display: block;
     font-size: 12px;
@@ -68,15 +66,30 @@
     padding: 7px 0px 22px;
     font-weight: 500;
 }
-.session-form form .form-last{
-    padding-top: 10px;
+.session-form .form-last{
+    display: flex;
+    flex-direction: row;
+    margin-left: 0px;
 }
-.session-form form .form-last div{
+.session-form .form-last div{
     display: flex;
     font-size: 12px;
     font-weight: 250;
     text-decoration: none;
     padding: 3px 0px 0px;
+    justify-content: left;
+}
+.session-form .form-last div p {
+    margin: 0px 5px 0px 0px;
+    height: 20px;
+}
+.session-form .form-last div button {
+    margin-left: 5px;
+    background-color: rgba(98, 105, 202, 0.836);
+    border: none;
+    color: rgba(255, 255, 255, 0.60);
+    border-radius: 3px;
+    height: 20px;
 }
 .session-form form input{
     border-radius: 3px;
@@ -131,6 +144,6 @@
 .session-form .form-submit:hover {
     background-color: #7289dae1;
 }
-.session-form form .session-link:last-of-type {
+.session-form .session-link:last-of-type {
     padding: 0px 3px;
 }

@@ -40,7 +40,7 @@ class User < ApplicationRecord
     end
 
     def create_username
-        self.username = self.username + "#" + (rand(0.00...1.00) * 10000 % 10000).to_i.to_s
+        self.username ||= self.username + "#" + (rand(0.00...1.00) * 10000 % 10000).to_i.to_s
     end
 
 end

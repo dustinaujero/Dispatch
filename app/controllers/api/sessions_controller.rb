@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
 
     def destroy
         logout
-        redirect_to root_url
+        redirect_to root_url, status: 200
     end
 
     private 

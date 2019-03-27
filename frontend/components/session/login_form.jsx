@@ -10,8 +10,9 @@ class LoginForm extends React.Component {
             password: ""
         }
 
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.update = this.update.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
+        this.demo = this.demo.bind(this);
     }
 
     handleSubmit(event) {
@@ -25,14 +26,27 @@ class LoginForm extends React.Component {
             this.setState({[field]: event.target.value})
         }
     }
+    demo() {
+
+        this.setState({
+            email: "demo@demo.com",
+            password: "password"
+        });
+        this.props.clearSessionErrors();
+        this.props.login(this.state);
+    }
     componentDidMount(){
+        // debugger
         $(".session-form").addClass("fade-in").removeClass("fade-out");
+        // debugger
         // $(".session-form").removeClass("fade-out");
   
     }
     componentWillUnmount(){
         // $(".session-form").removeClass("fade-in");
+        // debugger
         $(".session-form").addClass("fade-out");
+        // debugger
         this.props.clearSessionErrors();
     }
 
@@ -70,10 +84,15 @@ class LoginForm extends React.Component {
                     <input className={pwError ? "bad-input" : ""} type="password" onChange={this.update('password')} value={this.state.password}/>
                     <a href="#/login">Forgot your password?</a>
                     <input className="form-submit" type="submit" value="Login" />
-                    <div className="form-last">
-                        <div>Need an account?<Link className="session-link" to="/signup">Register</Link></div>
-                    </div>
                 </form>
+                <div className="form-last">
+                    <div>
+                        <p>Need an account?</p>
+                        <Link className="session-link" to="/signup">Register</Link>
+                        <p> or </p>
+                        <button onClick={this.demo}>Login as Demo</button>
+                    </div>
+                </div>
             </div>
         )
     }

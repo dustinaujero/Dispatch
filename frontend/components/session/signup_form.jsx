@@ -11,8 +11,8 @@ class SignupForm extends React.Component {
             password: ""
         }
 
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.update = this.update.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
     }
 
     handleSubmit(event) {
@@ -27,13 +27,17 @@ class SignupForm extends React.Component {
         }
     }
     componentDidMount() {
+        // debugger
         $(".session-form").addClass("fade-in").removeClass("fade-out");
+        // debugger
         // $(".session-form").removeClass("fade-out");
 
     }
     componentWillUnmount() {
+        // debugger
         // $(".session-form").removeClass("fade-in");
         $(".session-form").addClass("fade-out");
+        // debugger
         this.props.clearSessionErrors();
     }
 
