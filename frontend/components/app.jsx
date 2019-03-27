@@ -9,7 +9,7 @@ import MainContainer from './main/main'
 //import containers
 
 const App = () => (
-    <div>
+    <div className="app-div">
         <Route exact path="/" component={Splash} />
 
         <AuthRoute exact path="/signup" component={SignupForm} />

@@ -73,26 +73,28 @@ class LoginForm extends React.Component {
             }
         })
         return (
-            <div className="session-form">
-                <div>Welcome Back!</div>
-                <div>We're so excited to see you again!</div>
-                {inval}
+            <div className="session-div">
+                <div className="session-form">
+                    <div>Welcome Back!</div>
+                    <div>We're so excited to see you again!</div>
+                    {inval}
 
-                <form onSubmit={this.handleSubmit}>
-                    <label className={emailError ? "bad-label" : ""}>EMAIL <strong>{emailError}</strong></label>
-                    <input className={emailError ? "bad-input" : ""} type="text" onChange={this.update('email')} value={this.state.email}/>
-                    <label className={pwError ? "bad-label" : ""} >PASSWORD <strong>{pwError}</strong></label>
-                    <input className={pwError ? "bad-input" : ""} type="password" onChange={this.update('password')} value={this.state.password}/>
-                    <a href="#/login">Forgot your password?</a>
-                    <input className="form-submit" type="submit" value="Login" />
-                </form>
+                    <form onSubmit={this.handleSubmit}>
+                        <label className={emailError ? "bad-label" : ""}>EMAIL <strong>{emailError}</strong></label>
+                        <input className={emailError ? "bad-input" : ""} type="text" onChange={this.update('email')} value={this.state.email}/>
+                        <label className={pwError ? "bad-label" : ""} >PASSWORD <strong>{pwError}</strong></label>
+                        <input className={pwError ? "bad-input" : ""} type="password" onChange={this.update('password')} value={this.state.password}/>
+                        <a href="#/login">Forgot your password?</a>
+                        <input className="form-submit" type="submit" value="Login" />
+                    </form>
 
-                <div className="form-last">
-                    <div>
-                        <p>Need an account?</p>
-                        <Link className="session-link" to="/signup">Register</Link>
-                        <p> or </p>
-                        <button onClick={this.demo}>Login as Demo</button>
+                    <div className="form-last">
+                        <div>
+                            <p>Need an account?</p>
+                            <Link className="session-link" to="/signup">Register</Link>
+                            <p> or </p>
+                            <button onClick={this.demo}>Login as Demo</button>
+                        </div>
                     </div>
                 </div>
             </div>
