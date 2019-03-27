@@ -18,16 +18,28 @@ class Splash extends React.Component {
         return (
             <>
             <header className="splash-header">
-                <strong>Discord Logo</strong>
-                {/* img with link to main */}
-                <button onClick={this.handleClick} className="splash-login-button">Login</button>
+                <nav className="main-nav">
+                    <div className="left-nav">
+                        <div>Discord Logo</div>
+                        <div>Download</div>
+                        <div>Nitro</div>
+                        <div>Jobs</div>
+                        <div>Developers</div>
+                        <div>Community</div>
+                        <div>Support</div>
+                    </div>
+                    <div className="right-nav">
+                        <button onClick={this.handleClick} className="splash-login-button">Login</button>
+                    </div>
+                </nav>
             </header>
             <div className="splash-body">
-                It's time to ditch Skype and TeamSpeak.
-    All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone. Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.
-    
-    
-    
+                <h1>It's time to ditch Skype and TeamSpeak.</h1> 
+                <div>
+                    All-in-one voice and text chat for gamers that's free, secure, and 
+                    works on both your desktop and phone. <br />Stop paying for TeamSpeak servers 
+                    and hassling with Skype. Simplify your life.
+                </div>
             </div>
             </>
         );

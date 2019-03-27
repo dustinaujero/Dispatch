@@ -6,44 +6,116 @@
     align-items: center;
     margin: 0 auto;
     border-radius: 5px;
-    padding: 70px 40px 40px 40px;
+    padding: 40px;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.8);
     color: #72767d;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    width: 500px;
+    font-size: 16px;
+    font-weight: 300;
+    width: 400px;
+    /* height: 344px; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -240px; 
+    margin-left: -212px;
+    outline-color: rgba(114, 137, 218, 0.65);
+    outline-width: 0px;
+    outline-style: none;
 }
 /* (Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif) */
-.session-form h1 {
-    color: #fff;
+.session-form > div:nth-of-type(1) {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    /* text-shadow:
+		-0.05px -0.05px 0 #727981,
+		0.05px -0.05px 0 #727981,
+		-0.05px 0.05px 0 #727981,
+		0.05px 0.05px 0 #727981; */
 }
-.session-form h3 {
+.session-form > div:nth-of-type(2){
     color: #72767d;
-}
-.session-form .session-link, a {
-    color: #7289DA;
 }
 .session-form form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+.session-form form div:last-of-type{
+    padding-right: 255px;
+}
+.session-form form a {
+    color: rgba(114, 137, 218, 0.65);
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 7px 0px 22px;
+    font-weight: 500;
+}
+.session-form form .form-last{
+    padding-top: 10px;
+}
+.session-form form .form-last div{
+    display: flex;
+    font-size: 12px;
+    font-weight: 250;
+    text-decoration: none;
+    padding: 3px 0px 0px;
+}
 .session-form form input{
-    border-radius: 5px;
+    border-radius: 3px;
     background-color: rgba(0,0,0,0.2);
     border: 1px solid rgba(0,0,0,0.2);
-    width: 400px;
-    height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px 0px 15px;
+    width: 380px;
+    height: 30px;
+    color: #a5adb8;
 }
-.session-form form label{
-    margin-top: 20px;
+.session-form form input:focus{
+    border: 1px solid #7289DA;
+    box-shadow: none;
+    transition-duration: .15s
+}
+.session-form form label {
+    margin-top: 13px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #727981;
+    text-shadow:
+		-0.05px -0.05px 0 #727981,
+		0.05px -0.05px 0 #727981,
+		-0.05px 0.05px 0 #727981,
+		0.05px 0.05px 0 #727981;
 }
 .session-form .bad-label{
     color: red;
 }
+.session-form .bad-label strong{
+    font-style: italic;
+    font-weight: 250;
+    font-size: 12px;
+}
 .session-form .bad-input{
     border-color: red;
 }
+
 .session-form .form-submit {
-    background-color: #7289DA;
+    background-color: rgba(98, 105, 202, 0.836);
+    color: rgba(255, 255, 255, 0.60);
+    font-size: 17px;    
+    font-weight: bold;
+    width: 400px;
+    height: 50px;
+    padding: 10px;
+}
+.session-form .form-submit:hover {
+    background-color: #7289dae1;
+}
+.session-form form .session-link:last-of-type {
+    padding: 0px 3px;
 }

@@ -53,17 +53,17 @@ class SignupForm extends React.Component {
         })
         return (
             <div className="session-form">
-                <h1>Create An Account</h1>
+                <div>Create An Account</div>
                 <form onSubmit={this.handleSubmit}>
-                    <label className={emailError ? "bad-label" : ""}>Email{emailError}</label> 
+                    <label className={emailError ? "bad-label" : ""}>EMAIL{emailError}</label> 
                     <input className={emailError ? "bad-input" : ""} type="text" onChange={this.update('email')} value={this.state.email} />
-                    <label className={nameError ? "bad-label" : ""}>Username{nameError}</label> 
+                    <label className={nameError ? "bad-label" : ""}>USERNAME{nameError}</label> 
                     <input className={nameError ? "bad-input" : ""} type="text" onChange={this.update('username')} value={this.state.username}/>
-                    <label className={pwError ? "bad-label" : ""}>Password{pwError} </label> 
+                    <label className={pwError ? "bad-label" : ""}>PASSWORD{pwError} </label> 
                     <input className={pwError ? "bad-input" : ""} type="password" onChange={this.update('password')} value={this.state.password} />
                     <input className="form-submit" type="submit" value="Continue" />
+                    <Link className="session-link" to="/login">Already have an account?</Link>
                 </form>
-                <Link className="session-link" to="/login">Already have an account?</Link>
             </div>
         )
     }

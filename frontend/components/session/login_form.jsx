@@ -38,10 +38,12 @@ class LoginForm extends React.Component {
             switch (error.split(" ")[0]) {
                 case "Password": {
                     pwError = " - This field is required";
+                    inval = ""
                     break;
                 }
                 case "Email": {
                     emailError = " - This field is required";
+                    inval = ""
                     break;
                 }
                 case "Invalid": {
@@ -52,18 +54,20 @@ class LoginForm extends React.Component {
         })
         return (
             <div className="session-form">
-                <h1>Welcome Back</h1>
-                <h3>We're so excited to see you again</h3>
+                <div>Welcome Back!</div>
+                <div>We're so excited to see you again!</div>
                 {inval}
                 <form onSubmit={this.handleSubmit}>
-                    <label className={emailError ? "bad-label" : ""}>Email <strong>{emailError}</strong></label>
+                    <label className={emailError ? "bad-label" : ""}>EMAIL <strong>{emailError}</strong></label>
                     <input className={emailError ? "bad-input" : ""} type="text" onChange={this.update('email')} value={this.state.email}/>
-                    <label className={pwError ? "bad-label" : ""} >Password <strong>{pwError}</strong></label>
+                    <label className={pwError ? "bad-label" : ""} >PASSWORD <strong>{pwError}</strong></label>
                     <input className={pwError ? "bad-input" : ""} type="password" onChange={this.update('password')} value={this.state.password}/>
+                    <a href="#">Forgot your password?</a>
                     <input className="form-submit" type="submit" value="Login" />
+                    <div className="form-last">
+                        <div>Need an account?<Link className="session-link" to="/signup">   Register</Link></div>
+                    </div>
                 </form>
-                <a href="#">Forgot your password?</a>
-                <h6>Need an account? <Link className="session-link" to="/signup">Register</Link></h6>
             </div>
         )
     }
