@@ -9,7 +9,8 @@ class Api::SessionsController < ApplicationController
             erArr = ["Invalid email or password"]
             if (session_params[0].length == 0)
                 erArr.push("Email cannot be blank")
-            elsif (session_params[1].length == 0)
+            end
+            if (session_params[1].length == 0)
                 erArr.push("Password cannot be blank")
             end
             render json: erArr, status: 404

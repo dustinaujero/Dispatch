@@ -1,18 +1,26 @@
 body {
-    background-color: rgb(38, 38, 43);
-    /* background-color: aquamarine; */
+    /* background-color: rgb(38, 38, 43); */
+
     margin: 0px;
+    height: 100%;
+    background-image: url("y1ostvqnr4711.jpg");
 }
 html {
     padding: 0px;
     background-color: rgb(38, 38, 43);
-    /* background-color: aquamarine; */
+
     height: 100%;
+    /* background-image: url("y1ostvqnr4711.jpg"); */
     
 }
 .root {
     height: 100%;
-    background-color: rgb(38, 38, 43);
+
+    
+}
+.root > div {
+    height: 300px;
+
 }
 header {
     margin: 0px;

@@ -12,8 +12,8 @@ const App = () => (
     <div>
         <Route exact path="/" component={Splash} />
 
-        <AuthRoute path="/signup" component={SignupForm} />
-        <AuthRoute path="/login" component={LoginForm} />
+        <AuthRoute exact path="/signup" component={SignupForm} />
+        <AuthRoute exact path="/login" component={LoginForm} />
 
         <ProtectedRoute path="/channels/" component={MainContainer} />
         {/* <ProtectedRoute path="/channels/:serverId/:chanelId" component={DMContainer} /> */}

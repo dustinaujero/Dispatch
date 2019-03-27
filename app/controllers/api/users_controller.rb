@@ -5,7 +5,11 @@ class Api::UsersController < ApplicationController
             login(@user)
             render :show
         else
-            render json: @user.errors.full_messages, status: 422
+            if (params[:user][:username] == "")
+                render json: @user.errors.full_messages.push("Username has already been taken"), status: 422
+            else 
+                render json: @user.errors.full_messages, status: 422
+            end
         end
     end
 

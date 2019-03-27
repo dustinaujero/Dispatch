@@ -25,8 +25,14 @@ class LoginForm extends React.Component {
             this.setState({[field]: event.target.value})
         }
     }
-
+    componentDidMount(){
+        $(".session-form").addClass("fade-in").removeClass("fade-out");
+        // $(".session-form").removeClass("fade-out");
+  
+    }
     componentWillUnmount(){
+        // $(".session-form").removeClass("fade-in");
+        $(".session-form").addClass("fade-out");
         this.props.clearSessionErrors();
     }
 
@@ -37,17 +43,17 @@ class LoginForm extends React.Component {
         this.props.errors.forEach((error) => {
             switch (error.split(" ")[0]) {
                 case "Password": {
-                    pwError = " - This field is required";
+                    pwError = " - " + error;
                     inval = ""
                     break;
                 }
                 case "Email": {
-                    emailError = " - This field is required";
+                    emailError = " - " + error;
                     inval = ""
                     break;
                 }
                 case "Invalid": {
-                    inval = "Invalid email or password";
+                    inval = " - " + error;
                     break;
                 }
             }
@@ -62,10 +68,10 @@ class LoginForm extends React.Component {
                     <input className={emailError ? "bad-input" : ""} type="text" onChange={this.update('email')} value={this.state.email}/>
                     <label className={pwError ? "bad-label" : ""} >PASSWORD <strong>{pwError}</strong></label>
                     <input className={pwError ? "bad-input" : ""} type="password" onChange={this.update('password')} value={this.state.password}/>
-                    <a href="#">Forgot your password?</a>
+                    <a href="#/login">Forgot your password?</a>
                     <input className="form-submit" type="submit" value="Login" />
                     <div className="form-last">
-                        <div>Need an account?<Link className="session-link" to="/signup">   Register</Link></div>
+                        <div>Need an account?<Link className="session-link" to="/signup">Register</Link></div>
                     </div>
                 </form>
             </div>
