@@ -23,16 +23,12 @@
 .session-form form{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
-
-.session-form form h1{
-    font-size: 26px;
-    color: black;
-    font-weight: 300;
-    text-align: center;
-
+.session-form form input{
+    border-radius: 5px;
+    background-color: #72767d;
 }
-
 .session-form form label{
-    
+    margin-top: 20px;
 }
