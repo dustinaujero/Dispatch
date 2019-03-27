@@ -2,9 +2,10 @@ class User < ApplicationRecord
 
     validates :email, :username, :password_digest, :session_token, :img_url, presence: true
     validates :password, length: {minimum: 6}, allow_nil: true
+    validates :email, :username, uniqueness: true
 
     attr_reader :password 
-    after_initialize :ensure_session_token, :ensure_img_url
+    after_initialize :ensure_session_token, :ensure_img_url, :create_username
     
 
     def self.find_by_credentials(email, password)
@@ -37,9 +38,9 @@ class User < ApplicationRecord
     def ensure_img_url
         self.img_url ||= "img_url";
     end
-  
-    
 
-
+    def create_username
+        self.username = self.username + "#" + (rand(0.00...1.00) * 10000 % 10000).to_i.to_s
+    end
 
 end
