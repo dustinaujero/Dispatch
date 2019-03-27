@@ -10,7 +10,7 @@ class Splash extends React.Component {
                 <button></button>
             </header>
             <div>
-                HOME PAGE
+                MAIN PAGE
 
             </div>
             </>
