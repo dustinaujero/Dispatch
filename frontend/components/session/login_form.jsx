@@ -27,13 +27,13 @@ class LoginForm extends React.Component {
         }
     }
     demo() {
-
         this.setState({
             email: "demo@demo.com",
             password: "password"
+        }, () => {
+            this.props.clearSessionErrors();
+            this.props.login(this.state);
         });
-        this.props.clearSessionErrors();
-        this.props.login(this.state);
     }
     componentDidMount(){
         // debugger
@@ -77,6 +77,7 @@ class LoginForm extends React.Component {
                 <div>Welcome Back!</div>
                 <div>We're so excited to see you again!</div>
                 {inval}
+
                 <form onSubmit={this.handleSubmit}>
                     <label className={emailError ? "bad-label" : ""}>EMAIL <strong>{emailError}</strong></label>
                     <input className={emailError ? "bad-input" : ""} type="text" onChange={this.update('email')} value={this.state.email}/>
@@ -85,6 +86,7 @@ class LoginForm extends React.Component {
                     <a href="#/login">Forgot your password?</a>
                     <input className="form-submit" type="submit" value="Login" />
                 </form>
+
                 <div className="form-last">
                     <div>
                         <p>Need an account?</p>
