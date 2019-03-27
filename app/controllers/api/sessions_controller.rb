@@ -1,12 +1,13 @@
 class Api::SessionsController < ApplicationController
 
     def create
-        @user = User.find_by_credentials(session_params)
+        debugger
+        @user = User.find_by_credentials(*session_params)
+        debugger
         if @user
             login(@user)
             render '/api/users/show'
         else
-            flash.now[:errors] = @user.errors.full_messages
             render json: ["Invalid email or password"], status: 401
         end
     end
@@ -18,8 +19,8 @@ class Api::SessionsController < ApplicationController
 
     private 
     
-    def user_params
-        params.require(:user).permit(:email, :password)
+    def session_params
+        params.require(:user).permit(:email, :password).values
     end
 
 end
