@@ -1,0 +1,16 @@
+.splash-header {
+    display: flex;
+    justify-content: space-between;
+}
+.splash-header .splash-login-button {
+    border-radius: 20%;
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+    padding: 5px;
+    color: white;
+}
+
+.splash-body {
+
+    color: white;
+}

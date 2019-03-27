@@ -5,8 +5,7 @@ class Api::UsersController < ApplicationController
             login(@user)
             render :show
         else
-            flash.now[:errors] = @user.errors.full_messages
-            render json: @user.errors.full_messages, status: 401
+            render json: @user.errors.full_messages, status: 422
         end
     end
 
@@ -15,9 +14,8 @@ class Api::UsersController < ApplicationController
         if @user && @user.update(user_params)
             render :show
         else
-            render json: @user.errors.full_messages, status: 401
+            render json: @user.errors.full_messages, status: 406
         end
-
     end
 
     private

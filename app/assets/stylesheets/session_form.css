@@ -20,6 +20,9 @@
 .session-form h3 {
     color: #72767d;
 }
+.session-form .session-link, a {
+    color: #7289DA;
+}
 .session-form form{
     display: flex;
     flex-direction: column;
@@ -27,8 +30,18 @@
 }
 .session-form form input{
     border-radius: 5px;
-    background-color: #72767d;
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.2);
 }
 .session-form form label{
     margin-top: 20px;
+}
+.session-form .bad-label{
+    color: red;
+}
+.session-form .bad-input{
+    border-color: red;
+}
+.session-form .form-submit {
+    background-color: #7289DA;
 }

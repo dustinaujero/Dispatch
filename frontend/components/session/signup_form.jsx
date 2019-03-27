@@ -17,6 +17,7 @@ class SignupForm extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        this.props.clearSessionErrors();
         this.props.signup(this.state);
     }
 
@@ -26,20 +27,43 @@ class SignupForm extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        this.props.clearSessionErrors();
+    }
+
     render() {
+        let emailError = "";
+        let pwError = "";
+        let nameError = "";
+        this.props.errors.forEach( (error) => {
+            switch(error.split(" ")[0]){
+                case "Username": {
+                    nameError = " - This field is required";
+                    break;
+                }
+                case "Password": {
+                    pwError = " - This field is required";
+                    break;
+                }
+                case "Email": {
+                    emailError = " - This field is required";
+                    break;
+                }
+            }
+        })
         return (
             <div className="session-form">
                 <h1>Create An Account</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Email</label>
-                    <input type="text" onChange={this.update('email')} value={this.state.email} />
-                    <label>Username</label>
-                    <input type="text" onChange={this.update('username')} value={this.state.username}/>
-                    <label>Password</label>
-                    <input type="password" onChange={this.update('password')} value={this.state.password} />
-                    <input type="submit" value="Continue" />
+                    <label className={emailError ? "bad-label" : ""}>Email{emailError}</label> 
+                    <input className={emailError ? "bad-input" : ""} type="text" onChange={this.update('email')} value={this.state.email} />
+                    <label className={nameError ? "bad-label" : ""}>Username{nameError}</label> 
+                    <input className={nameError ? "bad-input" : ""} type="text" onChange={this.update('username')} value={this.state.username}/>
+                    <label className={pwError ? "bad-label" : ""}>Password{pwError} </label> 
+                    <input className={pwError ? "bad-input" : ""} type="password" onChange={this.update('password')} value={this.state.password} />
+                    <input className="form-submit" type="submit" value="Continue" />
                 </form>
-                <Link to="/login">Already have an account?</Link>
+                <Link className="session-link" to="/login">Already have an account?</Link>
             </div>
         )
     }

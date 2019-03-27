@@ -6,7 +6,13 @@ class Api::SessionsController < ApplicationController
             login(@user)
             render '/api/users/show'
         else
-            render json: ["Invalid email or password"], status: 401
+            erArr = ["Invalid email or password"]
+            if (session_params[0].length == 0)
+                erArr.push("Email cannot be blank")
+            elsif (session_params[1].length == 0)
+                erArr.push("Password cannot be blank")
+            end
+            render json: erArr, status: 404
         end
     end
 
