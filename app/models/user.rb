@@ -7,7 +7,7 @@ class User < ApplicationRecord
     attr_reader :password 
     after_initialize :ensure_session_token, :ensure_img_url, :create_username
     
-    has_many :servers,
+    has_many :owned_servers,
         class_name: :Server,
         foreign_key: :owner_id
 
@@ -17,6 +17,14 @@ class User < ApplicationRecord
 
     has_many :servers_they_mod,
         through: :mod_subs,
+        source: :server
+
+    has_many :userserver_subs
+        class_name: :Userserver,
+        foreign_key: :user_id
+
+    has_many :servers, 
+        through: :server_subs,
         source: :server
 
     def self.find_by_credentials(email, password)

@@ -1,4 +1,5 @@
 class Moderator < ApplicationRecord
+    
     validates :moderator_id, :server_id, presence: true
 
     belongs_to :moderator, 

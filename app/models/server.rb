@@ -15,6 +15,14 @@ class Server < ApplicationRecord
         through: :mod_subs,
         source: :moderator
 
+    has_many :userserver_subs
+        class_name: :Userserver,
+        foreign_key: :server_id
+
+    has_many :users,
+        through: :userserver_subs,
+        source: :user
+
     def ensure_img_url
         self.img_url ||= "img_url"
     end
