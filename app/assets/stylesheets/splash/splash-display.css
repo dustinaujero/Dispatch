@@ -25,7 +25,7 @@
 #controller{
     position: relative;
     z-index: 4;
-    right: 200px;
+    right: calc(20% + 100px);
 }
 #right-phone{
     position: relative;

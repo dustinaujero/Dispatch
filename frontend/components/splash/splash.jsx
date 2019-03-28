@@ -11,7 +11,7 @@ class Splash extends React.Component {
     }
   
     handleClick(){
-        this.props.history.push("/signup");
+        this.props.history.push("/login");
     }
 
     render() {

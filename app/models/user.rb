@@ -19,7 +19,7 @@ class User < ApplicationRecord
         through: :mod_subs,
         source: :server
 
-    has_many :userserver_subs
+    has_many :userserver_subs,
         class_name: :Userserver,
         foreign_key: :user_id
 

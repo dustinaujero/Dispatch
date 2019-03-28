@@ -1,0 +1,32 @@
+.main-page {
+    display: flex;
+    height: 100vh;
+}
+.secondary {
+    display: flex;
+    width: 240px;
+    margin: 0; 
+    background-color: rgb(43, 43, 50);
+}
+.secondary .secondary-header {
+    display: flex;
+    box-shadow: 0px 0.5px 1px 0px rgb(28, 28, 28);
+    color: white;
+    height: 48px;
+    width: 100%;
+    align-content: center;
+
+}
+
+.third {
+    /* background-color: #2F3036; */
+    background-color:#34363c;
+    margin: 0;
+    width: 100%;
+}
+.third div {
+    box-shadow: 0px 0.5px 1px 0px rgb(28, 28, 28);
+    color: white;
+    height: 48px;
+    width: 100%;
+}

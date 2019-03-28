@@ -1,0 +1,13 @@
+.server-list {
+    overflow-y: scroll;
+    width: 70px;
+    display: flex;
+    background-color: #1F2225;
+}
+.server-list::-webkit-scrollbar { 
+    width: 0 !important 
+}
+.server-list { 
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+}
