@@ -1,0 +1,31 @@
+/* Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif */
+.splash-body {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 72px 50px 0px;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.splash-body h1, div {
+    margin: 0 auto;
+}
+
+.splash-body h1 {
+    font-size: 36px;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+    line-height: 30px;
+    padding-bottom: 20px;
+}
+
+.splash-body div {
+    color: rgb(157, 157, 157);
+    font-size: 15px;
+    font-weight: 400;
+    justify-content: center;
+}
+.splash-body div p {
+    text-align: center;
+    padding: 0;
+    margin: 10px 0px;
+}

@@ -1,3 +1,9 @@
+.session-div {
+    height: 100vh;
+    background-image: url("/assets/y1ostvqnr4711-a54311ff26fac801ea1a33e0acca8276f13626ba9a9ae631bdc673f22f9f2729.jpg");
+    display: flex;
+    align-items: center;
+}
 .session-form {
     background-color: #36393f;
     display: flex;
@@ -13,31 +19,69 @@
     font-size: 16px;
     font-weight: 300;
     width: 400px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -240px; 
-    margin-left: -240px;
+
 }
-.fade-out {
-    opacity: 0;
-    transform: scale(1.05) translate(0px, -40px);
-    -webkit-transition: opacity 0.5s ease-in;
-       -moz-transition: opacity 0.5s ease-in;
-        -ms-transition: opacity 0.5s ease-in;
-         -o-transition: opacity 0.5s ease-in;
-            transition: opacity 0.5s ease-in;
+@keyframes fadeIn{
+    0%{
+        transform: scale(1.075) translateX(5px) translateY(-30px);
+        opacity: 0;
+        }
+    5%{
+        transform: scale(1.05) translateX(3px) translateY(-20px);
+        opacity: 0.6;
+        }
+    11%{
+        transform: translateX(1px);
+        opacity: 0.8;
+        }
+    39%{
+        transform: translateY(20px);
+        opacity: 1.0;
+        }
+    70%{
+        transform: translateY(10px);
+        opacity: 1.0;
+        }
+    100%{
+        opacity: 1.0;
+        }
+}
+@keyframes fadeOut{
+    0%{
+        opacity: 1.0;
+        }
+    5%{
+        transform: translateY(10px);
+        opacity: 1.0;
+        }
+    11%{
+        transform: translateY(20px);
+        opacity: 1.0;
+        }
+    39%{
+        transform: translateX(1px);
+        opacity: 0.8;
+        }
+    70%{
+        transform: scale(1.05) translateX(3px) translateY(-20px);
+        opacity: 0.6;
+        }
+    100%{
+        transform: scale(1.075) translateX(5px) translateY(-30px);
+        opacity: 0;
+        }
 }
 .fade-in {
-    opacity: 1;
-    transform: scale(1.05) translate(0px, -40px);
-    -webkit-transition: opacity 0.5s ease-in;
-       -moz-transition: opacity 0.5s ease-in;
-        -ms-transition: opacity 0.5s ease-in;
-         -o-transition: opacity 0.5s ease-in;
-            transition: opacity 0.5s ease-in;
+    animation: fadeOut 0.2s 1 0s ease-in;
 }
-/* (Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif) */
+.fade-out{
+    animation: fadeOut 0.2s 1 0s ease-in;
+}
+
+.elementToAnimate{
+    animation: yourAnimation 0.2s 1 0s ease-in;
+}
+
 .session-form > div:nth-of-type(1) {
     color: rgba(255, 255, 255, 0.75);
     font-size: 26px;
@@ -112,13 +156,13 @@
     margin-top: 13px;
     margin-bottom: 8px;
     font-size: 12px;
-    font-weight: bold;
-    color: #727981;
-    text-shadow:
+    font-weight: bolder;
+    color: #969696;
+    /* text-shadow:
 		-0.05px -0.05px 0 #727981,
 		0.05px -0.05px 0 #727981,
 		-0.05px 0.05px 0 #727981,
-		0.05px 0.05px 0 #727981;
+		0.05px 0.05px 0 #727981; */
 }
 .session-form .bad-label{
     color: red;
@@ -134,6 +178,7 @@
 
 .session-form .form-submit {
     background-color: rgba(98, 105, 202, 0.836);
+    /* background-color: #738ADB; */
     color: rgba(255, 255, 255, 0.60);
     font-size: 17px;    
     font-weight: bold;

@@ -36,10 +36,20 @@ class Splash extends React.Component {
             <div className="splash-body">
                 <h1>It's time to ditch Skype and TeamSpeak.</h1> 
                 <div>
-                    All-in-one voice and text chat for gamers that's free, secure, and 
-                    works on both your desktop and phone. <br />Stop paying for TeamSpeak servers 
-                    and hassling with Skype. Simplify your life.
+                    <p>All-in-one voice and text chat for gamers that's free, secure, and 
+                    works on both your desktop and phone. </p>
+                    <p>Stop paying for TeamSpeak servers 
+                    and hassling with Skype. Simplify your life.</p>
                 </div>
+            </div>
+            <div className="splash-display">
+                <img src="assets/main-comp.svg" id="main-comp" />
+                <img src="assets/right-comp.svg" id="right-comp" />
+                <img src="assets/headphones.svg" id="headphones" />
+                <img src="assets/controller.svg" id="controller" />
+                <img src="assets/right-phone.svg" id="right-phone" />
+                <img src="assets/left-phone.svg" id="left-phone" />
+                <img src="assets/flask.svg" id="flask" />
             </div>
             </>
         );

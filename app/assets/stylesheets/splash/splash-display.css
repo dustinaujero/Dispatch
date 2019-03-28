@@ -1,0 +1,43 @@
+.splash-display {
+    display: flex;
+    height: 700px;
+    align-items: flex-end;
+    justify-content: center;
+    width: 1350px;
+    margin-bottom: 200px;
+}
+#main-comp {
+    position: absolute;
+}
+#right-comp {
+    position: absolute;
+    z-index: 1;
+    right: 83px;
+}
+#headphones {
+    position: absolute;
+    z-index: 2;
+    bottom: 187px; 
+    right: 295px;
+    height: 200px;
+}
+#controller{
+    position: absolute;
+    z-index: 1;
+    left: 430px;
+}
+#right-phone{
+    position: absolute;
+    z-index: 1;
+    left: 285px;
+}
+#left-phone{
+    position: absolute;
+    z-index: 2;
+    left: 140px;
+}
+#flask {
+    position: absolute;
+    z-index: 1;
+    left: 75px;
+}

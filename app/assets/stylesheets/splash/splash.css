@@ -1,0 +1,51 @@
+.splash-header {
+    padding: 8px 0px;
+    color: rgb(223, 223, 223);
+    font-family: "Helvetica Neue";
+    font-size: 13px;
+    font-weight: 345;
+}
+.splash-header .main-nav {
+    display: flex;
+    height: 56px;
+    padding: 0px 30px;
+    justify-content: space-between;
+}
+.left-nav {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+}
+.left-nav div {
+    padding: 15px 10px;
+    margin-right: 8px;
+}
+.right-nav {
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+}
+.right-nav div {
+    padding: 15px 10px;
+}
+.splash-header .splash-login-button {
+    border-radius: 25px;
+    border: 1.5px solid rgb(175, 175, 175);
+    background-color: transparent;
+    margin: 7px 0px;
+    color: rgb(199, 199, 199);
+    padding: 2px 20px;
+
+    line-height: 20px;
+    font-family: "Helvetica Neue";
+    font-weight: 350;
+    font-size: 13px;
+
+    height: 33px;
+}
+/* (Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif) */
+.splash-header .splash-login-button:hover {
+    border: 1.5px solid #D4D4D5;
+    color: #D4D4D5;
+}
+
