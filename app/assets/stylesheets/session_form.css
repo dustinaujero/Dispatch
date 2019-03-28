@@ -14,33 +14,34 @@
     border-radius: 5px;
     padding: 40px;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.8);
-    color: #72767d;
+    color: #898d94;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     width: 400px;
+    letter-spacing: 1px;
 
 }
 @keyframes fadeIn{
     0%{
-        transform: scale(1.075) translateX(5px) translateY(-30px);
-        opacity: 0;
+        transform: scale(1.075) translateX(5px) translateY(-10px);
+        opacity: 0.4;
         }
     5%{
         transform: scale(1.05) translateX(3px) translateY(-20px);
-        opacity: 0.6;
+        opacity: 0.5;
         }
     11%{
         transform: translateX(1px);
-        opacity: 0.8;
+        opacity: 0.6;
         }
     39%{
-        transform: translateY(20px);
-        opacity: 1.0;
+        transform: translateY(10px);
+        opacity: 0.8;
         }
     70%{
-        transform: translateY(10px);
-        opacity: 1.0;
+        transform: translateY(5px);
+        opacity: 0.9;
         }
     100%{
         opacity: 1.0;
@@ -51,39 +52,35 @@
         opacity: 1.0;
         }
     5%{
-        transform: translateY(10px);
-        opacity: 1.0;
+        transform: translateY(5px);
+        opacity: 0.9;
         }
     11%{
-        transform: translateY(20px);
-        opacity: 1.0;
+        transform: translateY(10px);
+        opacity: 0.8;
         }
     39%{
         transform: translateX(1px);
-        opacity: 0.8;
+        opacity: 0.6;
         }
     70%{
         transform: scale(1.05) translateX(3px) translateY(-20px);
-        opacity: 0.6;
+        opacity: 0.5;
         }
     100%{
-        transform: scale(1.075) translateX(5px) translateY(-30px);
-        opacity: 0;
+        transform: scale(1.075) translateX(5px) translateY(-10px);
+        opacity: 0.4;
         }
 }
 .fade-in {
-    animation: fadeOut 0.2s 1 0s ease-in;
+    animation: fadeIn 0.4s 1 0s ease-in;
 }
 .fade-out{
-    animation: fadeOut 0.2s 1 0s ease-in;
-}
-
-.elementToAnimate{
-    animation: yourAnimation 0.2s 1 0s ease-in;
+    animation: fadeOut 0.4s 1 0s ease-in;
 }
 
 .session-form > div:nth-of-type(1) {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.913);
     font-size: 26px;
     font-weight: 300;
     margin-bottom: 10px;
@@ -103,12 +100,15 @@
 }
 
 .session-form .session-link, form a {
-    color: rgba(114, 137, 218, 0.65);
+    color: rgb(114, 137, 218);
     display: block;
     font-size: 12px;
     text-decoration: none;
-    padding: 7px 0px 22px;
+    padding: 2px 0px 22px;
     font-weight: 500;
+}
+.session-form .session-link:hover, form a:hover {
+    text-decoration: underline;
 }
 .session-form .form-last{
     display: flex;
@@ -124,70 +124,80 @@
     justify-content: left;
 }
 .session-form .form-last div p {
-    margin: 0px 5px 0px 0px;
+    margin: 2px 0px;
     height: 20px;
 }
 .session-form .form-last div button {
-    margin-left: 5px;
-    background-color: rgba(98, 105, 202, 0.836);
+    margin-left: 2px;
+    background-color: rgb(116, 120, 187);
     border: none;
-    color: rgba(255, 255, 255, 0.60);
+    color: rgb(199, 199, 199);
     border-radius: 3px;
     height: 20px;
+}
+.session-form .form-last div button:hover {
+    background-color: #7289dae1;
+    color: rgb(230, 230, 230);
+    transition-duration: .20s;
 }
 .session-form form input{
     border-radius: 3px;
     background-color: rgba(0,0,0,0.2);
     border: 1px solid rgba(0,0,0,0.2);
-    font-size: 18px;
-    padding: 10px;
-    margin: 5px 0px 15px;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 5px 0px;
     width: 380px;
     height: 30px;
-    color: #a5adb8;
+    color: rgba(255, 255, 255, 0.913);
+    letter-spacing: 0.3px;
+    font-weight: 350;
 }
 .session-form form input:focus{
     border: 1px solid #7289DA;
     box-shadow: none;
-    transition-duration: .15s;
+    transition-duration: .20s;
     outline: 0;
 }
 .session-form form label {
     margin-top: 13px;
     margin-bottom: 8px;
-    font-size: 12px;
-    font-weight: bolder;
-    color: #969696;
-    /* text-shadow:
-		-0.05px -0.05px 0 #727981,
-		0.05px -0.05px 0 #727981,
-		-0.05px 0.05px 0 #727981,
-		0.05px 0.05px 0 #727981; */
+    font-size: 11px;
+    font-weight: 500;
+    color: #c9c9c9;
+    letter-spacing: 1px;
 }
 .session-form .bad-label{
     color: red;
 }
 .session-form .bad-label strong{
     font-style: italic;
-    font-weight: 250;
-    font-size: 12px;
+    font-weight: 300;
+    font-size: 13px;
 }
 .session-form .bad-input{
     border-color: red;
 }
 
 .session-form .form-submit {
-    background-color: rgba(98, 105, 202, 0.836);
+    background-color: rgb(134, 139, 219);
     /* background-color: #738ADB; */
-    color: rgba(255, 255, 255, 0.60);
-    font-size: 17px;    
+    color: rgb(255, 255, 255);
+    font-size: 14px;    
     font-weight: bold;
     width: 400px;
-    height: 50px;
+    height: 45px;
     padding: 10px;
+    border: 1px solid rgb(134, 139, 219);
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .session-form .form-submit:hover {
     background-color: #7289dae1;
+    transition-duration: .20s;
+}
+.session-form .session-link {
+    margin-right: 2px;
+    margin-top: 2px;
 }
 .session-form .session-link:last-of-type {
     padding: 0px 3px;

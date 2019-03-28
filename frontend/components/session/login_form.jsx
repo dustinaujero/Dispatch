@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
     }
     componentDidMount(){
         // debugger
-        $(".session-form").addClass("fade-in").removeClass("fade-out");
+        $(".session-form").removeClass("fade-out").addClass("fade-in");
         // debugger
         // $(".session-form").removeClass("fade-out");
   
@@ -67,7 +67,7 @@ class LoginForm extends React.Component {
                     break;
                 }
                 case "Invalid": {
-                    inval = " - " + error;
+                    inval = error;
                     break;
                 }
             }

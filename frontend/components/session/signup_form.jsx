@@ -28,7 +28,7 @@ class SignupForm extends React.Component {
     }
     componentDidMount() {
         // debugger
-        $(".session-form").addClass("fade-in").removeClass("fade-out");
+        $(".session-form").removeClass("fade-out").addClass("fade-in");
         // debugger
         // $(".session-form").removeClass("fade-out");
 
@@ -64,7 +64,7 @@ class SignupForm extends React.Component {
         return (
             <div className="session-div">
                 <div className="session-form">
-                    <div>Create An Account</div>
+                    <div>Create an account</div>
                     <form onSubmit={this.handleSubmit}>
                         <label className={emailError ? "bad-label" : ""}>EMAIL<strong>{emailError}</strong></label> 
                         <input className={emailError ? "bad-input" : ""} type="text" onChange={this.update('email')} value={this.state.email} />
