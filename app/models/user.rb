@@ -7,6 +7,17 @@ class User < ApplicationRecord
     attr_reader :password 
     after_initialize :ensure_session_token, :ensure_img_url, :create_username
     
+    has_many :servers,
+        class_name: :Server,
+        foreign_key: :owner_id
+
+    has_many :mod_subs,
+        class_name: :Moderator,
+        foreign_key: :moderator_id
+
+    has_many :servers_they_mod,
+        through: :mod_subs,
+        source: :server
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
