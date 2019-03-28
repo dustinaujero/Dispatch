@@ -4,7 +4,7 @@ import { AuthRoute, ProtectedRoute } from '../util/routes_util';
 import SignupForm from './session/signup_container';
 import LoginForm from './session/login_container';
 import Splash from './splash/splash';
-import MainContainer from './main/main'
+import MainContainer from './main/main_container';
 
 //import containers
 

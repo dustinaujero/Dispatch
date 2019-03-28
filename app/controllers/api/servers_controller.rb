@@ -8,6 +8,15 @@ class ServersController < ApplicationController
         render :index
     end
 
+    def show
+        @server = Server.find(params[:id])
+        if @server
+            render :show 
+        else 
+            render json: ["Server not found"], status: 404
+        end
+    end
+
     def create
         @server = Server.new(server_params)
         @server.owner_id = current_user.id 

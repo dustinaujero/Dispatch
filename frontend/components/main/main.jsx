@@ -1,19 +1,25 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import { logout } from '../../actions/session_actions';
-
-const mdp = dispatch => ({
-    logout: () => dispatch(logout())
-})
+import { Route, Switch } from 'react-router-dom';
 
 
-const Main = (props) => {
-    return (
-        <>
-        <h1>MainPage</h1>
-        <button onClick={props.logout}>Logout</button>
-        </>
-    );
+class Main extends React.Component {
+
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <div className="main-page">
+                <aside className="server-list">
+
+                </aside>
+                <Route path="/channels/@me" component={() => (<h1> IN DMS</h1>)}/>
+                <Route path="/channels/:server" component={() => (<h1> IN SERVERS</h1>)} />
+            </div>
+        );
+    }
+    
 }
 
-export default connect(null, mdp)(Main);
+export default Main;
