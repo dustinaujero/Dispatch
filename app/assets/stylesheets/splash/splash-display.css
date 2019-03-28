@@ -3,41 +3,42 @@
     height: 700px;
     align-items: flex-end;
     justify-content: center;
-    width: 1350px;
+    width: 1300px;
     margin-bottom: 200px;
 }
 #main-comp {
-    position: absolute;
+    position: relative;
+    left: calc(50% - 289.5px);
 }
 #right-comp {
-    position: absolute;
+    position: relative;
     z-index: 1;
-    right: 83px;
+    right: 20%;
 }
 #headphones {
-    position: absolute;
-    z-index: 2;
-    bottom: 187px; 
-    right: 295px;
+    position: relative;
+    z-index: 5;
+    padding-bottom: 165px; 
     height: 200px;
+    right: -50px;
 }
 #controller{
-    position: absolute;
-    z-index: 1;
-    left: 430px;
+    position: relative;
+    z-index: 4;
+    right: 200px;
 }
 #right-phone{
-    position: absolute;
-    z-index: 1;
-    left: 285px;
+    position: relative;
+    z-index: 3;
+    right: 480px;
 }
 #left-phone{
-    position: absolute;
-    z-index: 2;
-    left: 140px;
+    position: relative;
+    z-index: 3;
+    right: 500px;
 }
 #flask {
-    position: absolute;
-    z-index: 1;
-    left: 75px;
+    position: relative;
+    z-index: 2;
+    right: 340px;
 }

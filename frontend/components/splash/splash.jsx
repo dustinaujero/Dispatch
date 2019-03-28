@@ -43,13 +43,13 @@ class Splash extends React.Component {
                 </div>
             </div>
             <div className="splash-display">
-                <img src="assets/main-comp.svg" id="main-comp" />
-                <img src="assets/right-comp.svg" id="right-comp" />
-                <img src="assets/headphones.svg" id="headphones" />
-                <img src="assets/controller.svg" id="controller" />
-                <img src="assets/right-phone.svg" id="right-phone" />
-                <img src="assets/left-phone.svg" id="left-phone" />
-                <img src="assets/flask.svg" id="flask" />
+                <img src={window.flask} id="flask" />
+                <img src={window.mainComp} id="main-comp" />
+                <img src={window.rightComp} id="right-comp" />
+                <img src={window.headphones} id="headphones" />
+                <img src={window.controller} id="controller" />
+                <img src={window.leftPhone} id="left-phone" />
+                <img src={window.rightPhone} id="right-phone" />
             </div>
             </>
         );
