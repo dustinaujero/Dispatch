@@ -1,13 +1,10 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ServerIndexContainer from '../servers/server_index_container';
+import { inspect } from 'util';
 
 
 class Main extends React.Component {
-
-    constructor(props) {
-        super(props)
-    }
 
     render() {
         return (
@@ -15,12 +12,20 @@ class Main extends React.Component {
                 <ServerIndexContainer />
                 <div className="secondary"> 
                     <div className="secondary-header">
-                        <p>Title</p> 
-                        <div><i className="fas fa-chevron-down"></i></div>
-                        
+                        <Switch>
+                            <Route path="/channels/@me" component={() => <input type="text" />} />
+                            <Route path="/channels/:dmId" component={() => {
+                                return (
+                                    <>
+                                    <p>Title</p> 
+                                    <div><i className="fas fa-chevron-down"></i></div>
+                                    </>
+                                )
+                                }
+                            }/>
+                        </Switch>
                     </div>
-
-
+                    <Route path="/@me" component={() => <input type="text" />}/>
                     <div className="current-profile">
 
                     </div>
