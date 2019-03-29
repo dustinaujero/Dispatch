@@ -47,10 +47,6 @@ class Main extends React.Component {
                 <div className="fourth">
                     ausd hasdfhiudsfhuisdafihuds
                 </div>
-                {/* <Switch>
-                    <Route path="/channels/@me" component={() => (<div className="secondary"><h1> IN DMS</h1></div>)}/>
-                    <Route path="/channels/:server" component={() => (<div className="secondary"><h1> IN SERVERS</h1></div>)} />
-                </Switch> */}
             </div>
             </>
         );

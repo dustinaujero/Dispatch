@@ -5,40 +5,112 @@
     justify-content: center;
     width: 1300px;
     margin-bottom: 200px;
+    /* position: relative; */
 }
 #main-comp {
-    position: relative;
-    left: calc(50% - 289.5px);
+    position: absolute;
+    left: calc(50% - 295px);
 }
 #right-comp {
-    position: relative;
-    z-index: 1;
-    right: 20%;
+    position: absolute;
+    z-index: 2;
+    left: calc(52%);
 }
 #headphones {
-    position: relative;
+    position: absolute;
     z-index: 5;
-    padding-bottom: 165px; 
+    padding-bottom: 166px; 
     height: 200px;
-    right: -50px;
+    left: calc(52% + 350px);
 }
 #controller{
-    position: relative;
+    position: absolute;
     z-index: 4;
-    right: calc(20% + 100px);
+    left: calc(36%);
 }
 #right-phone{
-    position: relative;
+    position: absolute;
     z-index: 3;
-    right: 480px;
+    left: calc(25% + 70px);
 }
 #left-phone{
-    position: relative;
+    position: absolute;
     z-index: 3;
-    right: 500px;
+    left: calc(16% + 90px);
 }
 #flask {
-    position: relative;
+    position: absolute;
     z-index: 2;
-    right: 340px;
+    left: calc(15% + 30px);
 }
+#cd {
+    position: absolute;
+    z-index: 1;
+    left: calc(75%);
+}
+#coin {
+    position: absolute;
+    z-index: 1;
+    padding-bottom: 500px; 
+    left: calc(60%);
+    animation: hover 5s infinite 0s linear;
+}
+#triangle {
+    position: absolute;
+    z-index: 1;
+    padding-bottom: 500px; 
+    left: calc(75%);
+}
+#bomb {
+    position: absolute;
+    z-index: 1;
+    padding-bottom: 350px; 
+    left: calc(20%);
+    animation: hover 5s infinite 0.5s linear;
+}
+
+@keyframes hover{
+    0%{
+        transform: translateY(0);
+        }
+    14%{
+        transform: translateY(-6px);
+        }
+    17%{
+        transform: translateY(-7px);
+        }
+    19%{
+        transform: translateY(-8px);
+        }
+    25%{
+        transform: translateY(-8.5px);
+        }
+    31%{
+        transform: translateY(-8px);
+        }
+    33%{
+        transform: translateY(-7px);
+        }
+    64%{
+        transform: translateY(6px);
+        }
+    67%{
+        transform: translateY(7px);
+        }
+    69%{
+        transform: translateY(8px);
+        }
+    75%{
+        transform: translateY(8.5px);
+        }
+    81%{
+        transform: translateY(8px);
+        }
+    83%{
+        transform: translateY(7px);
+        }
+    100%{
+        transform: translateY(0);
+        }
+}
+
