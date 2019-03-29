@@ -16,7 +16,8 @@ class Main extends React.Component {
                 <div className="secondary"> 
                     <div className="secondary-header">
                         <p>Title</p> 
-                        <i class="fas fa-chevron-down"></i>
+                        <div><i class="fas fa-chevron-down"></i></div>
+                        
                     </div>
 
 
@@ -30,6 +31,9 @@ class Main extends React.Component {
                         iuniubibibobiubiubiuiboib
                     </div>
                     OIANDFONAFONADFIN
+                </div>
+                <div className="fourth">
+                    ausd hasdfhiudsfhuisdafihuds
                 </div>
                 {/* <Switch>
                     <Route path="/channels/@me" component={() => (<div className="secondary"><h1> IN DMS</h1></div>)}/>

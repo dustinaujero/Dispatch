@@ -1,8 +1,10 @@
 .server-list {
     overflow-y: scroll;
-    width: 70px;
+    width: 100px;
     display: flex;
     background-color: #1F2225;
+    flex-direction: column;
+    align-items: center;
 }
 .server-list::-webkit-scrollbar { 
     width: 0 !important 
@@ -10,4 +12,17 @@
 .server-list { 
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
+}
+.server-list .server-list-header { 
+    border-bottom: 1px solid white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.server-list button { 
+    border-radius: 50%;
+    padding: 10px 15spx;
+    margin: 10px 0px;
+    width: 15px;
 }

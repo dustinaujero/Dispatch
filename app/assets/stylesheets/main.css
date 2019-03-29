@@ -4,9 +4,9 @@
 }
 .secondary {
     display: flex;
-    width: 240px;
+    width: 350px;
     margin: 0; 
-    background-color: rgb(43, 43, 50);
+    background-color: #2F3136;
 }
 .secondary .secondary-header {
     display: flex;
@@ -15,9 +15,13 @@
     height: 48px;
     width: 100%;
     align-content: center;
-
+    justify-content: space-around;
 }
 
+.secondary .secondary-header div {
+    padding-top: 16px;
+    margin: 0;
+}
 .third {
     /* background-color: #2F3036; */
     background-color:#34363c;
@@ -29,4 +33,7 @@
     color: white;
     height: 48px;
     width: 100%;
+}
+.fourth {
+    width: 240px;
 }
