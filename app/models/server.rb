@@ -15,7 +15,7 @@ class Server < ApplicationRecord
         through: :mod_subs,
         source: :moderator
 
-    has_many :userserver_subs
+    has_many :userserver_subs,
         class_name: :Userserver,
         foreign_key: :server_id
 
