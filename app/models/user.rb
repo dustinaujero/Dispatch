@@ -7,25 +7,22 @@ class User < ApplicationRecord
     attr_reader :password 
     after_initialize :ensure_session_token, :ensure_img_url, :create_username
     
-    has_many :owned_servers,
-        class_name: :Server,
-        foreign_key: :owner_id
+    #server + mods
+    has_many :owned_servers, class_name: :Server, foreign_key: :owner_id
+    has_many :mod_subs, class_name: :Moderator, foreign_key: :moderator_id
+    has_many :servers_they_mod, through: :mod_subs, source: :server
+    has_many :userserver_subs, class_name: :Userserver, foreign_key: :user_id
+    has_many :servers, through: :userserver_subs, source: :server
 
-    has_many :mod_subs,
-        class_name: :Moderator,
-        foreign_key: :moderator_id
+    #alias 
+    has_many :aliases, class_name: :Nickname, foreign_key: :user_id
 
-    has_many :servers_they_mod,
-        through: :mod_subs,
-        source: :server
+    #channel
+    has_many :channel_memberships, class_name: :Membership, foreign_key: :user_id 
+    has_many :channels, through: :channel_memberships, source: :channel
 
-    has_many :userserver_subs,
-        class_name: :Userserver,
-        foreign_key: :user_id
-
-    has_many :servers, 
-        through: :server_subs,
-        source: :server
+    #message 
+    has_many :messages, class_name: :Message, foreign_key: :user_id
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
@@ -37,13 +34,16 @@ class User < ApplicationRecord
         self.update(session_token: User.generate_session_token)
         self.session_token
     end
+
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)
     end
+
     def is_password?(password)
         BCrypt::Password.new(self.password_digest).is_password?(password)
     end  
+
     private  
 
     def self.generate_session_token

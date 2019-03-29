@@ -38,9 +38,9 @@ class ServersController < ApplicationController
 
     def destroy
         @server = Server.find(params[:id])
-        if @server 
+        if @server && @server.owner_id == current_user.id
             @server.destroy 
-            render json: ["Deleted Server"], status: 200
+            render json: ["Successfull Deleted Server"], status: 200
         else 
             render json: ["Unable to delete server"], status: 401
         end

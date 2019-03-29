@@ -7,3 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create({email:"demo@demo.com", username:"username#0000", password:"password"})
+User.create({email:"example@example.com", username:"dustin#6969", password:"monica!!"})
+
+Server.create({server_name:"Main", owner_id: 2})

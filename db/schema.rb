@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_28_203935) do
+ActiveRecord::Schema.define(version: 2019_03_29_185225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "channels", force: :cascade do |t|
+    t.string "channel_name", null: false
+    t.integer "server_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "channel_id", null: false
+    t.index ["user_id", "channel_id"], name: "index_memberships_on_user_id_and_channel_id", unique: true
+  end
 
   create_table "messages", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -28,6 +41,14 @@ ActiveRecord::Schema.define(version: 2019_03_28_203935) do
     t.integer "server_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["moderator_id", "server_id"], name: "index_moderators_on_moderator_id_and_server_id", unique: true
+  end
+
+  create_table "nicknames", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "channel_id", null: false
+    t.string "nickname", null: false
+    t.index ["user_id", "channel_id"], name: "index_nicknames_on_user_id_and_channel_id", unique: true
   end
 
   create_table "servers", force: :cascade do |t|
