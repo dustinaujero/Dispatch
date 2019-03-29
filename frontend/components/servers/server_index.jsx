@@ -1,10 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServerIndex = (props) => {
     return (
         <aside className="server-list">
             <div className="server-list-header">
-                <img src={window.basicIcon}/>
+            <img src={window.mainIcon}/>
+                <div className="server-header-bg">
+                    .
+                </div>
             </div>
             <div className="server-list-main">
                 <img src={window.basicIcon} />

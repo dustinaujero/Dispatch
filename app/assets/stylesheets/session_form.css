@@ -180,8 +180,8 @@
 }
 
 .session-form .form-submit {
-    background-color: rgb(134, 139, 219);
-    /* background-color: #738ADB; */
+    /* background-color: rgb(134, 139, 219); */
+    background-color: #7289DA;
     color: rgb(255, 255, 255);
     font-size: 14px;    
     font-weight: bold;
