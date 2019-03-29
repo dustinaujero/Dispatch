@@ -16,7 +16,7 @@ class Main extends React.Component {
                 <div className="secondary"> 
                     <div className="secondary-header">
                         <p>Title</p> 
-                        <div><i class="fas fa-chevron-down"></i></div>
+                        <div><i className="fas fa-chevron-down"></i></div>
                         
                     </div>
 

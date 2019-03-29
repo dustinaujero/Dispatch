@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
+import serversReducer from './entities/servers_reducer';
 
-const entitiesReducer = (state = {}, action) => {
-
-    return state;
-}
-export default entitiesReducer
+export default combineReducers({
+    servers: serversReducer
+});

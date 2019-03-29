@@ -4,27 +4,44 @@ const ServerIndex = (props) => {
     return (
         <aside className="server-list">
             <div className="server-list-header">
-                <button>.</button>
+                <img src={window.basicIcon}/>
             </div>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
-            <button>.</button>
+            <div className="server-list-main">
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+                <img src={window.basicIcon} />
+            </div>
         </aside>
     );
 }

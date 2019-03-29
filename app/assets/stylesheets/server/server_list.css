@@ -1,10 +1,24 @@
 .server-list {
     overflow-y: scroll;
-    width: 100px;
+    width: 120px;
     display: flex;
     background-color: #1F2225;
     flex-direction: column;
     align-items: center;
+}
+@keyframes serverHover {
+    0%{
+        border-radius: 50%;
+        }
+    30%{
+        border-radius: 13px;
+        }
+    60%{
+        border-radius: 16px;
+        }
+    100%{
+        border-radius: 14px;
+        }
 }
 .server-list::-webkit-scrollbar { 
     width: 0 !important 
@@ -18,11 +32,24 @@
     width: 100%;
     display: flex;
     justify-content: center;
-
 }
-.server-list button { 
-    border-radius: 50%;
-    padding: 10px 15spx;
+.server-list .server-list-header img{
+    border-radius: 14px;
+}
+.server-list .server-list-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.server-list img {
+    width: 50px;
+    height: 50px;
     margin: 10px 0px;
-    width: 15px;
+    background-color: red;
+    border-radius: 50%;
+}
+.server-list img:hover{
+    animation: serverHover 1s 1 0s ease;
+    border-radius: 14px;
+    transition-duration: 0.5s;
 }
