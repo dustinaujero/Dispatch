@@ -44,6 +44,7 @@
     width: 55px;
     height: 55px;
     margin: 5px 10px;
+    padding: 26px;
     border-radius: 14px;
     position: relative;
     z-index: 1;
@@ -55,7 +56,6 @@
     width: 70px;
     height: 70px;
     overflow: visible;
-
     position: relative;
     z-index: 2;
 }
