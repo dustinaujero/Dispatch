@@ -1,4 +1,4 @@
-class ServersController < ApplicationController
+class Api::ServersController < ApplicationController
 
     before_action :ensure_logged_in
 

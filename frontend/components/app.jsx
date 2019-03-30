@@ -12,10 +12,10 @@ const App = () => (
     <div className="app-div">
         <Route exact path="/" component={Splash} />
 
-        <AuthRoute exact path="/signup" component={SignupForm} />
-        <AuthRoute exact path="/login" component={LoginForm} />
+        <Route exact path="/signup" component={SignupForm} />
+        <Route exact path="/login" component={LoginForm} />
 
-        <ProtectedRoute path="/channels/" component={MainContainer} />
+        <Route path="/channels/" component={MainContainer} />
         {/* <ProtectedRoute path="/channels/:serverId/:chanelId" component={DMContainer} /> */}
     </div>
 );

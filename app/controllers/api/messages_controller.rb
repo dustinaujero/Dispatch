@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController 
+class Api::MessagesController < ApplicationController 
 
     before_action :ensure_logged_in
 

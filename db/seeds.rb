@@ -9,4 +9,22 @@
 User.create({email:"demo@demo.com", username:"username#0000", password:"password"})
 User.create({email:"example@example.com", username:"dustin#6969", password:"monica!!"})
 
-Server.create({server_name:"Main", owner_id: 2})
+Server.create({server_name:"Main", owner_id: 1})
+Channel.create({channel_name:"1st Channel", server_id: 1})
+Channel.create({channel_name:"2nd Channel", server_id: 1})
+
+Server.create({server_name:"Second", owner_id: 1})
+Channel.create({channel_name:"2-1 Channel", server_id: 2})
+Channel.create({channel_name:"2-2 Channel", server_id: 2})
+
+
+
+Server.create({server_name:"Third", owner_id: 1})
+Channel.create({channel_name:"3-1 Channel", server_id: 3})
+Channel.create({channel_name:"3-2 Channel", server_id: 3})
+
+
+Server.create({server_name:"Fourth", owner_id: 1})
+Channel.create({channel_name:"4-1 Channel", server_id: 4})
+Channel.create({channel_name:"4-2 Channel", server_id: 4})
+

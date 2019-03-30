@@ -1,18 +1,33 @@
 .main-page {
     display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
     height: 100vh;
     width: 100vw;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.primary {
+    overflow-y: scroll;
+    width: 70px;
+    display: flex;
+    background-color: #1F2225;
+    flex-direction: column;
+    align-items: center;
+
+    flex-grow: 0;
+    flex-shrink: 0;
+}
 .secondary {
     display: flex;
-    width: 360px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 240px;
     margin: 0; 
     background-color: #2F3136;
 }
 .secondary .secondary-header {
     display: flex;
-    box-shadow: 0px 0.5px 2px 0px rgb(36, 36, 36);
+    box-shadow: 0px 0.5px 1px 0px rgb(36, 36, 36);
     height: 48px;
     width: 100%;
     align-content: center;
@@ -25,7 +40,7 @@
     background-color: #26262A;
     border-radius: 5px;
     margin: 7px 0px;
-    width: 190px;
+    width: 210px;
     height: 60%;
 
     display: flex;
@@ -39,7 +54,7 @@
     letter-spacing: 0.2px;
 }
 .secondary .secondary-header p {
-    margin: 7.5px 7.5px;
+    margin: 7.5px 9px;
 }
 .third {
     /* background-color: #2F3036; */
@@ -49,13 +64,15 @@
     width: 100%;
 }
 .third div {
-    box-shadow: 0px 0.5px 2px 0px rgb(36, 36, 36);
+    box-shadow: 0px 1px 1px 0px rgb(36, 36, 36);
     color: white;
     height: 48px;
     width: 100%;
 }
 .fourth {
     width: 240px;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 

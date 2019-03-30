@@ -12,7 +12,9 @@ class Main extends React.Component {
             <>
             {this.props.loading ? <Loading /> : <></>}
             <div className="main-page">
-                <ServerIndexContainer />
+                <div className="primary">
+                    <ServerIndexContainer />
+                </div>
                 <div className="secondary"> 
                     <div className="secondary-header">
                         <Switch>

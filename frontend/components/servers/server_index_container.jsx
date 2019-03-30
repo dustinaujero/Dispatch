@@ -4,7 +4,7 @@ import { connect } from  'react-redux';
 import {fetchServers} from '../../actions/server_actions';
 
 const msp = state => ({
-    servers: state.entities.servers
+    servers: Object.values(state.entities.servers)
 })
 
 const mdp = dispatch => ({
