@@ -12,9 +12,9 @@ class ServerIndex extends React.Component {
     }
 
     render() {
-        const allServers = this.servers.map( server => (
-            <img src={server.img_url} />
-        ));
+        const servers = this.servers.map(server => (
+                        <p>{server.img_url}</p>
+                    ));
         return (
             <aside className="server-list">
                 <div className="server-list-header">
@@ -24,7 +24,7 @@ class ServerIndex extends React.Component {
                     </div>
                 </div>
                 <div className="server-list-main">
-                    
+                    {servers}
                 </div>
             </aside>
         );
