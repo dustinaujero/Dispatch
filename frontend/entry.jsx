@@ -8,7 +8,18 @@ import { loading, clearLoading } from './actions/ui_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const store = configureStore();
+    let store;
+    if (window.currentUser) {
+        const state = {
+           session: { id: window.currentUser.id }
+        };
+        store = configureStore(state);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }
+
+    
 
 
 
