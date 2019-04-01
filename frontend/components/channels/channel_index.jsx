@@ -7,11 +7,11 @@ class ChannelIndex extends React.Component {
         super(props);
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.match)  {
-            
-    //     }
-    // }
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.serverId !== this.props.match.params.serverId)  {
+            this.props.fetchChannels(this.props.match.params.serverId);
+        }
+    }
     componentDidMount() {
         debugger
         this.props.fetchChannels(this.props.match.params.serverId);
@@ -19,7 +19,6 @@ class ChannelIndex extends React.Component {
     }
 
     render() {
-
         return (
             <>
                 <ul>
