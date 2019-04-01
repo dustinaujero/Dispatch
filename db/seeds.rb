@@ -7,26 +7,26 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 demo = User.create({email:"demo@demo.com", username:"username#0000", password:"password"})
-User.create({email:"example@example.com", username:"dustin#6969", password:"monica!!"})
+me = User.create({email:"example@example.com", username:"dustin#1234", password:"monica!!"})
 
-server1 = Server.create({server_name:"Main", owner_id: demo.id})
-Channel.create({channel_name:"1st Channel", server_id: server1.id})
-Channel.create({channel_name:"2nd Channel", server_id: server1.id})
+serverOne = Server.create({server_name:"Main", owner_id: demo.id})
+chOne = Channel.create({channel_name:"1st Channel", server_id: serverOne.id})
+chTwo = Channel.create({channel_name:"2nd Channel", server_id: serverOne.id})
 
-server2 = Server.create({server_name:"Second", owner_id: demo.id})
-Channel.create({channel_name:"2-1 Channel", server_id: server2.id})
-Channel.create({channel_name:"2-2 Channel", server_id: server2.id})
-
-
-
-server3 = Server.create({server_name:"Third", owner_id: demo.id})
-Channel.create({channel_name:"3-1 Channel", server_id: server3.id})
-Channel.create({channel_name:"3-2 Channel", server_id: server3.id})
+serverTwo = Server.create({server_name:"Second", owner_id: demo.id})
+Channel.create({channel_name:"2-1 Channel", server_id: serverTwo.id})
+Channel.create({channel_name:"2-2 Channel", server_id: serverTwo.id})
 
 
-server4 = Server.create({server_name:"Fourth", owner_id: demo.id})
-Channel.create({channel_name:"4-1 Channel", server_id: server4.id})
-Channel.create({channel_name:"4-2 Channel", server_id: server4.id})
+
+serverThree = Server.create({server_name:"Third", owner_id: demo.id})
+Channel.create({channel_name:"3-1 Channel", server_id: serverThree.id})
+Channel.create({channel_name:"3-2 Channel", server_id: serverThree.id})
+
+
+serverFour = Server.create({server_name:"Fourth", owner_id: demo.id})
+Channel.create({channel_name:"4-1 Channel", server_id: serverFour.id})
+Channel.create({channel_name:"4-2 Channel", server_id: serverFour.id})
 Server.create({server_name:"Main", owner_id: demo.id})
 Server.create({server_name:"Main", owner_id: demo.id})
 Server.create({server_name:"Main", owner_id: demo.id})
