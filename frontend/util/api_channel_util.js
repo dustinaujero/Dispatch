@@ -1,6 +1,6 @@
 export const fetchChannels = (serverId) => (
     $.ajax({
-        url: `/api/${serverId}/channels`,
+        url: `/api/servers/${serverId}/channels`,
         method: 'GET',
     })
 )
@@ -14,7 +14,7 @@ export const fetchChannel = (id) => (
 
 export const createChannel = (serverId, channel) => (
     $.ajax({
-        url: `/api/${serverId}/channels`,
+        url: `/api/servers/${serverId}/channels`,
         method: 'POST',
         data: { channel }
     })
