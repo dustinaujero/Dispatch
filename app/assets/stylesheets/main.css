@@ -13,10 +13,19 @@
     background-color: #1F2225;
     flex-direction: column;
     align-items: center;
-
+    z-index: 10;
     flex-grow: 0;
     flex-shrink: 0;
+    overflow: visible;
 }
+
+
+
+
+
+
+
+
 .secondary {
     display: flex;
     flex-shrink: 0;
@@ -24,6 +33,7 @@
     width: 240px;
     margin: 0; 
     background-color: #2F3136;
+    flex-direction: column;
 }
 .secondary .secondary-header {
     display: flex;
@@ -56,6 +66,37 @@
 .secondary .secondary-header p {
     margin: 7.5px 9px;
 }
+
+.secondary .secondary-main {
+    width: 100%;
+}
+.secondary .secondary-main ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.secondary .current-profile {
+    background-color: rgba(32, 34, 37, 0.4);
+    width: 100%;
+    padding: 0px 10px;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .third {
     /* background-color: #2F3036; */
     background-color:#34363c;

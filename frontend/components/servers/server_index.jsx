@@ -4,16 +4,21 @@ import { Link } from 'react-router-dom';
 class ServerIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.servers = this.props.servers;
     }
 
     componentDidMount() {
         this.props.fetchServers();
+        this.props.clearLoading();
     }
 
     render() {
-        const servers = this.servers.map(server => (
-                        <p>{server.img_url}</p>
+        const servers = this.props.servers.map(server => (
+                        <li key={server.id}>
+                            <img src={server.img_url} />
+                            <div className="s-list-item-info">
+                                {server.server_name}
+                            </div>
+                        </li>
                     ));
         return (
             <aside className="server-list">
@@ -24,7 +29,9 @@ class ServerIndex extends React.Component {
                     </div>
                 </div>
                 <div className="server-list-main">
-                    {servers}
+                    <ul className="server-list-items">
+                        {servers}
+                    </ul>
                 </div>
             </aside>
         );

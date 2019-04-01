@@ -1,10 +1,12 @@
 .server-list {
     overflow-y: scroll;
-    width: 120px;
+    overflow: visible;
+    width: 70px;
     display: flex;
     background-color: #1F2225;
     flex-direction: column;
     align-items: center;
+    z-index: 7;
 }
 @keyframes serverHover {
     0%{
@@ -67,7 +69,7 @@
     justify-content: center;
     align-content: center;
     padding: 8px;
-    margin: 7px 5px;
+    margin: 9px 5px;
     background-color: #7289DA;
     /* background-color: #000000; */
     border-radius: 14px;
@@ -77,14 +79,11 @@
 
 
 
-
-
-
-
 .server-list .server-list-main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: visible;
 }
 .server-list .server-list-main img {
     margin: 5px 5px;
@@ -97,6 +96,38 @@
     animation: serverHover 1s 1 0s ease;
     border-radius: 14px;
     transition-duration: 0.5s;
+}
+/* li = dropdown
+img = dropbtn
+div = dropdown-content */
+
+.server-list .server-list-main ul {
+    list-style: none;
+    padding: 0;
+
+}
+.server-list .server-list-main ul li {
+    position: relative;
+
+}
+.server-list .server-list-main ul li:hover .s-list-item-info{
+    display: block;
+    z-index: 10;
+
+}
+
+.server-list .server-list-main .s-list-item-info {
+    display: none;
+    position: absolute;
+    top: 18px;
+    left: 75px;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.5px;
 }
 
 @keyframes shake { 

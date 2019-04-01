@@ -7,7 +7,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    
+    <% if logged_in? %>
+      <script type="text/javascript">
+        window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
+      </script>
+    <% end %>
     <script>
       window.controller = "<%= asset_path('controller.svg')%>";
       window.flask = "<%= asset_path('flask.svg')%>";

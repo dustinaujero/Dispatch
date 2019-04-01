@@ -34,9 +34,19 @@ class Main extends React.Component {
                             }/>
                         </Switch>
                     </div>
+                    <div className="secondary-main">
+                        <ul>
+                            <li>list</li>
+                            <li>of</li>
+                            <li>names</li>
+                        </ul>
+                    
+                    </div>
+
                     <Route path="/@me" component={() => <input type="text" />}/>
                     <div className="current-profile">
-
+                        profile
+                        <button onClick={this.props.logout}>logout</button>
                     </div>
                 
                 </div>
@@ -50,6 +60,7 @@ class Main extends React.Component {
                     ausd hasdfhiudsfhuisdafihuds
                 </div>
             </div>
+            
             </>
         );
     }

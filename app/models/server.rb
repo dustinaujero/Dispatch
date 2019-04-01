@@ -14,7 +14,7 @@ class Server < ApplicationRecord
     has_many :channels, class_name: :Channel, foreign_key: :server_id
 
     def ensure_img_url
-        self.img_url ||= "window.basicIcon"
+        self.img_url ||= "/assets/basic-discord-645038d22a7d96fb1d5c8e85bc78b7055b9bbb022c62a0258b76b3a8a03f060e.png"
     end
 
 end
