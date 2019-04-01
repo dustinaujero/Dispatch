@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import ServerIndexContainer from '../servers/server_index_container';
 import Loading from '../ui/loading';
 
@@ -67,4 +67,4 @@ class Main extends React.Component {
     
 }
 
-export default Main;
+export default withRouter(Main);
