@@ -9,7 +9,7 @@ const serverErrorsReducer = (state = [], action) => {
             return [].concat(state).concat(action.errors);
         }
         case RECEIVE_SERVER: {
-            return []
+            return [];
         }
         case CLEAR_SERVER_ERRORS: {
             return [];
