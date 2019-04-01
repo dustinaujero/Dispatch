@@ -84,7 +84,6 @@ class LoginForm extends React.Component {
                         <input className={emailError ? "bad-input" : ""} type="text" onChange={this.update('email')} value={this.state.email}/>
                         <label className={pwError ? "bad-label" : ""} >PASSWORD <strong>{pwError}</strong></label>
                         <input className={pwError ? "bad-input" : ""} type="password" onChange={this.update('password')} value={this.state.password}/>
-                        <a href="#/login">Forgot your password?</a>
                         <input className="form-submit" type="submit" value="Login" />
                     </form>
 
