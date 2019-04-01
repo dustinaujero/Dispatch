@@ -1,75 +1,75 @@
-import * as ServerAPIUtil from '../util/api_server_util';
+import * as ChannelAPIUtil from '../util/api_channel_util';
 
-export const RECEIVE_SERVERS = "RECEIVE_SERVERS";
-export const RECEIVE_SERVER = "RECEIVE_SERVER";
-export const REMOVE_SERVER = "REMOVE_SERVER";
-export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
-export const CLEAR_SERVER_ERRORS = "CLEAR_SERVER_ERRORS";
+export const RECEIVE_CHANNELS = "RECEIVE_CHANNELS";
+export const RECEIVE_CHANNEL = "RECEIVE_CHANNEL";
+export const REMOVE_CHANNEL = "REMOVE_CHANNEL";
+export const RECEIVE_CHANNEL_ERRORS = "RECEIVE_CHANNEL_ERRORS";
+export const CLEAR_CHANNEL_ERRORS = "CLEAR_CHANNEL_ERRORS";
 
-export const receiveServers = (servers) => (
+export const receiveChannels = (channels) => (
     {
-        type: RECEIVE_SERVERS,
-        servers
+        type: RECEIVE_CHANNELS,
+        channels
     }
 )
 
-export const receiveServer = (server) => (
+export const receiveChannel = (channel) => (
     {
-        type: RECEIVE_SERVER,
-        server
+        type: RECEIVE_CHANNEL,
+        channel
     }
 )
 
-export const removeServer = (serverId) => (
+export const removeChannel = (channelId) => (
     {
-        type: REMOVE_SERVER,
-        serverId
+        type: REMOVE_CHANNEL,
+        channelId
     }
 )
 
-export const receiveServerErrors = (errors) => (
+export const receiveChannelErrors = (errors) => (
     {
-        type: RECEIVE_SERVER_ERRORS,
+        type: RECEIVE_CHANNEL_ERRORS,
         errors
     }
 )
-export const clearServerErrors = () => (
+export const clearChannelErrors = () => (
     {
-        type: CLEAR_SERVER_ERRORS,
+        type: CLEAR_CHANNEL_ERRORS,
     }
 )
 
-export const fetchServers = () => dispatch => (
-    ServerAPIUtil.fetchServers().then(
-        (servers) => dispatch(receiveServers(servers)),
-        (errors) => dispatch(receiveServerErrors(errors.responseJSON))
+export const fetchChannels = (serverId) => dispatch => (
+    ChannelAPIUtil.fetchChannels(serverId).then(
+        (channels) => dispatch(receiveChannels(channels)),
+        (errors) => dispatch(receiveChannelErrors(errors.responseJSON))
     )
 )
 
-export const fetchServer = (id) => dispatch => (
-    ServerAPIUtil.fetchServer(id).then(
-        (server) => dispatch(receiveServer(server)),
-        (errors) => dispatch(receiveServerErrors(errors.responseJSON))
+export const fetchChannel = (id) => dispatch => (
+    ChannelAPIUtil.fetchChannel(id).then(
+        (channel) => dispatch(receiveChannel(channel)),
+        (errors) => dispatch(receiveChannelErrors(errors.responseJSON))
     )
 )
 
-export const createServer = (server) => dispatch => (
-    ServerAPIUtil.createServer(server).then(
-        (server) => dispatch(receiveServer(server)),
-        (errors) => dispatch(receiveServerErrors(errors.responseJSON))
+export const createChannel = (serverId, channel) => dispatch => (
+    ChannelAPIUtil.createChannel(serverId, channel).then(
+        (channel) => dispatch(receiveChannel(channel)),
+        (errors) => dispatch(receiveChannelErrors(errors.responseJSON))
     )
 )
 
-export const updateServer = (server) => dispatch => (
-    ServerAPIUtil.updateServer(server).then(
-        (server) => dispatch(receiveServer(server)),
-        (errors) => dispatch(receiveServerErrors(errors.responseJSON))
+export const updateChannel = (channel) => dispatch => (
+    ChannelAPIUtil.updateChannel(channel).then(
+        (channel) => dispatch(receiveChannel(channel)),
+        (errors) => dispatch(receiveChannelErrors(errors.responseJSON))
     )
 )
 
-export const deleteServer = (id) => dispatch => (
-    ServerAPIUtil.deleteServer(id).then(
-        (id) => dispatch(removeServer(id)),
-        (errors) => dispatch(receiveServerErrors(errors.responseJSON))
+export const deleteChannel = (id) => dispatch => (
+    ChannelAPIUtil.deleteChannel(id).then(
+        (id) => dispatch(removeChannel(id)),
+        (errors) => dispatch(receiveChannelErrors(errors.responseJSON))
     )
 )
