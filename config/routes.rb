@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: "static_pages#root"
 
-  mount ActionCable.server => '/cable'
+  # mount ActionCable.server => '/cable'
 
   namespace :api do 
     resources :users, only: [:show, :create, :update]

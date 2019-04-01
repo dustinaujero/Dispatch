@@ -3,7 +3,7 @@ class RoomChannel < ApplicationCable::Channel
     # if params[:channel_id].present?
       # stream_from("ChatRoom-#{(params[:channel_id])}")
     # end
-    stream_from 'room_channel'
+    # stream_from 'room_channel'
   end
 
   def speak(data) 
