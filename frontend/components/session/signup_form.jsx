@@ -27,17 +27,10 @@ class SignupForm extends React.Component {
         }
     }
     componentDidMount() {
-        // debugger
         $(".session-form").removeClass("fade-out").addClass("fade-in");
-        // debugger
-        // $(".session-form").removeClass("fade-out");
-
     }
     componentWillUnmount() {
-        // debugger
-        // $(".session-form").removeClass("fade-in");
         $(".session-form").addClass("fade-out");
-        // debugger
         this.props.clearSessionErrors();
     }
 

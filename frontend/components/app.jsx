@@ -6,8 +6,6 @@ import LoginForm from './session/login_container';
 import Splash from './splash/splash';
 import MainContainer from './main/main_container';
 
-//import containers
-
 const App = () => (
     <div className="app-div">
         <Route exact path="/" component={Splash} />
@@ -16,7 +14,6 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginForm} />
 
         <ProtectedRoute path="/channels/" component={MainContainer} />
-        {/* <ProtectedRoute path="/channels/:serverId/:chanelId" component={DMContainer} /> */}
     </div>
 );
 export default App;

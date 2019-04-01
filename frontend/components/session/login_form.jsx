@@ -36,17 +36,10 @@ class LoginForm extends React.Component {
         });
     }
     componentDidMount(){
-        // debugger
         $(".session-form").removeClass("fade-out").addClass("fade-in");
-        // debugger
-        // $(".session-form").removeClass("fade-out");
-  
     }
     componentWillUnmount(){
-        // $(".session-form").removeClass("fade-in");
-        // debugger
         $(".session-form").addClass("fade-out");
-        // debugger
         this.props.clearSessionErrors();
     }
 

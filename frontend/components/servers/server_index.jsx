@@ -11,8 +11,6 @@ class ServerIndex extends React.Component {
         this.props.clearLoading();
     }
     
-
-
     render() {
         const servers = this.props.servers.map(server => (
                         <li key={server.id}>
