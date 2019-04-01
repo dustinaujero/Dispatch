@@ -4,6 +4,7 @@ class Api::ServersController < ApplicationController
 
     def index
         @servers = current_user.servers
+        debugger
         @owned_servers = current_user.owned_servers
         render :index
     end

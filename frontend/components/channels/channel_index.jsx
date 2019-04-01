@@ -13,7 +13,6 @@ class ChannelIndex extends React.Component {
         }
     }
     componentDidMount() {
-        debugger
         this.props.fetchChannels(this.props.match.params.serverId);
         this.props.clearLoading();
     }

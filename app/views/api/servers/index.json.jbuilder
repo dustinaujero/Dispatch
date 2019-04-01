@@ -6,6 +6,11 @@
                 user.id
             end
         end
+        json.channels do 
+            json.array! server.channels do |channel|
+                channel.id
+            end
+        end
     end
 end
 @owned_servers.each do |server|
@@ -14,6 +19,11 @@ end
         json.users do 
             json.array! server.users do |user|
                 user.id
+            end
+        end
+        json.channels do 
+            json.array! server.channels do |channel|
+                channel.id
             end
         end
     end

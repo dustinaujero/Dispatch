@@ -37,7 +37,11 @@ class Main extends React.Component {
                         </Switch>
                     </div>
                     <div className="secondary-main">
-                        <Route path="/channels/:serverId" component={ChannelIndexContainer} />
+                        <Switch>
+                            <Route path="/channels/@me" component={() => (<div>IN @ME</div>)} />
+                            <Route path="/channels/:serverId" component={ChannelIndexContainer} />
+                        </Switch>
+                        
                     </div>
 
                     <Route path="/@me" component={() => <input type="text" />}/>
