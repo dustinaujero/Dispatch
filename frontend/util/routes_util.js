@@ -11,7 +11,7 @@ const mdp = dispatch => ({
 });
 
 const Auth = ({ component: Component, path, loggedIn, loading }) => {
-    loading();
+    // loading();
     return (<Route
         path={path}
         render={props => (
@@ -21,7 +21,7 @@ const Auth = ({ component: Component, path, loggedIn, loading }) => {
 };
 
 const Protected = ({ component: Component, path, loggedIn, loading }) => {
-    loading();
+    // loading();
     return (<Route
         path={path}
         render={props => (

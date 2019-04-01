@@ -1,11 +1,13 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import ServerIndexContainer from '../servers/server_index_container';
+import ChannelIndexContainer from '../channels/channel_index_container';
 import Loading from '../ui/loading';
 
 
 
 class Main extends React.Component {
+
 
     render() {
         return (
@@ -35,12 +37,7 @@ class Main extends React.Component {
                         </Switch>
                     </div>
                     <div className="secondary-main">
-                        <ul>
-                            <li>list</li>
-                            <li>of</li>
-                            <li>names</li>
-                        </ul>
-                    
+                        <Route path="/channels/:serverId" component={ChannelIndexContainer} />
                     </div>
 
                     <Route path="/@me" component={() => <input type="text" />}/>
@@ -52,7 +49,7 @@ class Main extends React.Component {
                 </div>
                 <div className="third">
                     <div>
-                        iuniubibibobiubiubiuiboib
+                        DEBUGGER PLS
                     </div>
                     OIANDFONAFONADFIN
                 </div>

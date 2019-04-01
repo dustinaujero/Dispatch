@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class ServerIndex extends React.Component {
     constructor(props) {
         super(props);
+
+        this.handleSelect = this.handleSelect.bind(this);
     }
 
     componentDidMount() {
@@ -11,10 +13,14 @@ class ServerIndex extends React.Component {
         this.props.clearLoading();
     }
     
+    handleSelect(serverId) {
+        this.props.history.push(`/channels/${serverId}`);
+    }
+
     render() {
         const servers = this.props.servers.map(server => (
                         <li key={server.id}>
-                            <img src={server.img_url} />
+                            <img src={server.img_url} onClick={() => this.handleSelect(server.id)}/>
                             <div className="s-list-item-info">
                                 {server.server_name}
                             </div>
@@ -46,4 +52,4 @@ class ServerIndex extends React.Component {
     }
 }
 
-export default ServerIndex;
+export default withRouter(ServerIndex);

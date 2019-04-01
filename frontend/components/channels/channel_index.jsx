@@ -7,17 +7,27 @@ class ChannelIndex extends React.Component {
         super(props);
     }
 
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.match)  {
+            
+    //     }
+    // }
+    componentDidMount() {
+        debugger
+        this.props.fetchChannels(this.props.match.params.serverId);
+        this.props.clearLoading();
+    }
 
     render() {
-        
+
         return (
             <>
                 <ul>
-
+                    HELLO IM IN THE CHANNEL INDEX HEHEHEHEEHEHH
                 </ul>
             </>
         );
     }
 }
 
-export default ChannelIndex;
+export default withRouter(ChannelIndex);
