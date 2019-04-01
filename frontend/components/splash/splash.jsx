@@ -20,16 +20,21 @@ class Splash extends React.Component {
             <header className="splash-header">
                 <nav className="main-nav">
                     <div className="left-nav">
-                        <div>Discord Logo</div>
-                        <div>Download</div>
-                        <div>Nitro</div>
-                        <div>Jobs</div>
-                        <div>Developers</div>
-                        <div>Community</div>
-                        <div>Support</div>
+                        <div className="logo">
+                            <img src={window.splashIcon}/>
+                            <img src={window.logo}/>
+                        </div>
+                        <div>LinkedIn</div>
+                        <div>Project Git</div>
                     </div>
                     <div className="right-nav">
-                        <button onClick={this.handleClick} className="splash-login-button">Login</button>
+                        <div><a href='https://github.com/dustinaujero' target="_blank"><i className="fab fa-github fa-lg"></i></a></div>
+                        <div><a href='https://www.linkedin.com/in/dustin-a-0aab33127/' target="_blank"><i className="fab fa-linkedin-in fa-lg"></i></a></div>
+                        <div>
+                            <button onClick={this.handleClick} className="splash-login-button">
+                                Login
+                            </button>
+                        </div>
                     </div>
                 </nav>
             </header>
@@ -40,6 +45,10 @@ class Splash extends React.Component {
                     works on both your desktop and phone. </p>
                     <p>Stop paying for TeamSpeak servers 
                     and hassling with Skype. Simplify your life.</p>
+                </div>
+                <div>
+                    <button>New to the site?</button>
+                    <button>Come here often?</button>
                 </div>
             </div>
             <div className="splash-display">

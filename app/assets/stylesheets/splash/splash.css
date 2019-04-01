@@ -2,39 +2,71 @@
     padding: 8px 0px;
     color: rgb(223, 223, 223);
     font-family: "Helvetica Neue";
-    font-size: 13px;
-    font-weight: 345;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: center;
 }
 .splash-header .main-nav {
     display: flex;
     height: 56px;
     padding: 0px 30px;
     justify-content: space-between;
+    width: 1700px;
 }
 .left-nav {
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-left: 50px;
 }
 .left-nav div {
     padding: 15px 10px;
     margin-right: 8px;
 }
+.left-nav .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.left-nav .logo img:first-of-type{
+    margin-top: 4px;
+    width: 45px;
+    height: 45px;
+}
+.left-nav .logo img {
+    height: 16px;
+    width: 100px;
+}
+
+
 .right-nav {
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-right: 50px;
+
 }
 .right-nav div {
-    padding: 15px 10px;
+    margin-left: 15px;
 }
+.right-nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+
+
 .splash-header .splash-login-button {
     border-radius: 25px;
     border: 1.5px solid rgb(175, 175, 175);
     background-color: transparent;
     margin: 7px 0px;
     color: rgb(199, 199, 199);
-    padding: 2px 20px;
+    padding: 6px 20px;
 
     line-height: 20px;
     font-family: "Helvetica Neue";

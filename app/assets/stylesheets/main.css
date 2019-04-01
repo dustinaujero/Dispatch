@@ -13,7 +13,6 @@
     background-color: #1F2225;
     flex-direction: column;
     align-items: center;
-    z-index: 10;
     flex-grow: 0;
     flex-shrink: 0;
     overflow: visible;

@@ -1,6 +1,5 @@
 .server-list {
     overflow-y: scroll;
-    overflow: visible;
     width: 70px;
     display: flex;
     background-color: #1F2225;
@@ -111,7 +110,6 @@ div = dropdown-content */
 }
 .server-list .server-list-main ul li:hover .s-list-item-info{
     display: block;
-
 }
 
 .server-list .server-list-main .s-list-item-info {
