@@ -5,6 +5,7 @@
     color: white;
     padding: 72px 50px 0px;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 }
 .splash-body h1, div {
     margin: 0 auto;
@@ -28,4 +29,35 @@
     text-align: center;
     padding: 0;
     margin: 10px 0px;
+}
+
+
+
+
+
+.splash-buttons {
+    display: flex;
+    justify-content: space-between;  
+    position: absolute;
+    height: 0px;
+    left: calc(50% - 280px);
+    top: 25%;
+    z-index: 20;
+}
+.splash-buttons button{
+    width: 250px;
+    height: 45px;
+    border-radius: 4px;
+    margin: 0px 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;   
+    font-size: 15px; 
+    letter-spacing: 0.2px;
+} 
+.splash-buttons button:last-of-type {
+    background-color: rgb(114, 137, 218);
+    border: none;
+    color: white;
+}
+.splash-buttons button:hover {
+    transform: translateY(1px);
 }

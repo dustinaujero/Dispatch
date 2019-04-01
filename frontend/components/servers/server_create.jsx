@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ServerCreate extends React.Component {
+class ServerModal extends React.Component {
 
 
     render() {
@@ -29,4 +29,4 @@ class ServerCreate extends React.Component {
 
 }
 
-export default ServerCreate
+export default ServerModal

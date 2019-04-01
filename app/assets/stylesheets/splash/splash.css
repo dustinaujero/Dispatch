@@ -1,3 +1,11 @@
+.splash-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+
 .splash-header {
     padding: 8px 0px;
     color: rgb(223, 223, 223);
@@ -15,13 +23,28 @@
     justify-content: space-between;
     width: 1700px;
 }
+
+
+
+
+
+
+
+
+
+
+
 .left-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-left: 50px;
 }
-.left-nav div {
+.left-nav a {
+    text-decoration: none;
+    color: inherit;
+}
+.left-nav > div {
     padding: 15px 10px;
     margin-right: 8px;
 }
@@ -39,6 +62,52 @@
     height: 16px;
     width: 100px;
 }
+.left-nav .pg-div {
+    position: relative;
+}
+
+
+
+
+
+
+
+
+.left-nav .splash-dropdwn {
+    display: none;
+    position: absolute;
+    left: -35px;
+    top: 40px;
+    border-radius: 10px;
+    width: 160px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.55);
+
+}
+.left-nav .pg-div:hover .splash-dropdwn {
+    display: block;
+}
+.left-nav .splash-dropdwn a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 7px 0px;
+}   
+.left-nav .splash-dropdwn a:nth-of-type(even){
+    background-color: rgba(0, 0, 0, 1);
+}
+.left-nav .splash-dropdwn a:nth-of-type(odd) {
+    /* background-color: rgba(153, 153, 153, 0.8); */
+}
+
+
+
+
+
+
+
+
+
 
 
 .right-nav {
@@ -55,6 +124,14 @@
     text-decoration: none;
     color: inherit;
 }
+
+
+
+
+
+
+
+
 
 
 
