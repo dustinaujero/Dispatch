@@ -77,8 +77,6 @@
     height: 35px;
 }
 
-
-
 .server-list .server-list-main {
     display: flex;
     flex-direction: column;
@@ -104,15 +102,15 @@ div = dropdown-content */
 .server-list .server-list-main ul {
     list-style: none;
     padding: 0;
+    overflow: visible;
 
 }
 .server-list .server-list-main ul li {
     position: relative;
-
+    overflow: visible;
 }
 .server-list .server-list-main ul li:hover .s-list-item-info{
     display: block;
-    z-index: 10;
 
 }
 
@@ -129,6 +127,39 @@ div = dropdown-content */
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: 0.5px;
 }
+
+.server-list .server-list-main button {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    margin: 5px;
+    padding: 0px;
+    position: relative;
+    border: 1px dashed rgba(86, 86, 86, 0.897);
+    display: flex;
+}
+.server-list .server-list-main button div {
+    margin: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 45px;
+    font-weight: 200;
+    line-height: 10px;
+    position: absolute;
+    bottom: 5px;
+    left: 4px;
+    color: rgba(86, 86, 86, 0.897);
+    overflow: visible;
+}
+.server-list .server-list-main button:hover {
+    transition: 0.8s;
+    border: 1px dashed white;
+}
+.server-list .server-list-main button div:hover {
+    color: white;
+}
+
 
 @keyframes shake { 
     2% {transform:translate(.5px, 1.5px) rotate(1.5deg)} 
