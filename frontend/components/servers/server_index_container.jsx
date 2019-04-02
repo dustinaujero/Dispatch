@@ -1,7 +1,7 @@
 import React from 'react';
 import ServerIndex from './server_index';
 import { connect } from  'react-redux';
-import { fetchServers } from '../../actions/server_actions';
+import { fetchServers, createServer } from '../../actions/server_actions';
 import { clearLoading } from '../../actions/ui_actions';
 
 const msp = state => ({
@@ -10,7 +10,8 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     fetchServers: () => dispatch(fetchServers()),
-    clearLoading: () => dispatch(clearLoading())
+    clearLoading: () => dispatch(clearLoading()),
+    createServer: (server) => dispatch(createServer(server))
 })
 
 export default connect(msp, mdp)(ServerIndex);

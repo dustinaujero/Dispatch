@@ -17,7 +17,7 @@
     flex-grow: 0;
     flex-shrink: 0;
 
-    z-index: 5;
+    z-index: 20;
 }
 
 
@@ -36,6 +36,7 @@
     background-color: #2F3136;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 21;
 }
 .secondary .secondary-header {
     display: flex;
@@ -45,6 +46,7 @@
     align-content: center;
     justify-content: baseline;
     justify-content: space-around;
+    z-index: 6;
 }
 
 .secondary .secondary-header div {
@@ -71,6 +73,7 @@
 
 .secondary .secondary-main {
     width: 100%;
+    z-index: 4;
 }
 .secondary .secondary-main ul {
     list-style: none;

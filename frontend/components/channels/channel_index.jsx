@@ -3,9 +3,6 @@ import { withRouter } from 'react-router-dom';
 
 class ChannelIndex extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.serverId !== this.props.match.params.serverId)  {
@@ -14,16 +11,21 @@ class ChannelIndex extends React.Component {
     }
     componentDidMount() {
         this.props.fetchChannels(this.props.match.params.serverId);
-        this.props.clearLoading();
     }
 
     render() {
+
+        const channels = this.props.channels.map(channel => {
+            return (
+                <li key={channel.id}>
+                    {channel.channel_name}
+                </li>
+            );
+        });
         return (
-            <>
-                <ul>
-                    HELLO IM IN THE CHANNEL INDEX HEHEHEHEEHEHH
-                </ul>
-            </>
+            <ul>
+                <li>{this.props.currServerChannels}</li>
+            </ul>
         );
     }
 }

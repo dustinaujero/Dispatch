@@ -16,12 +16,13 @@ class ServerIndex extends React.Component {
     handleSelect(serverId) {
         this.props.history.push(`/channels/${serverId}`);
     }
-
+    handleAddServer() {
+        this.props.history.push(`/channels/servers`);
+    }
     render() {
         const servers = this.props.servers.map(server => {
             if (server.img_url === 'empty') {
                 return (
-                    <>
                     <li key={server.id}>
                         <div className="no-img" onClick={() => this.handleSelect(server.id)}>
                             <p>{server.server_name.split(" ").map(word => {
@@ -29,14 +30,12 @@ class ServerIndex extends React.Component {
                                 }).join("")
                             }</p>
                         </div>
-                        
-                    </li>
                         <div className="server-li-stick">
                             <div className="s-list-item-info">
                                 {server.server_name}
                             </div>
                         </div>
-                    </>
+                    </li>
                 )
             }
             else {
@@ -63,8 +62,8 @@ class ServerIndex extends React.Component {
                 <div className="server-list-main">
                     <ul className="server-list-items">
                         {servers}
-                        <li>
-                            <button>
+                        <li key={"0"}>
+                            <button onClick={() => this.handleAddServer()}>
                                 <div>+</div>
                             </button>
                             <div className="s-list-item-info">
