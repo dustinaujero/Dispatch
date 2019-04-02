@@ -4,8 +4,8 @@
     display: flex;
     background-color: #191a1d;
     flex-direction: column;
-    align-items: center;
-    z-index: 4;
+    align-content: flex-end;
+    margin: 0;
     /* overflow-x: hidden; */
 }
 @keyframes serverHover {
@@ -33,9 +33,10 @@
 
 .server-list .server-list-header { 
     border-bottom: 1px solid white;
-    width: 100%;
+    width: 30px;
     display: flex;
     justify-content: center;
+    margin-left: 25px;
 }
 
 .server-list .server-list-header div img{
@@ -89,6 +90,7 @@
     align-items: center;
     overflow: visible;
     z-index: 5;
+    margin-left: 5px;
 }
 .server-list .server-list-main img {
     margin: 5px 5px;

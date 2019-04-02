@@ -15,16 +15,13 @@ class ChannelIndex extends React.Component {
 
     render() {
 
-        const channels = this.props.channels.map(channel => {
-            return (
-                <li key={channel.id}>
-                    {channel.channel_name}
-                </li>
-            );
+        const channels = this.props.currServerChannels.map(id => {
+            return (this.props.channels[id]);
         });
+        debugger
         return (
             <ul>
-                <li>{this.props.currServerChannels}</li>
+                <li>{channels}</li>
             </ul>
         );
     }
