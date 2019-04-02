@@ -4,6 +4,7 @@ import ServerIndexContainer from '../servers/server_index_container';
 import ServerModal from '../../components/servers/server_modal';
 import ChannelIndexContainer from '../channels/channel_index_container';
 import Loading from '../ui/loading';
+import UserProfile from '../../components/ui/user_profile';
 
 
 
@@ -46,11 +47,8 @@ class Main extends React.Component {
                         
                     </div>
 
-                    <Route path="/@me" component={() => <input type="text" />}/>
-                    <div className="current-profile">
-                        profile
-                        <button onClick={this.props.logout}>logout</button>
-                    </div>
+
+                    <UserProfile />
                 
                 </div>
                 <div className="third">

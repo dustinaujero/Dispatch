@@ -116,7 +116,6 @@ div = dropdown-content */
 }
 .server-list .server-list-main ul li {
     position: relative;
-    over
     height: 60px;
     z-index: 13;
 }
