@@ -7,15 +7,16 @@
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .primary {
-    overflow-y: scroll;
+
     width: 70px;
     display: flex;
-    background-color: #1F2225;
+    background-color: #202225;
+    /* #16171a */
     flex-direction: column;
     align-items: center;
     flex-grow: 0;
     flex-shrink: 0;
-    overflow: visible;
+
     z-index: 5;
 }
 
@@ -34,6 +35,7 @@
     margin: 0; 
     background-color: #2F3136;
     flex-direction: column;
+    justify-content: space-between;
 }
 .secondary .secondary-header {
     display: flex;
@@ -138,13 +140,14 @@
     height: 100vh;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.9);
-    z-index: 5;
+    z-index: 50;
 }
-.loading img{
+.loading > img {
     position: relative;
     width: 200px;
     height: 200px;
     animation: loadingAnimation 1.2s infinite 0s ease;
     left: calc(50% - 50px);
     top: calc(50% - 100px);
+    z-index: 51;
 }

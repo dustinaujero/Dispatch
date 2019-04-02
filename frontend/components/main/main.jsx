@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import ServerIndexContainer from '../servers/server_index_container';
+import ServerModal from '../../components/servers/server_modal';
 import ChannelIndexContainer from '../channels/channel_index_container';
 import Loading from '../ui/loading';
 

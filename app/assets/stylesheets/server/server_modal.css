@@ -1,0 +1,72 @@
+.server-create-modal {
+    background-color: white;
+    width: 540px;
+    height: 420px;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    background-image: url("/assets/server-modal-pic-6fa55c88f08a906d8c39578da909470db91ae74bdf58ef08ba70283d01f43586.png")
+}
+.smodal-header {
+    font-size: 18px;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: rgb(114, 137, 218);
+}
+
+
+.saction-area {
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+    height: 287px;
+    position: absolute;
+    bottom: 37px;
+    left: 40px;
+    border: 1px solid rgba(255, 0, 0, 0);
+    margin: 0;
+    justify-content: space-between;
+}
+.saction-area > div {
+    padding: 9px;
+    width: 196px;
+    border-radius: 3px;
+    display: flex;
+    align-items: flex-end;
+    margin: 0px 0px;
+    border: 1px solid rgba(0, 0, 255, 0);
+}
+.saction-area > div:hover{
+    cursor: pointer;
+}
+.saction-area .saction-create:hover button {
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: rgb(102, 123, 196);
+}
+.saction-area .saction-join:hover button {
+    cursor: pointer;
+    transition: 0.4s;
+    background-color: rgb(54, 146, 105);
+}
+.saction-area > div button {
+    border-radius: 3px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+}
+.saction-create button {
+    background-color: rgb(114, 137, 218);
+    border: 1px solid rgb(114, 137, 218);
+    color: white;
+}
+.saction-join button {
+    background-color: rgb(60, 163, 116);
+    border: 1px solid rgb(60, 163, 116);
+    color: white;
+}

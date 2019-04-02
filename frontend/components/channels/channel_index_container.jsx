@@ -5,9 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { clearLoading } from '../../actions/ui_actions';
 
 const msp = (state, ownProps) => {
-    debugger
     
-
     return {
         channels: state.entities.channels
     };

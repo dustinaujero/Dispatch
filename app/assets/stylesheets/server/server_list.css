@@ -1,11 +1,12 @@
 .server-list {
     overflow-y: scroll;
-    width: 70px;
+    width: 50px;
     display: flex;
-    background-color: #1F2225;
+    background-color: #191a1d;
     flex-direction: column;
     align-items: center;
-    z-index: 7;
+    z-index: 10;
+    /* overflow-x: hidden; */
 }
 @keyframes serverHover {
     0%{
@@ -70,7 +71,6 @@
     padding: 8px;
     margin: 9px 5px;
     background-color: #7289DA;
-    /* background-color: #000000; */
     border-radius: 14px;
     width: 35px;
     height: 35px;
@@ -88,6 +88,7 @@
     flex-direction: column;
     align-items: center;
     overflow: visible;
+    z-index: 5;
 }
 .server-list .server-list-main img {
     margin: 5px 5px;
@@ -109,28 +110,52 @@ div = dropdown-content */
     list-style: none;
     padding: 0;
     overflow: visible;
-
+    z-index: 12;
 }
 .server-list .server-list-main ul li {
     position: relative;
-    overflow: visible;
+    over
+    height: 60px;
+    z-index: 13;
+}
+.server-list .server-list-main .no-img {
+    margin: 5px 5px;
+    background-color: #282B30;
+    border: 1px solid #191a1d;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    text-align: center;
+    color: white;
+}
+.server-list .server-list-main .no-img:hover {
+    animation: serverHover 1s 1 0s ease;
+    border-radius: 14px;
+    background-color: #7289DA;
+    transition-duration: 0.5s;
+}
+.server-list .server-list-main ul li .no-img p {
+    margin: 0 auto;
+    padding: 19px 0px;
+    text-align: center;
+}
+.server-list .server-list-main ul li .server-li-stick {
+    position: sticky;
+    height: 1px;
+    z-index: 10;
+
 }
 .server-list .server-list-main ul li:hover .s-list-item-info{
     display: block;
 }
-.server-list .server-list-main ul li .server-li-stick {
-    position: sticky;
-    background: blue;
-    height: 1px;
-    z-index: 10;
-}
+
 .server-list .server-list-main .s-list-item-info {
     /* display: none; */
-    position: absolute;
-    top: 20px;
+    position: sticky;
+    bottom: 20px;
     left: 50px;
     color: white;
-    background-color: black;
+    background-color: green;
     padding: 5px;
     border-radius: 5px;
     font-size: 14px;
@@ -149,6 +174,7 @@ div = dropdown-content */
     position: relative;
     border: 1px dashed rgba(86, 86, 86, 0.897);
     display: flex;
+    outline: none;
 }
 .server-list .server-list-main button div {
     margin: 10px;

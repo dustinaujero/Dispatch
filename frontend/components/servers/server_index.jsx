@@ -21,19 +21,34 @@ class ServerIndex extends React.Component {
         const servers = this.props.servers.map(server => {
             if (server.img_url === 'empty') {
                 return (
+                    <>
                     <li key={server.id}>
-                        <img src={server.img_url} onClick={() => this.handleSelect(server.id)}/>
+                        <div className="no-img" onClick={() => this.handleSelect(server.id)}>
+                            <p>{server.server_name.split(" ").map(word => {
+                                    return word.split("")[0];
+                                }).join("")
+                            }</p>
+                        </div>
+                        
+                    </li><div className="server-li-stick">
+                            <div className="s-list-item-info">
+                                {server.server_name}
+                            </div>
+                        </div>
+                    </>
+                )
+            }
+            else {
+                return (
+                    <li key={server.id}>
+                        <img src={server.img_url} onClick={() => this.handleSelect(server.id)} />
                         <div className="server-li-stick">
                             <div className="s-list-item-info">
                                 {server.server_name}
                             </div>
                         </div>
-                        
                     </li>
                 )
-            }
-            else {
-
             }
         });
         return (
