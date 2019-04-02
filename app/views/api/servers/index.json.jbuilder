@@ -2,14 +2,10 @@
     json.set! server.id do 
         json.extract! server, :id, :server_name, :owner_id, :img_url
         json.users do 
-            json.array! server.users do |user|
-                user.id
-            end
+            json.array! server.users.ids
         end
         json.channels do 
-            json.array! server.channels do |channel|
-                channel.id
-            end
+            json.array! server.channels.ids
         end
     end
 end
@@ -17,14 +13,10 @@ end
     json.set! server.id do
         json.extract! server, :id, :server_name, :owner_id, :img_url
         json.users do 
-            json.array! server.users do |user|
-                user.id
-            end
+            json.array! server.users.ids
         end
         json.channels do 
-            json.array! server.channels do |channel|
-                channel.id
-            end
+            json.array! server.channels.ids
         end
     end
 end

@@ -30,7 +30,8 @@ class ServerIndex extends React.Component {
                             }</p>
                         </div>
                         
-                    </li><div className="server-li-stick">
+                    </li>
+                        <div className="server-li-stick">
                             <div className="s-list-item-info">
                                 {server.server_name}
                             </div>
