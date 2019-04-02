@@ -18,14 +18,24 @@ class ServerIndex extends React.Component {
     }
 
     render() {
-        const servers = this.props.servers.map(server => (
-                        <li key={server.id}>
-                            <img src={server.img_url} onClick={() => this.handleSelect(server.id)}/>
+        const servers = this.props.servers.map(server => {
+            if (server.img_url === 'empty') {
+                return (
+                    <li key={server.id}>
+                        <img src={server.img_url} onClick={() => this.handleSelect(server.id)}/>
+                        <div className="server-li-stick">
                             <div className="s-list-item-info">
                                 {server.server_name}
                             </div>
-                        </li>
-                    ));
+                        </div>
+                        
+                    </li>
+                )
+            }
+            else {
+
+            }
+        });
         return (
             <aside className="server-list">
                 <div className="server-list-header">

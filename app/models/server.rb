@@ -1,7 +1,7 @@
 class Server < ApplicationRecord
 
-    validates :server_name, :owner_id, :img_url, presence: true
-    after_initialize :ensure_img_url
+    validates :server_name, :owner_id, :img_url, :inv_code, presence: true
+    after_initialize :ensure_img_url, :ensure_inv_code
 
     #user + mods
     belongs_to :owner, class_name: :User, foreign_key: :owner_id
@@ -14,7 +14,20 @@ class Server < ApplicationRecord
     has_many :channels, class_name: :Channel, foreign_key: :server_id
 
     def ensure_img_url
-        self.img_url ||= "/assets/basic-discord-645038d22a7d96fb1d5c8e85bc78b7055b9bbb022c62a0258b76b3a8a03f060e.png"
+        self.img_url ||= "empty"
+    end
+
+    def ensure_inv_code
+        self.inv_code ||= Server.generate_inv_code
+    end
+
+    def reset_inv_code
+        self.update(inv_code: Server.generate_inv_code)
+        self.inv_code
+    end
+
+    def self.generate_inv_code
+        SecureRandom::hex(3)
     end
 
 end

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # mount ActionCable.server => '/cable'
 
   namespace :api do 
+    get '/servers/:id/invite', to: 'servers#getCode', as: 'server_getCode'
+    post '/servers/:id/invite', to: 'servers#join', as: 'server_join'
     resources :users, only: [:show, :create, :update]
     resource :session, only: [:create, :destroy]
     resources :servers, only: [:index, :show, :create, :update, :destroy] do 

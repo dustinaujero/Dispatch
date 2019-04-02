@@ -4,7 +4,6 @@ class Api::ServersController < ApplicationController
 
     def index
         @servers = current_user.servers
-        debugger
         @owned_servers = current_user.owned_servers
         render :index
     end
@@ -33,7 +32,7 @@ class Api::ServersController < ApplicationController
         if @server && @user.update(server_params)
             render :show
         else
-            render json :@server.errors.full_messages, status: 406
+            render json: @server.errors.full_messages, status: 406
         end
     end
 
@@ -44,6 +43,31 @@ class Api::ServersController < ApplicationController
             render json: ["Successfull Deleted Server"], status: 200
         else 
             render json: ["Unable to delete server"], status: 401
+        end
+    end
+
+    def getCode 
+        @server = Server.find(params[:id])
+        if @server && @server.owner_id == current_user.id
+            @server.reset_inv_code
+            render :code
+        else
+            render json: ["Server Not Found"], status: 404
+        end
+    end
+
+    def join
+        @server = Server.find(params[:id])
+        if @server && (@server.inv_code == params[:inv_code])
+            @membership = Userserver.new({user_id: params[:user_id], server_id: params[:id]})
+            if @membership.save
+                @server.reset_inv_code
+                render json: ["Successfully Joined Server"], status: 200
+            else
+                render json: ["Could Not Join Server"], status: 400
+            end
+        else
+            render json: ["Server Not Found"], status: 404
         end
     end
 
