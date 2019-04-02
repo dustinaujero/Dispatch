@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let store;
     if (window.currentUser) {
         const state = {
-           session: { id: window.currentUser.id }
+           session: { user: window.currentUser }
         };
         store = configureStore(state);
         delete window.currentUser;
