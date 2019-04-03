@@ -15,6 +15,7 @@ class Main extends React.Component {
         return (
             <>
             {this.props.loading ? <Loading /> : <></>}
+            <Route exact path="/channels/servers" component={ServerModal} />
             <div className="main-page">
 
             

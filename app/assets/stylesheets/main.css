@@ -151,23 +151,21 @@
     outline: none;
     color: gray;
 }
+.icons button:first-of-type:hover{
+    cursor: help;
+    color: white;
+    transition: 1s;
+} 
+.icons button:last-of-type:hover{
+    cursor: e-resize;
+    color: red;
+    transition: 1s;
+} 
+
+
 .invert > * {
     filter: invert(1);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
