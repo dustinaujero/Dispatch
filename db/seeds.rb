@@ -39,19 +39,10 @@ serverFour = Server.create({server_name:"Fourth", owner_id: demo.id})
 Channel.create({channel_name:"4-1 Channel", server_id: serverFour.id})
 Channel.create({channel_name:"4-2 Channel", server_id: serverFour.id})
 Server.create({server_name:"Main", owner_id: demo.id, img_url: "/assets/basic-discord-645038d22a7d96fb1d5c8e85bc78b7055b9bbb022c62a0258b76b3a8a03f060e.png"})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
-Server.create({server_name:"Main", owner_id: demo.id})
+(14).times do 
+    x = Server.create({server_name:"Main", owner_id: demo.id})
+    (x.id).times do 
+        Channel.create({channel_name: "general", server_id: x.id})
+    end
+end
 
