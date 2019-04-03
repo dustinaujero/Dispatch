@@ -1,12 +1,15 @@
 .server-list {
     overflow-y: scroll;
-    width:  150px;
+    width: 70px;
     display: flex;
     background-color: #191a1d;
     /* background-color: green; */
     flex-direction: column;
     align-content: flex-end;
-    margin: 0px 10px 0px 0px;
+    /* margin: 0px 10px 0px 0px; */
+    margin: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
     /* overflow-x: visible; */
 }
 @keyframes serverHover {

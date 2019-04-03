@@ -45,6 +45,9 @@ class Api::ChannelsController < ApplicationController
         end 
     end
 
+    def all 
+        @channels = current_user.channels
+    end
     private
 
     def channel_params

@@ -6,6 +6,7 @@ import ChannelIndexContainer from '../channels/channel_index_container';
 import Loading from '../ui/loading';
 import UserProfile from '../../components/ui/user_profile';
 import ServerHeader from '../servers/server_header';
+import ChannelHeader from '../channels/channel_header';
 
 
 
@@ -26,11 +27,7 @@ class Main extends React.Component {
                 <div className="secondary"> 
                     <div className="secondary-header">
                         <Switch>
-                            <Route exact path="/channels/@me" component={() => 
-                                <div className="search-div">
-                                    <p>Find or start a conversation</p>
-                                </div>  
-                            }/>
+                            <Route exact path="/channels/@me" component={() => <div className="search-div"><p>Find or start a conversation</p></div>}/>
                             <Route path="/channels/:serverId/" component={ServerHeader}/>
                         </Switch>
                     </div>
@@ -45,8 +42,12 @@ class Main extends React.Component {
 
 
                 <div className="third">
-                    <div>
-                        DEBUGGER PLS
+                    <div className="third-header">
+                        <Switch>
+                            <Route exact path="/channels/@me" component={() => (<div>IN @ME</div>)} />
+                            <Route exact path="/channels/:serverId" component={() => (<div>NO SELECTED CHANNEL</div>)} />
+                            <Route path="/channels/:serverId/:channelId" component={ChannelHeader} />
+                        </Switch>
                     </div>
                     OIANDFONAFONADFIN
                 </div>

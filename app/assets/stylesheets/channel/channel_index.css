@@ -1,4 +1,4 @@
-.channel-header {
+.channel-type {
     padding: 28px 0px 0px;
     font-size: 11.75px;
     font-weight: 600;
@@ -9,15 +9,15 @@
     align-items: center;
     height: 10px;
 }
-.channel-header p {
+.channel-type p {
     padding-left: 0px;
     margin-bottom: 10px;
     padding-right: 70px;
 }
-.channel-header div:first-of-type {
+.channel-type div:first-of-type {
     margin-right: 6px;
 }
-.channel-header > *:hover{
+.channel-type > *:hover{
     color: white;
 }
 
