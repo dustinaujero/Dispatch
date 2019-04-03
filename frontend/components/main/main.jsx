@@ -5,6 +5,7 @@ import ServerModal from '../../components/servers/server_modal';
 import ChannelIndexContainer from '../channels/channel_index_container';
 import Loading from '../ui/loading';
 import UserProfile from '../../components/ui/user_profile';
+import ServerHeader from '../servers/server_header';
 
 
 
@@ -32,15 +33,7 @@ class Main extends React.Component {
                                     <p>Find or start a conversation</p>
                                 </div>  
                             }/>
-                            <Route exact path="/channels/:serverId/" component={() => {
-                                return (
-                                    <>
-                                    <p>Title</p> 
-                                    <div><i className="fas fa-chevron-down"></i></div>
-                                    </>
-                                    )
-                                }
-                            }/>
+                            <Route path="/channels/:serverId/" component={ServerHeader}/>
                         </Switch>
                     </div>
                     <div className="secondary-main">

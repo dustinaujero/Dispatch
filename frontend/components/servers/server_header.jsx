@@ -16,4 +16,4 @@ const ServerHeader = (props) => {
     );
 }
 
-export default withRouter(connect(msp, null)(ServerHeader))
+export default withRouter(connect(msp, null)(ServerHeader));
