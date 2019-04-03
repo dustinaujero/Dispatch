@@ -7,7 +7,7 @@ import { clearLoading } from '../../actions/ui_actions';
 // state.entities.channels
 const msp = (state, ownProps) => ({
     currServerChannels: state.entities.servers[ownProps.match.params.serverId].channels,
-    channels: Object.values(state.entities.channels)
+    channels: state.entities.channels
 });
 
 const mdp = dispatch => ({

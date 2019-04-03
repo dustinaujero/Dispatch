@@ -23,7 +23,7 @@ class Main extends React.Component {
                 <div className="secondary"> 
                     <div className="secondary-header">
                         <Switch>
-                            <Route path="/channels/@me" component={() => 
+                            <Route exact path="/channels/@me" component={() => 
                                 <div className="search-div">
                                     <p>Find or start a conversation</p>
                                 </div>  
@@ -34,7 +34,7 @@ class Main extends React.Component {
                                     <p>Title</p> 
                                     <div><i className="fas fa-chevron-down"></i></div>
                                     </>
-                                )
+                                    )
                                 }
                             }/>
                         </Switch>
