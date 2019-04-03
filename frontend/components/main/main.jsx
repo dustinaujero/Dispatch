@@ -49,7 +49,6 @@ class Main extends React.Component {
                             <Route path="/channels/:serverId/:channelId" component={ChannelHeader} />
                         </Switch>
                     </div>
-                    OIANDFONAFONADFIN
                 </div>
                 <div className="fourth">
                     ausd hasdfhiudsfhuisdafihuds

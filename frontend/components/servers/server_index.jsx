@@ -16,11 +16,7 @@ class ServerIndex extends React.Component {
         this.props.history.push(`/channels/@me`);
     }
     handleSelect(serverId) {
-        debugger
-        return (e) => {
-            debugger
-            this.props.history.push(`/channels/${serverId}/?`);
-        }
+        this.props.history.push(`/channels/${serverId}/?`);
     }
     handleAddServer() {
         this.props.history.push(`/channels/servers`);
@@ -30,7 +26,8 @@ class ServerIndex extends React.Component {
             if (server.img_url === 'empty') {
                 return (
                     <li key={server.id} >
-                        <div className="no-img" onClick={() => this.handleSelect(server.id)}>
+                        <input type="radio" name="something" onClick={() => this.handleSelect(server.id)}/>
+                        <div className="no-img">
                             <p>{server.server_name.split(" ").map(word => {
                                     return word.split("")[0];
                                 }).join("")
@@ -47,6 +44,7 @@ class ServerIndex extends React.Component {
             else {
                 return (
                     <li key={server.id}>
+                        <input type="radio" name="something" />
                         <img src={server.img_url} onClick={() => this.handleSelect(server.id)} />
                         <div className="server-li-stick">
                             <div className="s-list-item-info">
