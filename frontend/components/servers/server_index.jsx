@@ -44,8 +44,8 @@ class ServerIndex extends React.Component {
             else {
                 return (
                     <li key={server.id}>
-                        <input type="radio" name="something" />
-                        <img src={server.img_url} onClick={() => this.handleSelect(server.id)} />
+                        <input type="radio" name="something" onClick={() => this.handleSelect(server.id)}/>
+                        <img src={server.img_url} />
                         <div className="server-li-stick">
                             <div className="s-list-item-info">
                                 {server.server_name}
@@ -56,7 +56,7 @@ class ServerIndex extends React.Component {
             }
         });
         return (
-            <aside className="server-list">
+            <div className="server-list">
                 <div className="server-list-header">
                     <div onClick={() => this.goHome()}>
                         <img src={window.whiteFace} id="first"/>
@@ -76,7 +76,7 @@ class ServerIndex extends React.Component {
                         </li>
                     </ul>
                 </div>
-            </aside>
+            </div>
         );
     }
 }

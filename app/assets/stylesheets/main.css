@@ -159,10 +159,15 @@
 } 
 
 
-.invert > * {
+.invert div {
     filter: invert(1);
 }
-
+.invert > div {
+    filter: invert(1);
+}
+.invert > div > div{
+    filter: invert(1);
+}
 
 
 
