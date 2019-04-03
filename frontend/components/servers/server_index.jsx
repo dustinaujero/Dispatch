@@ -12,7 +12,9 @@ class ServerIndex extends React.Component {
         this.props.fetchServers();
         this.props.clearLoading();
     }
-    
+    goHome() {
+        this.props.history.push(`/channels/@me`);
+    }
     handleSelect(serverId) {
         this.props.history.push(`/channels/${serverId}/?`);
     }
@@ -54,7 +56,7 @@ class ServerIndex extends React.Component {
         return (
             <aside className="server-list">
                 <div className="server-list-header">
-                    <div>
+                    <div onClick={() => this.goHome()}>
                         <img src={window.whiteFace} id="first"/>
                         <img src={window.angryFace} id="sec"/>
                     </div>

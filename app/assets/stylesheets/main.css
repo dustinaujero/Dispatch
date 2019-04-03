@@ -9,15 +9,14 @@
 }
 .primary {
 
-    width: 70px;
+    /* width: 70px;
     display: flex;
-    background-color: #202225;
+    background-color: #202225; */
     /* #16171a */
-    flex-direction: column;
+    /* flex-direction: column; */
     flex-grow: 0;
     flex-shrink: 0;
-    overflow: visible;
-    z-index: 21;
+
 }
 
 
@@ -31,31 +30,29 @@
     display: flex;
     flex-shrink: 0;
     flex-grow: 0;
-    width: 220px;
+    width: 240px;
     margin: 0; 
-    background-color: #2F3136;
+    /* background-color: #2F3136; */
+    background-color: #2F3037;
     flex-direction: column;
     align-content: flex-end;
     justify-content: space-between;
-    z-index: 22;
     overflow: visible;
 }
 .secondary .secondary-header {
     display: flex;
     box-shadow: 0px 0.5px 1px 0px rgb(36, 36, 36);
-    height: 48px;
+    height: 57px;
     width: 100%;
     align-content: center;
-    justify-content: baseline;
     justify-content: space-around;
-    z-index: 24;
 }
 
 .secondary .secondary-header .search-div {
     border: 1px solid rgb(33, 33, 33);
     background-color: #26262A;
     border-radius: 5px;
-    margin: 7px 0px;
+    margin: 7px 5px;
     width: 210px;
     height: 60%;
 
@@ -75,11 +72,10 @@
 
 .secondary .secondary-main {
     width: 100%;
-    z-index: 4;
+    height: 100%;
 }
 .secondary .secondary-main ul {
     list-style: none;
-    padding-left: 10px;
 }
 
 
@@ -90,7 +86,7 @@
 .current-profile {
     background-color: rgba(32, 34, 37, 0.4);
     width: 100%;
-    padding: 10px 0px;
+    padding: 5px 0px 10px;
     color: white;
     display: flex;
     align-items: center;

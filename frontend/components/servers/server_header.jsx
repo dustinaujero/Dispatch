@@ -10,9 +10,10 @@ const msp = (state, ownProps) => ({
 const ServerHeader = (props) => {
 
     return (
-        <>
-            {props.server.server_name}
-        </>
+        <div className="server-header">
+            <div>{props.server.server_name}</div>
+            <div><i className="fas fa-chevron-down fa-sm"></i></div>
+        </div>
     );
 }
 

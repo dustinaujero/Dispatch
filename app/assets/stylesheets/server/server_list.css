@@ -1,12 +1,13 @@
 .server-list {
     overflow-y: scroll;
-    width: 200px;
+    width:  150px;
     display: flex;
     background-color: #191a1d;
+    /* background-color: green; */
     flex-direction: column;
     align-content: flex-end;
-    margin: 0;
-    /* overflow-x: hidden; */
+    margin: 0px 10px 0px 0px;
+    /* overflow-x: visible; */
 }
 @keyframes serverHover {
     0%{
@@ -36,16 +37,23 @@
     width: 30px;
     display: flex;
     justify-content: center;
-    margin-left: 25px;
+    margin-left: 20px;
 }
-
+.server-list .server-list-header div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 8px;
+    margin: 9px 5px 20px;
+    background-color: #7289DA;
+    border-radius: 14px;
+    width: 35px;
+    height: 35px;
+}
 .server-list .server-list-header div img{
     border-radius: 30%;
     width: 45px;
     height: 45px;
-}
-.server-list .server-list-header img:hover{
-    animation: shake 100ms infinite 0s ease-in-out;
 }
 .server-list .server-list-header #first{
     position: relative;
@@ -64,18 +72,9 @@
 }   
 .server-list .server-list-header #sec:hover{
     z-index: 4;
+    animation: shake 100ms infinite 0s ease-in-out;
 }
-.server-list .server-list-header div {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 8px;
-    margin: 9px 5px;
-    background-color: #7289DA;
-    border-radius: 14px;
-    width: 35px;
-    height: 35px;
-}
+
 
 
 
@@ -89,8 +88,8 @@
     flex-direction: column;
     align-items: center;
     overflow: visible;
-    z-index: 5;
-    margin-left: 5px;
+    margin-left: 2px;
+    z-index: 10;
 }
 .server-list .server-list-main img {
     margin: 5px 5px;
@@ -113,11 +112,13 @@ div = dropdown-content */
     padding: 0;
     overflow: visible;
     z-index: 12;
+    padding-right: 50px;
+    margin-top: 5px;
 }
 .server-list .server-list-main ul li {
     position: relative;
     height: 60px;
-    z-index: 13;
+    z-index: 10;
 }
 .server-list .server-list-main .no-img {
     margin: 5px 5px;
@@ -149,29 +150,21 @@ div = dropdown-content */
 .server-list .server-list-main ul li:hover .s-list-item-info{
     display: block;
 }
-.server-list .server-list-main ul li:hover::after {
-    background-color: blue;
-    content: "adsfasdf";
-    position: absolute;
-    left: 30px;
-    top: 0px;
-    z-index: 30;
-}
 
 .server-list .server-list-main .s-list-item-info {
-    /* display: none; */
+    display: none;
     position: absolute;
-    bottom: 20px;
+    bottom: 22px;
+    /* left: 70px; */
     left: 50px;
-    /* left: 0px; */
     color: white;
-    background-color: green;
+    background-color: black;
     padding: 5px;
     border-radius: 5px;
     font-size: 14px;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: 0.5px;
-    z-index: -1;
+    z-index: 10;
 }
 
 .server-list .server-list-main button {

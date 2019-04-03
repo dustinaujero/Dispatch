@@ -19,10 +19,8 @@ class Main extends React.Component {
             <Route exact path="/channels/servers" component={ServerModal} />
             <div className="main-page">
 
-            
-                <div className="primary">
-                    <ServerIndexContainer />
-                </div>
+
+                <ServerIndexContainer />
 
 
                 <div className="secondary"> 
