@@ -14,12 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
             $.ajax({ method: "GET", url: "/api/servers" }),
             $.ajax({ method: "GET", url: "/api/channels/all" })
         ).done( (servers, channels) => {
-            debugger
             const state = {
                 session: { user: window.currentUser },
                 entities: { servers: servers[0], channels: channels[0] }
             };
-            debugger
             const store = configureStore(state);
             delete window.currentUser;
             window.store = store;
