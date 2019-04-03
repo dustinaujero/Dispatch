@@ -50,7 +50,7 @@
     z-index: 24;
 }
 
-.secondary .secondary-header div {
+.secondary .secondary-header .search-div {
     border: 1px solid rgb(33, 33, 33);
     background-color: #26262A;
     border-radius: 5px;

@@ -16,7 +16,7 @@ class ChannelIndex extends React.Component {
     render() {
         return (
             <ul>
-                <li>idk</li>
+                <li>{this.props.currServerChannels}</li>
             </ul>
         );
     }
