@@ -5,11 +5,15 @@ import { withRouter } from 'react-router-dom';
 import { clearLoading } from '../../actions/ui_actions';
 // const channels = state.entities.servers[ownProps.match.params.serverId].channels.map(id => state.entities.channels[id])
 // state.entities.channels
-const msp = (state, ownProps) => ({
-    currServer: state.entities.servers[ownProps.match.params.serverId],
-    currServerChannels: state.entities.servers[ownProps.match.params.serverId].channels,
-    channels: state.entities.channels
-});
+const msp = (state, ownProps) => {
+
+    return {
+            currServer: state.entities.servers[ownProps.match.params.serverId],
+            currServerChannels: state.entities.servers[ownProps.match.params.serverId].channels,
+            channels: state.entities.channels
+    };
+    
+};
 
 const mdp = dispatch => ({
     fetchChannels: (serverId) => dispatch(fetchChannels(serverId)),

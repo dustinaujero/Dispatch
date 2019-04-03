@@ -2,13 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-const msp = (state, ownProps) => ({
-    server: state.entities.servers[ownProps.match.params.serverId]
-})
+const msp = (state, ownProps) => {
+    if (ownProps.match.params.serverId === "servers") {
+        return {
+            server: {server_name: " "}
+        };
+    }
+    else {
+        return {
+            server: state.entities.servers[ownProps.match.params.serverId]
+        };
+    };
+};
 
 
 const ServerHeader = (props) => {
-
     return (
         <div className="server-header">
             <div>{props.server.server_name}</div>

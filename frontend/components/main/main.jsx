@@ -14,6 +14,7 @@ class Main extends React.Component {
 
 
     render() {
+        debugger
         return (
             <>
             {this.props.loading ? <Loading /> : <></>}
@@ -28,12 +29,14 @@ class Main extends React.Component {
                     <div className="secondary-header">
                         <Switch>
                             <Route exact path="/channels/@me" component={() => <div className="search-div"><p>Find or start a conversation</p></div>}/>
+                            <Route exact path="/channels/servers" component={() => <div className="search-div"><p>Find or start a conversation</p></div>}/>
                             <Route path="/channels/:serverId/" component={ServerHeader}/>
                         </Switch>
                     </div>
                     <div className="secondary-main">
                         <Switch>
                             <Route exact path="/channels/@me" component={() => (<div>IN @ME</div>)} />
+                            <Route exact path="/channels/servers" component={() => (<div>IN @ME</div>)} />
                             <Route path="/channels/:serverId" component={ChannelIndexContainer} />
                         </Switch>
                     </div>
@@ -45,6 +48,7 @@ class Main extends React.Component {
                     <div className="third-header">
                         <Switch>
                             <Route exact path="/channels/@me" component={() => (<div>IN @ME</div>)} />
+                            <Route exact path="/channels/servers" component={() => (<div>IN @ME</div>)} />
                             <Route exact path="/channels/:serverId" component={() => (<div>NO SELECTED CHANNEL</div>)} />
                             <Route path="/channels/:serverId/:channelId" component={ChannelHeader} />
                         </Switch>
