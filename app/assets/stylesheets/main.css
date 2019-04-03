@@ -4,6 +4,7 @@
     flex-shrink: 0;
     height: 100vh;
     width: 100vw;
+    min-width: 860px;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .primary {

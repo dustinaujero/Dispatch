@@ -15,11 +15,14 @@ class Main extends React.Component {
         return (
             <>
             {this.props.loading ? <Loading /> : <></>}
-            <Route exact path="/channels/servers" component={ServerModal} />
             <div className="main-page">
+
+            
                 <div className="primary">
                     <ServerIndexContainer />
                 </div>
+
+
                 <div className="secondary"> 
                     <div className="secondary-header">
                         <Switch>
@@ -28,7 +31,7 @@ class Main extends React.Component {
                                     <p>Find or start a conversation</p>
                                 </div>  
                             }/>
-                            <Route path="/channels/:serverId" component={() => {
+                            <Route exact path="/channels/:serverId/" component={() => {
                                 return (
                                     <>
                                     <p>Title</p> 
@@ -42,15 +45,13 @@ class Main extends React.Component {
                     <div className="secondary-main">
                         <Switch>
                             <Route path="/channels/@me" component={() => (<div>IN @ME</div>)} />
-                            <Route path="/channels/:serverId" component={ChannelIndexContainer} />
+                            <Route path="/channels/:serverId/:channelId" component={ChannelIndexContainer} />
                         </Switch>
-                        
                     </div>
-
-
                     <UserProfile />
-                
                 </div>
+
+
                 <div className="third">
                     <div>
                         DEBUGGER PLS

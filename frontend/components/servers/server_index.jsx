@@ -17,7 +17,6 @@ class ServerIndex extends React.Component {
         this.props.history.push(`/channels/${serverId}`);
     }
     handleAddServer() {
-        this.props.history.push(`/channels/servers`);
     }
     render() {
         const servers = this.props.servers.map(server => {
