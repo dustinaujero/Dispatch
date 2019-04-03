@@ -14,9 +14,15 @@ class ChannelIndex extends React.Component {
     }
 
     render() {
+        let chnls = [];
+        if (this.props.channels[this.props.currServerChannels[0]]) {
+            chnls = this.props.currServerChannels.map( id => { 
+                return <li>{this.props.channels[id].channel_name}</li>
+            });
+        }
         return (
             <ul>
-                <li>{this.props.currServerChannels}</li>
+                {chnls}
             </ul>
         );
     }

@@ -45,8 +45,8 @@ class Main extends React.Component {
                     </div>
                     <div className="secondary-main">
                         <Switch>
-                            <Route path="/channels/@me" component={() => (<div>IN @ME</div>)} />
-                            <Route path="/channels/:serverId/:channelId" component={ChannelIndexContainer} />
+                            <Route exact path="/channels/@me" component={() => (<div>IN @ME</div>)} />
+                            <Route path="/channels/:serverId" component={ChannelIndexContainer} />
                         </Switch>
                     </div>
                     <UserProfile />
