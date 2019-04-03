@@ -20,7 +20,7 @@ class User < ApplicationRecord
     #channel
     has_many :channel_memberships, class_name: :Membership, foreign_key: :user_id 
     has_many :channels, through: :channel_memberships, source: :channel
-    has_many :owned_channels, through: :owned_servers, source: :channel
+    has_many :owned_channels, through: :owned_servers, source: :channels
 
     #message 
     has_many :messages, class_name: :Message, foreign_key: :user_id
