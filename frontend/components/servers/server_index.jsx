@@ -64,7 +64,7 @@ class ServerIndex extends React.Component {
                 <div className="server-list-main">
                     <ul className="server-list-items">
                         {servers}
-                        <li key={"0"}>
+                        <li key={"-1"}>
                             <button onClick={() => this.handleAddServer()}>
                                 <div>+</div>
                             </button>
