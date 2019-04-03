@@ -10,25 +10,24 @@ import { fetchServers } from './actions/server_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     if (window.currentUser) {
-
-        $.ajax({ method: "GET", url: "/api/servers" }).then((servers) => {
-        
+        $.when(
+            $.ajax({ method: "GET", url: "/api/servers" }),
+            $.ajax({ method: "GET", url: "/api/channels/all" })
+        ).done( (servers, channels) => {
             const state = {
                 session: { user: window.currentUser },
-                entities: { servers }
+                entities: { servers, channels }
             };
+
             const store = configureStore(state);
             delete window.currentUser;
             window.store = store;
 
             const root = document.getElementById('root');
             ReactDOM.render(<Root store={store} />, root);
-        });
-        
-        
+        })
     } 
     else {
-        
         const store = configureStore();
         window.store = store;
 

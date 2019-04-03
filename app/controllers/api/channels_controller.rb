@@ -47,7 +47,10 @@ class Api::ChannelsController < ApplicationController
 
     def all 
         @channels = current_user.channels
+        @owned_channels = current_user.owned_channels
+        render :all
     end
+
     private
 
     def channel_params
