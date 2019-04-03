@@ -52,6 +52,9 @@ class Splash extends React.Component {
                                 </a> 
                             </div>
                         </div>
+                        <div>
+                            <a href='https://discordapp.com/' target="_blank">Clone of Dispatch</a> 
+                        </div>
                     </div>
                     <div className="right-nav">
                         <div><a href='https://github.com/dustinaujero' target="_blank"><i className="fab fa-github fa-lg"></i></a></div>
