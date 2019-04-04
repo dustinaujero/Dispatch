@@ -25,7 +25,7 @@ class ServerIndex extends React.Component {
         const servers = this.props.servers.map(server => {
             if (server.img_url === 'empty') {
                 return (
-                    <li key={server.id} >
+                    <li key={server.id} id={`serv${server.id}`}>
                         <input type="radio" name="something" onClick={() => this.handleSelect(server.id)}/>
                         <div className="no-img">
                             <p>{server.server_name.split(" ").map(word => {

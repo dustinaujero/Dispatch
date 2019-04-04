@@ -16,6 +16,7 @@
     /* flex-direction: column; */
     flex-grow: 0;
     flex-shrink: 0;
+    
 
 }
 
@@ -35,17 +36,39 @@
     /* background-color: #2F3136; */
     background-color: #2F3037;
     flex-direction: column;
-    align-content: flex-end;
-    justify-content: space-between;
+    /* align-content: flex-start;
+    justify-content: space-between; */
+
+    justify-content: flex-start;
+
     overflow: visible;
+
+
+
+    /* position: relative;
+    left: -127px; */
+
+
+
+
+
 }
 .secondary .secondary-header {
+
+
+    position: relative;
+
+
+
     display: flex;
     box-shadow: 0px 0.5px 1px 0px rgb(36, 36, 36);
+    /* border-bottom:  */
     height: 57px;
-    width: 100%;
+    width: 240px;
     align-content: center;
     justify-content: space-around;
+    overflow: visible;
+    /* z-index: 5; */
 }
 
 .secondary .secondary-header .search-div {
@@ -71,8 +94,10 @@
 }
 
 .secondary .secondary-main {
-    width: 100%;
+    width: 240px;
     height: 100%;
+    overflow: visible;
+    z-index: 5;
 }
 .secondary .secondary-main ul {
     list-style: none;
@@ -85,12 +110,16 @@
 
 .current-profile {
     background-color: rgba(32, 34, 37, 0.4);
-    width: 100%;
+    /* background-color: red; */
+    width: 240px;
     padding: 5px 0px 10px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow: visible;
+    /* z-index: 5; */
+
 }
 .current-profile > div {
     display: flex;
@@ -243,6 +272,10 @@
     background-color:#34363c;
     margin: 0;
 
+    /* position: relative;
+    left: -127px; */
+
+
     width: 100%;
 }
 .third .third-header {
@@ -257,6 +290,10 @@
     width: 240px;
     flex-grow: 0;
     flex-shrink: 0;
+    background-color: red;
+
+    /* position: relative;
+    left: -127px; */
 }
 
 

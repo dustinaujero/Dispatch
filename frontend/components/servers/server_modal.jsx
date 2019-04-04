@@ -1,4 +1,7 @@
 import React from 'react';
+import { Switch, withRouter } from 'react-router-dom';
+
+
 
 class ServerModal extends React.Component {
 
@@ -10,16 +13,24 @@ class ServerModal extends React.Component {
     }
 
     handleClick(type) {
-        this.setState({type})
+        this.props.history.push("/channels/servers")
     }
     handleExit() {
         $(".loading").css("visibility", "hidden");
-        this.props.history.push("/channels/@me");
+        this.props.history.goBack();
     }
 
     render() {
+        debugger
         return (
             <div className="loading">
+                <Switch>
+                    <Route />
+                    <Route />
+                    <Route />
+                </Switch>
+
+
                 <div className="server-create-modal">
                     <button onClick={() => this.handleExit()}>exit</button>
                     <div className="saction-area">
@@ -37,4 +48,4 @@ class ServerModal extends React.Component {
 
 }
 
-export default ServerModal
+export default ServerModal;

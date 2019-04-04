@@ -1,12 +1,12 @@
 .server-list {
     overflow-y: scroll;
-    width: 70px;
+    width: 73px;
     display: flex;
-    background-color: #191a1d;
+    background-color: #202225;
     /* background-color: green; */
     flex-direction: column;
     align-content: flex-end;
-    /* margin: 0px 10px 0px 0px; */
+    /* margin: 0px 20px 0px 0px; */
     margin: 0;
     flex-grow: 0;
     flex-shrink: 0;
@@ -40,7 +40,7 @@
     width: 30px;
     display: flex;
     justify-content: center;
-    margin-left: 20px;
+    margin-left: 22px;
 }
 .server-list .server-list-header div {
     display: flex;
@@ -89,9 +89,9 @@
 .server-list .server-list-main {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     overflow: visible;
-    margin-left: 2px;
+    margin: 0px;
     z-index: 10;
 }
 .server-list .server-list-main img {
@@ -110,7 +110,7 @@
 
 .server-list .server-list-main ul {
     list-style: none;
-    padding: 0;
+    padding-left: 3px;
     overflow: visible;
     z-index: 12;
     padding-right: 50px;
@@ -139,7 +139,7 @@
 .server-list .server-list-main .no-img {
     margin: 5px 5px;
     background-color: #282B30;
-    border: 1px solid #191a1d;
+    border: 1px solid #202225;
     border-radius: 50%;
     width: 54px;
     height: 54px;
@@ -175,9 +175,9 @@
 .server-list .server-list-main .s-list-item-info {
     display: none;
     position: absolute;
+    width: auto;
     bottom: 22px;
-    /* left: 70px; */
-    left: 50px;
+    left: 73px;
     color: white;
     background-color: black;
     padding: 5px;
@@ -217,7 +217,8 @@
     transition: 0.8s;
     border: 1px dashed white;
 }
-.server-list .server-list-main button div:hover {
+.server-list .server-list-main button:hover div{
+    transition: 0.8s;
     color: white;
 }
 
