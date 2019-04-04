@@ -17,7 +17,7 @@ class Main extends React.Component {
         return (
             <>
             {this.props.loading ? <Loading /> : <></>}
-            <Route exact path="/channels/servers" component={ServerModal} />
+            <Route path="/channels/servers" component={ServerModal} />
             <div className="main-page">
 
 
@@ -35,7 +35,8 @@ class Main extends React.Component {
                     <div className="secondary-main">
                         <Switch>
                             <Route exact path="/channels/@me" component={() => (<div>IN @ME</div>)} />
-                            <Route exact path="/channels/servers" component={() => (<div>IN @ME</div>)} />
+                            <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
+                            <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
                             <Route path="/channels/:serverId" component={ChannelIndexContainer} />
                         </Switch>
                     </div>
@@ -47,7 +48,8 @@ class Main extends React.Component {
                     <div className="third-header">
                         <Switch>
                             <Route exact path="/channels/@me" component={() => (<div>IN @ME</div>)} />
-                            <Route exact path="/channels/servers" component={() => (<div>IN @ME</div>)} />
+                            <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
+                            <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
                             <Route exact path="/channels/:serverId" component={() => (<div>NO SELECTED CHANNEL</div>)} />
                             <Route path="/channels/:serverId/:channelId" component={ChannelHeader} />
                         </Switch>

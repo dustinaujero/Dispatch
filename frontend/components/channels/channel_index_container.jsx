@@ -8,9 +8,9 @@ import { clearLoading } from '../../actions/ui_actions';
 const msp = (state, ownProps) => {
 
     return {
-            currServer: state.entities.servers[ownProps.match.params.serverId],
-            currServerChannels: state.entities.servers[ownProps.match.params.serverId].channels,
-            channels: state.entities.channels
+        currServer: state.entities.servers[ownProps.match.params.serverId],
+        currServerChannels: state.entities.servers[ownProps.match.params.serverId].channels,
+        channels: state.entities.channels
     };
     
 };

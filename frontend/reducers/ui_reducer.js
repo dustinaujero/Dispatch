@@ -4,5 +4,5 @@ import uiCurrentServerReducer from './ui/ui_curr_server_reducer';
 
 export default combineReducers({
     loading: uiLoadingReducer,
-    currentServer: uiCurrentServerReducer
+    // currentServer: uiCurrentServerReducer
 });

@@ -6,6 +6,7 @@
     width: 100vw;
     min-width: 860px;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    filter: blur(0.2px);
 }
 .primary {
 

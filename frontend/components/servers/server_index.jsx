@@ -20,6 +20,7 @@ class ServerIndex extends React.Component {
     }
     handleAddServer() {
         this.props.history.push(`/channels/servers`);
+        $(".loading").css("visibility", "visible");
     }
     render() {
         const servers = this.props.servers.map(server => {

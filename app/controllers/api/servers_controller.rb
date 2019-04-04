@@ -21,8 +21,9 @@ class Api::ServersController < ApplicationController
         @server = Server.new(server_params)
         @server.owner_id = current_user.id 
         if @server.save 
-            Channel.create({channel_name:"general", server_id: @server.id})
-            render :show 
+            @ch = Channel.create({channel_name:"general", server_id: @server.id})
+            @channel = [@ch]
+            render :new
         else 
             render json: @server.errors.full_messages, status: 422
         end
