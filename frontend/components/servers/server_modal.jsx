@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, withRouter } from 'react-router-dom';
+import { Switch, withRouter, Route } from 'react-router-dom';
 
 
 
@@ -12,36 +12,43 @@ class ServerModal extends React.Component {
         }
     }
 
-    handleClick(type) {
-        this.props.history.push("/channels/servers")
+    handleClick() {
+        return (e) => {
+            if (e.target.classList[1] === "create" || e.target.classList[1] === "join") {
+                this.props.history.push(`/channels/servers/${e.target.classList[1]}`);
+            } else {
+                $(".loading").css("visibility", "hidden");
+                this.props.history.goBack();
+            }
+        }
     }
-    handleExit() {
-        $(".loading").css("visibility", "hidden");
-        this.props.history.goBack();
-    }
+
+
+    
 
     render() {
-        debugger
         return (
-            <div className="loading">
+            <div className="loading" onClick={this.handleClick("off")}>
                 <Switch>
-                    <Route />
-                    <Route />
-                    <Route />
+                    <Route exact path="/channels/servers" component={() => 
+                        <div className="server-create-modal" >
+                            <div className="saction-area">
+                                <div className="saction-create create"onClick={this.handleClick("create")}>
+                                    <button >Create a server</button>
+                                </div>
+                                <div className="saction-join join" onClick={this.handleClick("join")}>
+                                    <button >Join a server</button>
+                                </div>
+                            </div>
+                        </div>  
+                    }/>
+                    <Route exact path="/channels/servers/create" component={() => 
+                        <div>JOIN</div>
+                    } />
+                    <Route exact path="/channels/servers/join" component={() => 
+                        <div>JOIN</div>
+                    } />
                 </Switch>
-
-
-                <div className="server-create-modal">
-                    <button onClick={() => this.handleExit()}>exit</button>
-                    <div className="saction-area">
-                        <div className="saction-create">
-                            <button onClick={() => handleClick("create")}>Create a server</button>
-                        </div>
-                        <div className="saction-join">
-                            <button onClick={() => handleClick("join")}>Join a server</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         )
     }

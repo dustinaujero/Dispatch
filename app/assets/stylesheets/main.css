@@ -290,7 +290,7 @@
     width: 240px;
     flex-grow: 0;
     flex-shrink: 0;
-    background-color: red;
+    /* background-color: red; */
 
     /* position: relative;
     left: -127px; */
