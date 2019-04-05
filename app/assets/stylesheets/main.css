@@ -280,7 +280,7 @@
     /* position: relative;
     left: -127px; */
 
-
+    overflow: hidden;
     width: 100%;
 }
 .third .third-header {

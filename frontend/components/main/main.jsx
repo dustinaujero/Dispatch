@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import ServerIndexContainer from '../servers/server_index_container';
 import ServerModal from '../../components/servers/server_modal';
+import ChannelModal from '../../components/channels/channel_modal_create';
 import ChannelIndexContainer from '../channels/channel_index_container';
 import Loading from '../ui/loading';
 import UserProfile from '../../components/ui/user_profile';
@@ -18,6 +19,7 @@ class Main extends React.Component {
             <>
             {this.props.loading ? <Loading /> : <></>}
             <Route path="/channels/servers" component={ServerModal} />
+            <Route path="/channels/channels/:serverId" component={ChannelModal} />
             <div className="main-page">
 
 
@@ -29,6 +31,7 @@ class Main extends React.Component {
                         <Switch>
                             <Route exact path="/channels/@me" component={() => <div className="search-div"><p>Find or start a conversation</p></div>}/>
                             <Route exact path="/channels/servers" component={() => <div className="search-div"><p>Find or start a conversation</p></div>}/>
+                            <Route exact path="/channels/channels/:serverId" component={() => <div className="search-div"><p>Find or start a conversation</p></div>}/>
                             <Route path="/channels/:serverId/" component={ServerHeader}/>
                         </Switch>
                     </div>
@@ -47,6 +50,7 @@ class Main extends React.Component {
                                 )} />
                             <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
                             <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
+                            <Route exact path="/channels/channels/:serverId" component={() => (<div>creating channel</div>)} />
                             <Route path="/channels/:serverId" component={ChannelIndexContainer} />
                         </Switch>
                     </div>
@@ -60,6 +64,7 @@ class Main extends React.Component {
                             <Route exact path="/channels/@me" component={() => (<div></div>)} />
                             <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
                             <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
+                            <Route exact path="/channels/channels/:serverId" component={() => (<div>creating channel</div>)} />
                             <Route exact path="/channels/:serverId" component={() => (<div>SELECT A CHANNEL</div>)} />
                             <Route path="/channels/:serverId/:channelId" component={ChannelHeader} />
                         </Switch>
@@ -71,6 +76,7 @@ class Main extends React.Component {
                                 <Route exact path="/channels/@me" component={() => (<div></div>)} />
                                 <Route exact path="/channels/servers" component={() => (<div></div>)} />
                                 <Route exact path="/channels/servers/:type" component={() => (<div>NOTHING</div>)} />
+                                <Route exact path="/channels/channels/:serverId" component={() => (<div>NOTHING</div>)} />
                                 <Route path="/channels/:serverId" component={() => (<div>USERS</div>)} />
                             </Switch>
                         </div>

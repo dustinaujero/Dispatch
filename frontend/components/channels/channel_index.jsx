@@ -9,10 +9,14 @@ class ChannelIndex extends React.Component {
         this.handleSelect = this.handleSelect.bind(this);
 
         this.handleCollapseChannels = this.handleCollapseChannels.bind(this);
+        this.handleAddChannel = this.handleAddChannel.bind(this);
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.serverId !== this.props.match.params.serverId)  {
+            this.props.fetchChannels(this.props.match.params.serverId);
+        }
+        if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
             this.props.fetchChannels(this.props.match.params.serverId);
         }
     }
@@ -28,6 +32,8 @@ class ChannelIndex extends React.Component {
     }
     handleAddChannel() {
         $(".addChannelSVG").toggleClass("upright rotate");
+        this.props.history.push(`/channels/channels/${this.props.currServer.id}`);
+        $(".loading").css("visibility", "visible");
     }
     render() {
         let chnls = [];
