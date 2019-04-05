@@ -5,7 +5,8 @@ class User < ApplicationRecord
     validates :email, :username, uniqueness: true
 
     attr_reader :password 
-    after_initialize :ensure_session_token, :ensure_img_url, :create_username
+    after_initialize :ensure_session_token, :ensure_img_url
+    before_create: :create_username
     
     #server + mods
     has_many :owned_servers, class_name: :Server, foreign_key: :owner_id
@@ -60,7 +61,7 @@ class User < ApplicationRecord
     end
 
     def create_username
-        self.username = self.username + "#" + (rand(0.00...1.00) * 10000 % 10000).to_i.to_s
+        self.username ||= self.username + "#" + (rand(0.00...1.00) * 10000 % 10000).to_i.to_s
     end
 
 end
