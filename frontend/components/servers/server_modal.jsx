@@ -59,11 +59,13 @@ class ServerModal extends React.Component {
                 }/>
                 <Route exact path="/channels/servers/create" component={ServerModalCreate} />
                 <Route exact path="/channels/servers/join" component={() => 
-                    <div className="server-alt-modal" >
-                        <div className="server-modal-bottom">
+                    <div className="loading" onClick={this.handleClick()}>
+                        <div className="server-alt-modal" >
+                            join 
                         </div>
                     </div>
                 } />
+
             </Switch> 
         )
     }

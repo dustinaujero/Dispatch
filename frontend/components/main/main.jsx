@@ -34,7 +34,7 @@ class Main extends React.Component {
                     </div>
                     <div className="secondary-main">
                         <Switch>
-                            <Route exact path="/channels/@me" component={() => (<div>IN @ME</div>)} />
+                            <Route exact path="/channels/@me" component={() => (<div>direct messages</div>)} />
                             <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
                             <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
                             <Route path="/channels/:serverId" component={ChannelIndexContainer} />
@@ -47,10 +47,10 @@ class Main extends React.Component {
                 <div className="third">
                     <div className="third-header">
                         <Switch>
-                            <Route exact path="/channels/@me" component={() => (<div>IN @ME</div>)} />
+                            <Route exact path="/channels/@me" component={() => (<div></div>)} />
                             <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
                             <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
-                            <Route exact path="/channels/:serverId" component={() => (<div>NO SELECTED CHANNEL</div>)} />
+                            <Route exact path="/channels/:serverId" component={() => (<div>SELECT A CHANNEL</div>)} />
                             <Route path="/channels/:serverId/:channelId" component={ChannelHeader} />
                         </Switch>
                     </div>

@@ -123,17 +123,23 @@
 .server-modal-middle > div:first-of-type {
     display: flex;
     flex-direction: column;
-    margin-left: 0px;
+    margin: 0px 15px 0px 0px;
     font-size: 10.5px;
     font-weight: 800;
     color: grey;
+    width: 200px;
 }
+.server-modal-middle > div:first-of-type div {
+    margin-left: 0;
+} 
 .server-modal-middle > div:first-of-type input {
     border-width: 0px 0px 1px 0px;
     border-style: solid;
     border-color: grey;
     margin-top: 10px;
     outline: none;
+    font-size: 30px;
+    padding: 10px 5px;
 }
 .server-modal-middle > div:last-of-type {
     display: flex;
