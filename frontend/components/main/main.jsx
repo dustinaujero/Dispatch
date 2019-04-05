@@ -34,7 +34,17 @@ class Main extends React.Component {
                     </div>
                     <div className="secondary-main">
                         <Switch>
-                            <Route exact path="/channels/@me" component={() => (<div>direct messages</div>)} />
+                                <Route exact path="/channels/@me" component={() => (
+                                    <div className="channel-type">
+                                        <div>
+                                            <i className="fas fa-chevron-down fa-xs channelChev upright"></i>
+                                        </div>
+                                        <p>DIRECT MESSAGES</p>
+                                        <div className="addChannelDIV">
+                                            <svg className="addChannelSVG upright" width="18" height="18" viewBox="0 0 18 18"><polygon fillRule="nonzero" fill="currentColor" points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8"></polygon></svg>
+                                        </div>
+                                    </div>
+                                )} />
                             <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
                             <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
                             <Route path="/channels/:serverId" component={ChannelIndexContainer} />
@@ -54,9 +64,17 @@ class Main extends React.Component {
                             <Route path="/channels/:serverId/:channelId" component={ChannelHeader} />
                         </Switch>
                     </div>
-                </div>
-                <div className="fourth">
-                    ausd hasdfhiudsfhuisdafihuds
+                    <div className="third-body">
+                        <div className="third-main"></div>
+                        <div className="users-show">
+                            <Switch>
+                                <Route exact path="/channels/@me" component={() => (<div></div>)} />
+                                <Route exact path="/channels/servers" component={() => (<div></div>)} />
+                                <Route exact path="/channels/servers/:type" component={() => (<div>NOTHING</div>)} />
+                                <Route path="/channels/:serverId" component={() => (<div>USERS</div>)} />
+                            </Switch>
+                        </div>
+                    </div>
                 </div>
             </div>
             

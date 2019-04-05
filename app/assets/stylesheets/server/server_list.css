@@ -124,12 +124,27 @@
     width: 100px;
     border-radius: 50%;
 }
-.server-list .server-list-main ul li input:checked + div{
+.server-list .server-list-main ul li input:checked + div {
    border-radius: 14px;
    background-color: #7289DA;
 }
-.server-list .server-list-main ul li input:checked + img{
+.server-list .server-list-main ul li input:checked + img {
    border-radius: 14px;
+}
+.server-list .server-list-main ul li input:checked ~ div > .currServer {
+    /* display: block; */
+    height: 40px;
+    transition-duration: 0.3s;
+}
+.currServer {
+    /* display: none; */
+    position: absolute;
+    width: 10px;
+    height: 0px;
+    background-color: white;
+    bottom: 15px;
+    left: -8px;
+    border-radius: 5px;
 }
 .server-list .server-list-main ul li {
     position: relative;
@@ -177,7 +192,7 @@
     position: absolute;
     width: auto;
     bottom: 22px;
-    left: 50px;
+    left: 70px;
     color: white;
     background-color: black;
     padding: 5px;
