@@ -8,8 +8,8 @@
 
 
 
-demo = User.create({email:"demo@demo.com", username:"username#0000", password:"password"})
-me = User.create({email:"example@example.com", username:"dustin#1234", password:"monica!!"})
+demo = User.create({email:"demo@demo.com", username:"username", password:"password"})
+me = User.create({email:"example@example.com", username:"dustin", password:"monica!!"})
 
 
 
