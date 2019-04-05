@@ -6,7 +6,9 @@ class ChannelIndex extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleSelect = this.handleSelect.bind(this)
+        this.handleSelect = this.handleSelect.bind(this);
+
+        this.handleCollapseChannels = this.handleCollapseChannels.bind(this);
     }
 
     componentDidUpdate(prevProps) {
@@ -20,6 +22,13 @@ class ChannelIndex extends React.Component {
     handleSelect(channelId) {
         this.props.history.push(`/channels/${this.props.currServer.id}/${channelId}`);
     }
+    handleCollapseChannels() {
+        $(".channel-index").toggleClass("show collapse");
+        $(".channelChev").toggleClass("upright rotateTwo");
+    }
+    handleAddChannel() {
+        $(".addChannelSVG").toggleClass("upright rotate");
+    }
     render() {
         let chnls = [];
         if (this.props.channels[this.props.currServerChannels[0]]) {
@@ -32,15 +41,15 @@ class ChannelIndex extends React.Component {
         return (
             <>
             <div className="channel-type">
-                <div>
-                    <i className="fas fa-chevron-down fa-xs"></i>
+                <div onClick={() => this.handleCollapseChannels()}>
+                    <i className="fas fa-chevron-down fa-xs channelChev upright"></i>
                 </div> 
                 <p>TEXT CHANNELS</p> 
-                <div>
-                    <svg className="addButtonIcon-3u-3Hu" width="18" height="18" viewBox="0 0 18 18"><polygon fillRule="nonzero" fill="currentColor" points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8"></polygon></svg>
+                <div onClick={() => this.handleAddChannel()} className="addChannelDIV">
+                    <svg className="addChannelSVG upright" width="18" height="18" viewBox="0 0 18 18"><polygon fillRule="nonzero" fill="currentColor" points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8"></polygon></svg>
                 </div>
             </div>
-            <ul className="channel-index">
+            <ul className="channel-index show">
                 {chnls}
             </ul>
             </>

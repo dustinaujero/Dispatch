@@ -27,6 +27,9 @@
     margin-top: 0;
     padding: 5px 10px;
 }
+.channel-index {
+    overflow: hidden;
+}
 .channel-index li {
     border-radius: 5px;
     background-color: transparent;
@@ -49,4 +52,23 @@
     font-size: 13.5px;
     font-weight: 600;
     color: rgb(221, 221, 221);
+}
+.upright {
+    transform: rotate(0deg);
+    transition-duration: 0.5s
+}
+.rotate {
+    transform: rotate(45deg);
+    transition-duration: 0.5s
+}
+.rotateTwo {
+    transform: rotate(-90deg);
+    transition-duration: 3s;
+}
+
+.show {
+
+}
+.collapse {
+    height: 0px;
 }

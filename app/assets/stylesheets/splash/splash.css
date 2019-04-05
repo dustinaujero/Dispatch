@@ -81,7 +81,9 @@
     border-radius: 10px;
     width: 160px;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.55);
+    /* background-color: rgba(0, 0, 0, 0.55); */
+    background-color: rgb(238, 238, 238);
+    color: gray;
 
 }
 .left-nav .pg-div:hover .splash-dropdwn {
@@ -93,11 +95,8 @@
     width: 100%;
     padding: 7px 0px;
 }   
-.left-nav .splash-dropdwn a:nth-of-type(even){
-    background-color: rgba(0, 0, 0, 1);
-}
-.left-nav .splash-dropdwn a:nth-of-type(odd) {
-    /* background-color: rgba(153, 153, 153, 0.8); */
+.left-nav .splash-dropdwn a:hover {
+    background-color: rgb(207, 207, 207);
 }
 
 

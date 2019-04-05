@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ChannelIndex from './channel_index';
-import { fetchChannels } from '../../actions/channel_actions';
+import { fetchChannels, createChannel } from '../../actions/channel_actions';
 import { withRouter } from 'react-router-dom';
 import { clearLoading } from '../../actions/ui_actions';
 // const channels = state.entities.servers[ownProps.match.params.serverId].channels.map(id => state.entities.channels[id])
@@ -17,7 +17,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => ({
     fetchChannels: (serverId) => dispatch(fetchChannels(serverId)),
-    clearLoading: () => dispatch(clearLoading())
+    clearLoading: () => dispatch(clearLoading()),
+    createChannel: (serverId, channel) => dispatch(createChannel(serverId, channel))
 });
 
 export default withRouter(connect(msp, mdp)(ChannelIndex));

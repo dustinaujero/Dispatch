@@ -34,19 +34,19 @@ class Splash extends React.Component {
                                 <a href='https://github.com/dustinaujero/Dispatch/wiki' target="_blank">
                                 Home
                                 </a>
-                                <hr/>
+
                                 <a href='https://github.com/dustinaujero/Dispatch/wiki/State' target="_blank">
                                 Redux State
                                 </a>
-                                <hr />
+
                                 <a href='https://github.com/dustinaujero/Dispatch/wiki/Frontend-Routes' target="_blank">
                                 Frontend Routes
                                 </a>
-                                <hr />
+
                                 <a href='https://github.com/dustinaujero/Dispatch/wiki/Schema' target="_blank">
                                 Database Schema
                                 </a>
-                                <hr />
+
                                 <a href='https://github.com/dustinaujero/Dispatch/wiki/Backend-Routes' target="_blank">
                                 Backend Routes
                                 </a> 

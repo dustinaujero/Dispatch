@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, withRouter, Route } from 'react-router-dom';
 import ServerModalCreate from './server_modal_create';
+import ServerModalJoin from './server_modal_join';
 
 
 class ServerModal extends React.Component {
@@ -58,13 +59,7 @@ class ServerModal extends React.Component {
                     </div>
                 }/>
                 <Route exact path="/channels/servers/create" component={ServerModalCreate} />
-                <Route exact path="/channels/servers/join" component={() => 
-                    <div className="loading" onClick={this.handleClick()}>
-                        <div className="server-alt-modal" >
-                            join 
-                        </div>
-                    </div>
-                } />
+                <Route exact path="/channels/servers/join" component={ServerModalJoin} />
 
             </Switch> 
         )
