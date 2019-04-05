@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
     attr_reader :password 
     after_initialize :ensure_session_token, :ensure_img_url
-    before_create: :create_username
+    before_create :create_username
     
     #server + mods
     has_many :owned_servers, class_name: :Server, foreign_key: :owner_id
