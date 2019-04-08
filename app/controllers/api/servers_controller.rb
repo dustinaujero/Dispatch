@@ -61,7 +61,7 @@ class Api::ServersController < ApplicationController
     def join
         @server = Server.find(params[:id])
         if @server && (@server.inv_code == params[:inv_code])
-            @membership = Userserver.new({user_id: params[:user_id], server_id: params[:id]})
+            @membership = Userserver.new({user_id: current_user.id, server_id: params[:id]})
             if @membership.save
                 @server.reset_inv_code
                 render json: ["Successfully Joined Server"], status: 200

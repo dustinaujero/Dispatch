@@ -30,4 +30,16 @@ export const deleteServer = (id) => (
         method: 'DELETE'
     })
 )
-
+export const joinServer = (serverId, invCode) => (
+    $.ajax({
+        url: `/api/servers/${serverId}/invite`,
+        method: 'POST',
+        data: {invCode}
+    })
+)
+export const getServerCode = (serverId) => (
+    $.ajax({
+        url: `/api/servers/${serverId}/invite`,
+        method: 'GET'
+    })
+)
