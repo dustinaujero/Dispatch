@@ -66,9 +66,11 @@ class Api::ServersController < ApplicationController
                 @server.reset_inv_code
                 render json: ["Successfully Joined Server"], status: 200
             else
+                @server.reset_inv_code
                 render json: ["Could Not Join Server"], status: 400
             end
         else
+            @server.reset_inv_code
             render json: ["Server Not Found"], status: 404
         end
     end

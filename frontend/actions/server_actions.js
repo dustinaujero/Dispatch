@@ -1,4 +1,5 @@
 import * as ServerAPIUtil from '../util/api_server_util';
+import { Server } from 'http';
 
 export const RECEIVE_SERVERS = "RECEIVE_SERVERS";
 export const RECEIVE_SERVER = "RECEIVE_SERVER";
@@ -70,6 +71,12 @@ export const updateServer = (server) => dispatch => (
 export const deleteServer = (id) => dispatch => (
     ServerAPIUtil.deleteServer(id).then(
         (id) => dispatch(removeServer(id)),
+        (errors) => dispatch(receiveServerErrors(errors.responseJSON))
+    )
+)
+export const joinServer = (serverId, invCode) => dispatch => (
+    ServerAPIUtil.joinServer(serverId, invCode).then(
+        (serverId) => dispatch(fetchServer(serverId)),
         (errors) => dispatch(receiveServerErrors(errors.responseJSON))
     )
 )

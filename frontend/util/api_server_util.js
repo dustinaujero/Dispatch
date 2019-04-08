@@ -34,7 +34,7 @@ export const joinServer = (serverId, invCode) => (
     $.ajax({
         url: `/api/servers/${serverId}/invite`,
         method: 'POST',
-        data: {invCode}
+        data: {inv_code: invCode}
     })
 )
 export const getServerCode = (serverId) => (
