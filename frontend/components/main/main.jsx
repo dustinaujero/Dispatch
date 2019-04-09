@@ -8,7 +8,7 @@ import Loading from '../ui/loading';
 import UserProfile from '../../components/ui/user_profile';
 import ServerHeader from '../servers/server_header';
 import ChannelHeader from '../channels/channel_header';
-import ChannelShow from '../channels/channel_show';
+import ChannelShow from '../channels/channel_show_container';
 
 
 class Main extends React.Component {
@@ -71,7 +71,14 @@ class Main extends React.Component {
                     </div>
                     <div className="third-body">
                         <div className="third-main">
-                            <ChannelShow />
+                            <Switch>
+                                <Route exact path="/channels/@me" component={() => (<div></div>)} />
+                                <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
+                                <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
+                                <Route exact path="/channels/channels/:serverId" component={() => (<div>creating channel</div>)} />
+                                <Route exact path="/channels/:serverId" component={() => (<div>SELECT A CHANNEL</div>)} />
+                                <Route path="/channels/:serverId/:channelId" component={ChannelShow} />
+                            </Switch>
                         </div>
                         <div className="users-show">
                             <Switch>

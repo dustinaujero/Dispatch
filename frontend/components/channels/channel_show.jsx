@@ -14,7 +14,7 @@ class ChannelShow extends React.Component {
     componentDidMount() {
         App.cable.subscriptions.create(
             // { channel: `channel-${this.props.channel_id}` },
-            { channel: `RoomChannel`, channel_id: 1 },
+            { channel: `RoomChannel`, channel_id: this.props.channel_id },
             {
                 received: data => {
                     this.setState({
