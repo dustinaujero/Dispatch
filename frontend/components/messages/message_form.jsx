@@ -20,7 +20,6 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         App.cable.subscriptions.subscriptions[0].speak(this.state);
         this.setState({ body: "" });
     }
