@@ -3,8 +3,8 @@ class Api::ServersController < ApplicationController
     before_action :ensure_logged_in
 
     def index
-        @servers = current_user.servers
-        @owned_servers = current_user.owned_servers
+        @servers = current_user.servers.includes(:users, :channels)
+        @owned_servers = current_user.owned_servers.includes(:users, :channels)
         render :index
     end
 
