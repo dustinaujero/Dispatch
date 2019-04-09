@@ -1,6 +1,6 @@
 @servers.each do |server|
     json.set! server.id do 
-        json.extract! server, :id, :server_name, :owner_id, :img_url
+        json.extract! server, :id, :server_name, :owner_id, :img_url, :inv_code
         json.users do 
             json.array! server.users.ids
         end
@@ -11,7 +11,7 @@
 end
 @owned_servers.each do |server|
     json.set! server.id do
-        json.extract! server, :id, :server_name, :owner_id, :img_url
+        json.extract! server, :id, :server_name, :owner_id, :img_url, :inv_code
         json.users do 
             json.array! server.users.ids
         end
