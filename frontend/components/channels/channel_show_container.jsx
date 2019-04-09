@@ -10,4 +10,4 @@ const mdp = dispatch=> ({
 
 })
 
-export default withRouter(connect(null, null)(ChannelShow));
+export default withRouter(connect(msp, null)(ChannelShow));

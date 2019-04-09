@@ -8,8 +8,25 @@ class ChannelShow extends React.Component {
         // this.bottom = React.createRef();
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
         // this.bottom.current.scrollIntoView();
+        debugger
+        if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
+            App.cable.subscriptions.create(
+                // { channel: `channel-${this.props.channel_id}` },
+                { channel: `RoomChannel`, channel_id: this.props.match.params.channelId },
+                {
+                    received: data => {
+                        this.setState({
+                            messages: this.state.messages.concat(data.message)
+                        });
+                    },
+                    speak: function (data) {
+                        return this.perform("speak", data);
+                    }
+                }
+            );
+        }
     }
     componentDidMount() {
         App.cable.subscriptions.create(
@@ -18,7 +35,7 @@ class ChannelShow extends React.Component {
             {
                 received: data => {
                     this.setState({
-                        messages: this.state.messages.concat(data.message)
+                        messages: this.state.messages.concat(data)
                     });
                 },
                 speak: function (data) {
