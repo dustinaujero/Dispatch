@@ -185,6 +185,7 @@
 }
 .server-list .server-list-main ul li:hover .s-list-item-info{
     display: block;
+    position: absolute;
 }
 
 .server-list .server-list-main .s-list-item-info {
@@ -192,7 +193,7 @@
     position: absolute;
     width: auto;
     bottom: 22px;
-    left: 70px;
+    left: 40px;
     color: white;
     background-color: black;
     padding: 5px;

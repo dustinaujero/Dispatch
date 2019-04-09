@@ -38,7 +38,7 @@ class ServerModalJoin extends React.Component {
         };
     }
     handleSubmit() {
-        this.props.createServer(this.state).then(
+        this.props.joinServer(this.state).then(
             ({ server }) => this.props.fetchChannels(server.id).then((server) => {
                 const sId = Object.values(server.channels)[0].server_id;
                 this.props.history.push(`/channels/${sId}`);
