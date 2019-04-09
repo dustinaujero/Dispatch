@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createServer } from '../../actions/server_actions';
+import { joinServer, fetchServers } from '../../actions/server_actions';
 import { fetchChannels } from '../../actions/channel_actions';
 import { withRouter } from 'react-router-dom';
 
@@ -9,8 +9,8 @@ const msp = state => ({
 })
 
 const mdp = dispatch => ({
-    createServer: (server) => dispatch(createServer(server)),
-    fetchChannels: (serverId) => dispatch(fetchChannels(serverId))
+    joinServer: (serverId, invCode) => dispatch(joinServer(serverId, invCode)),
+    fetchServers: () => dispatch(fetchServers())
 })
 
 class ServerModalJoin extends React.Component {
@@ -18,8 +18,7 @@ class ServerModalJoin extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            server_name: "",
-            img_url: "empty"
+            code: ""
         };
 
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -27,13 +26,6 @@ class ServerModalJoin extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick() {
-        // return (e) => {
-        //     if (typeof e.target.classList[1] === "undefined") {
-        //         this.props.history.push("/channels/@me");
-        //     } else {
-        //         this.props.history.push(`/channels/servers/${e.target.classList[1]}`);
-        //     }
-        // };
         return (e) => {
             if (e.target === e.currentTarget) {
                 this.props.history.goBack();
@@ -61,42 +53,16 @@ class ServerModalJoin extends React.Component {
         return (
             <div className="loading" onClick={this.handleClick()}>
                 <div className="server-alt-modal" >
-                    <div className="server-modal-top">
-                        <div>CREATE YOUR SERVER</div>
-                        <div>By creating a server, you will have access to <strong>no</strong> voice and text chat to use amongst your friends</div>
-                    </div>
-                    <div className="server-modal-middle">
+                    <div className="server-join-top">JOIN A SERVER</div>
+                    <div>Enter an Instant Invite below to join an existing server. The invite will look something like this:</div>
+                    <div>https://discord.gg/qJq5C</div>
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text" onChange={this.handleUpdate("code")} value={this.state.code}/>
+                        <label>Enter an Instant Invite</label>
                         <div>
-                            <div>SERVER NAME {error}</div>
-
-                            <input autoFocus={true} type="text" value={this.state.server_name} onChange={this.handleUpdate("server_name")} className="server-title server-name" />
+                            <button>Join</button>
                         </div>
-                        <div>
-                            <input type="radio" name="img" id="img" onClick={() => this.setState({ img_url: "empty" })} />
-                            <div>
-                                <button>
-                                    <div>
-                                        <p>{this.state.server_name.split(" ").map(word => word.split("")[0]).slice(0, 4).join("")}</p>
-                                    </div>
-                                </button>
-                                <div>NO IMG</div>
-                            </div>
-                            <input type="radio" name="img" id="img" onClick={() => this.setState({ img_url: "/assets/basic-discord-645038d22a7d96fb1d5c8e85bc78b7055b9bbb022c62a0258b76b3a8a03f060e.png" })} />
-                            <div>
-                                <div>DEFAULT IMG</div>
-
-                                <button>
-                                    <img src={window.basicIcon} id="makeRed" />
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="server-modal-bottom">
-                        <div>
-                            <div onClick={() => this.props.history.goBack()}>BACK</div>
-                            <button onClick={() => this.handleSubmit()}>Create</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         );

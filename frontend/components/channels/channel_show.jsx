@@ -29,7 +29,7 @@ class ChannelShow extends React.Component {
     }
     render() {
         const messageList = this.state.messages.map(message => {
-            debugger
+ 
             return (
                 <li key={message.id}>
                     {message.body}
@@ -37,7 +37,7 @@ class ChannelShow extends React.Component {
                 </li>
             );
         });
-        debugger
+
         return (
             <div className="chatroom-container">
                 <div>ChatRoom</div>
