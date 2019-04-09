@@ -48,17 +48,17 @@ class ServerModalJoin extends React.Component {
     render() {
         let error = "";
         if (this.props.serverErrors.length > 0) {
-            error = " - Server name can't be blank"
+            error = " - Invalid invite code"
         }
         return (
             <div className="loading" onClick={this.handleClick()}>
                 <div className="server-alt-modal" >
                     <div className="server-join-top">JOIN A SERVER</div>
-                    <div>Enter an Instant Invite below to join an existing server. The invite will look something like this:</div>
-                    <div>https://discord.gg/qJq5C</div>
-                    <form onSubmit={this.handleSubmit}>
+                    <div className="server-join-header">Enter an Instant Invite below to join an existing server. The invite will look something like this:</div>
+                    <div className="server-join-body">https://discord.gg/qJq5C</div>
+                    <form className="server-join-form" onSubmit={this.handleSubmit}>
                         <input type="text" onChange={this.handleUpdate("code")} value={this.state.code}/>
-                        <label>Enter an Instant Invite</label>
+                        <label className={error ? "bad-label" : ""}>Enter an Instant Invite {error}</label>
                         <div>
                             <button>Join</button>
                         </div>
