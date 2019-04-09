@@ -59,18 +59,17 @@ class Api::ServersController < ApplicationController
     end
 
     def join
-        @server = Server.find(params[:id])
-        if @server && (@server.inv_code == params[:inv_code])
+        @server = Server.find_by(inv_code: params[:inv_code])
+        if @server 
             @membership = Userserver.new({user_id: current_user.id, server_id: params[:id]})
             if @membership.save
                 @server.reset_inv_code
                 render json: ["Successfully Joined Server"], status: 200
             else
                 @server.reset_inv_code
-                render json: ["Could Not Join Server"], status: 400
+                render json: @membership.errors.full_messages, status: 400
             end
         else
-            @server.reset_inv_code
             render json: ["Server Not Found"], status: 404
         end
     end
