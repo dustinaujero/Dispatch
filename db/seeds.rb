@@ -10,10 +10,11 @@
 
 demo = User.create({email:"demo@demo.com", username:"username", password:"password"})
 me = User.create({email:"example@example.com", username:"dustin", password:"monica!!"})
-
+dustin = User.create({email:"dustin", username:"dustin", password:"dustin"})
 
 
 serverOne = Server.create({server_name:"Main", owner_id: demo.id})
+Userserver.create({user_id: dustin.id, server.id: serverOne.id})
 chOne = Channel.create({channel_name:"1st Channel", server_id: serverOne.id})
     Membership.create({user_id: serverOne.owner_id, channel_id: chOne.id})
 
