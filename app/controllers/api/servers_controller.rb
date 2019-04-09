@@ -61,10 +61,10 @@ class Api::ServersController < ApplicationController
     def join
         @server = Server.find_by(inv_code: params[:inv_code])
         if @server 
-            @membership = Userserver.new({user_id: current_user.id, server_id: params[:id]})
+            @membership = Userserver.new({user_id: current_user.id, server_id: @server.id})
             if @membership.save
                 @server.reset_inv_code
-                render json: ["Successfully Joined Server"], status: 200
+                render :show
             else
                 @server.reset_inv_code
                 render json: @membership.errors.full_messages, status: 400
