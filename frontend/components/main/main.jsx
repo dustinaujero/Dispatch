@@ -8,7 +8,7 @@ import Loading from '../ui/loading';
 import UserProfile from '../../components/ui/user_profile';
 import ServerHeader from '../servers/server_header';
 import ChannelHeader from '../channels/channel_header';
-
+import ChannelShow from '../channels/channel_show';
 
 
 class Main extends React.Component {
@@ -70,7 +70,9 @@ class Main extends React.Component {
                         </Switch>
                     </div>
                     <div className="third-body">
-                        <div className="third-main"></div>
+                        <div className="third-main">
+                            <ChannelShow />
+                        </div>
                         <div className="users-show">
                             <Switch>
                                 <Route exact path="/channels/@me" component={() => (<div></div>)} />

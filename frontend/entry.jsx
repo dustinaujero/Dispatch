@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { loading, clearLoading } from './actions/ui_actions';
 import { fetchServers } from './actions/server_actions';
+import ChannelShow from './components/channels/channel_show';
 
 
 
