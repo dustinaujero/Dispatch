@@ -74,8 +74,8 @@ export const deleteServer = (id) => dispatch => (
         (errors) => dispatch(receiveServerErrors(errors.responseJSON))
     )
 )
-export const joinServer = (serverId, invCode) => dispatch => (
-    ServerAPIUtil.joinServer(serverId, invCode).then(
+export const joinServer = (invCode) => dispatch => (
+    ServerAPIUtil.joinServer(invCode).then(
         (serverId) => dispatch(fetchServer(serverId)),
         (errors) => dispatch(receiveServerErrors(errors.responseJSON))
     )
