@@ -30,7 +30,7 @@ export const updateChannel = (channel) => (
 
 export const deleteChannel = (id) => (
     $.ajax({
-        url: `/api/channels/${channel.id}`,
+        url: `/api/channels/${id}`,
         method: 'DELETE'
     })
 )
