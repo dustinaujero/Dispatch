@@ -1,6 +1,13 @@
 .server-list {
-    overflow-y: scroll;
-    width: 73px;
+    /* overflow-y: scroll; */
+    /* width: 73px; */
+    width: 100px;
+    height: 100vh;
+    overflow: visible;
+
+
+
+
     display: flex;
     background-color: #202225;
     /* background-color: green; */
@@ -93,6 +100,16 @@
     overflow: visible;
     margin: 0px;
     z-index: 10;
+
+    overflow-y: scroll;
+    height: 100vh;
+}
+.server-list .server-list-main::-webkit-scrollbar { 
+    width: 0 !important 
+}
+.server-list .server-list-main  { 
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
 }
 .server-list .server-list-main img {
     margin: 5px 5px;
@@ -112,6 +129,14 @@
     list-style: none;
     padding-left: 3px;
     overflow: visible;
+    /* overflow-y: scroll; */
+
+
+
+
+
+
+    
     z-index: 12;
     padding-right: 50px;
     margin-top: 5px;
@@ -193,7 +218,7 @@
     position: absolute;
     width: auto;
     bottom: 22px;
-    left: 40px;
+    left: 60px;
     color: white;
     background-color: black;
     padding: 5px;
