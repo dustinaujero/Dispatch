@@ -76,7 +76,7 @@ export const deleteServer = (id) => dispatch => (
 )
 export const joinServer = (invCode) => dispatch => (
     ServerAPIUtil.joinServer(invCode).then(
-        (serverId) => dispatch(fetchServer(serverId)),
+        (server) => dispatch(receiveServer(server)),
         (errors) => dispatch(receiveServerErrors(errors.responseJSON))
     )
 )
