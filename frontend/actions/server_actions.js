@@ -7,10 +7,10 @@ export const REMOVE_SERVER = "REMOVE_SERVER";
 export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
 export const CLEAR_SERVER_ERRORS = "CLEAR_SERVER_ERRORS";
 
-export const receiveServers = (servers) => (
+export const receiveServers = (payload) => (
     {
         type: RECEIVE_SERVERS,
-        servers
+        payload
     }
 )
 
@@ -42,7 +42,7 @@ export const clearServerErrors = () => (
 
 export const fetchServers = () => dispatch => (
     ServerAPIUtil.fetchServers().then(
-        (servers) => dispatch(receiveServers(servers)),
+        (payload) => dispatch(receiveServers(payload)),
         (errors) => dispatch(receiveServerErrors(errors.responseJSON))
     )
 )
