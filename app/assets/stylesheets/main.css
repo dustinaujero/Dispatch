@@ -308,6 +308,20 @@
     /* position: relative;
     left: -127px; */
 }
+.users-show {
+    margin-right: 0;
+    width: 200px;
+    height: 100%;
+    /* background-color: rgb(48, 49, 54); */
+    background-color: #2F3136;
+    padding: 20px;
+    /* color: rgb(168, 168, 168); */
+    /* color: #8b8c8f;
+
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.8px; */
+}
 
 
 
