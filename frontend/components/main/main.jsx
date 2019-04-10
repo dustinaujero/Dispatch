@@ -9,6 +9,7 @@ import UserProfile from '../../components/ui/user_profile';
 import ServerHeader from '../servers/server_header';
 import ChannelHeader from '../channels/channel_header';
 import ChannelShow from '../channels/channel_show_container';
+import UsersIndex from '../users/users_index';
 
 
 class Main extends React.Component {
@@ -86,7 +87,7 @@ class Main extends React.Component {
                                 <Route exact path="/channels/servers" component={() => (<div></div>)} />
                                 <Route exact path="/channels/servers/:type" component={() => (<div>NOTHING</div>)} />
                                 <Route exact path="/channels/channels/:serverId" component={() => (<div>NOTHING</div>)} />
-                                <Route path="/channels/:serverId" component={() => (<div>USERS</div>)} />
+                                <Route path="/channels/:serverId" component={UsersIndex} />
                             </Switch>
                         </div>
                     </div>
