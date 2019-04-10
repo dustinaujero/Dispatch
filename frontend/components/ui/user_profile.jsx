@@ -3,7 +3,7 @@ import { logout } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 
 const msp = state => ({
-    currentUser: state.session.user
+    currentUser: state.entities.users[state.session.user]
 });
 
 const mdp = dispatch => ({
@@ -14,11 +14,6 @@ class UserProfile extends React.Component{
 
     invert() {
         $("#root").toggleClass("invert");
-        // $("#root").find("img").css("filter", "invert(1)");
-        // $("#root").find("div").css("filter", "invert(1)");
-        // $("#root").find("li").css("filter", "invert(1)");
-        // $("#root").find("ul").css("filter", "invert(1)");
-        // $("#root").find("aside").css("filter", "invert(1)");
     }
 
     render() {

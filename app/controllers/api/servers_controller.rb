@@ -3,9 +3,9 @@ class Api::ServersController < ApplicationController
     before_action :ensure_logged_in
 
     def index
-        @servers = current_user.servers.includes(:users, :channels)
-        @owned_servers = current_user.owned_servers.includes(:users, :channels)
-        debugger
+        servers = current_user.servers.includes(:users, :channels)
+        owned_servers = current_user.owned_servers.includes(:users, :channels)
+        @all_servers = servers.to_a.concat(owned_servers.to_a)
         render :index
     end
 
