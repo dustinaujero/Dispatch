@@ -2,9 +2,7 @@
     json.set! channel.id do  
         json.extract! channel, :id, :channel_name, :server_id
         json.messages do
-            json.array! channel.messages do |message|
-                message.id 
-            end
+            json.array! channel.messages.ids
         end
     end
 end
