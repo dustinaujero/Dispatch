@@ -9,7 +9,7 @@ const sessionReducer = (state = nullState, action) => {
     Object.freeze(state);
     switch(action.type) {
         case LOGIN_CURRENT_USER: {
-            return {user: action.user};
+            return {user: action.user.id};
         }
         case LOGOUT_CURRENT_USER: {
             return nullState;

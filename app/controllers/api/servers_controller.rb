@@ -5,6 +5,7 @@ class Api::ServersController < ApplicationController
     def index
         @servers = current_user.servers.includes(:users, :channels)
         @owned_servers = current_user.owned_servers.includes(:users, :channels)
+        debugger
         render :index
     end
 
