@@ -10,7 +10,6 @@ class ChannelShow extends React.Component {
 
     componentDidUpdate(prevProps) {
         // this.bottom.current.scrollIntoView();
-        debugger
         if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
             App.cable.subscriptions.create(
                 // { channel: `channel-${this.props.channel_id}` },
