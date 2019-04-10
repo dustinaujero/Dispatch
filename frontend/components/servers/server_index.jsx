@@ -9,8 +9,10 @@ class ServerIndex extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchServers();
         this.props.clearLoading();
     }
+
     goHome() {
         this.props.history.push(`/channels/@me`);
     }
