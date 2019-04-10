@@ -5,6 +5,7 @@ import Root from './components/root';
 import { loading, clearLoading } from './actions/ui_actions';
 import { fetchServers } from './actions/server_actions';
 import ChannelShow from './components/channels/channel_show';
+import { merge } from 'lodash';
 
 
 
@@ -16,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
             $.ajax({ method: "GET", url: "/api/channels/all" })
         ).done( (payload, channels) => {
             const state = {
-                session: { user: window.currentUser },
-                entities: { servers: payload[0].servers, channels: channels[0], users: payload[0].users }
+                session: { user: window.currentUser.id },
+                entities: { servers: payload[0].servers, channels: channels[0], users: merge({}, payload[0].users, {[window.currentUser.id]: window.currentUser}) }
             };
             const store = configureStore(state);
             delete window.currentUser;
