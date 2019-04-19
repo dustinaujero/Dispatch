@@ -1,7 +1,7 @@
 .server-list {
     /* overflow-y: scroll; */
     /* width: 73px; */
-    width: 100px;
+    width: 70px;
     height: 100vh;
     overflow: visible;
 
@@ -218,7 +218,8 @@
     position: absolute;
     width: auto;
     bottom: 22px;
-    left: 60px;
+    /* left: 60px; */
+    left: 80px;
     color: white;
     background-color: black;
     padding: 5px;
