@@ -2,8 +2,10 @@ class RoomChannel < ApplicationCable::Channel
   def subscribed
     # if params[:channel_id]
       # stream_from("channel-#{(params[:channel_id])}")
-
-      stream_for("channel-#{params['channel_id']}")
+      channel = Channel.find(params['channel_id'])
+      # stream_for("channel-#{params['channel_id']}")
+      # stream_for "please_work"
+      stream_for channel
     # end
   end
 
@@ -23,7 +25,8 @@ class RoomChannel < ApplicationCable::Channel
     })
     channel = Channel.find(channel_id)
 
-    RoomChannel.broadcast_to("channel-#{channel_id}", message)
+    RoomChannel.broadcast_to(channel, message)
+    # RoomChannel.broadcast_to("please_work", message)
     # Message.create({
     #   user_id: sender.id, 
     #   channel_id: channel_id,
