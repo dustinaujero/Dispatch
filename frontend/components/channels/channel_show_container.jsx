@@ -11,6 +11,7 @@ const msp = (state, ownProps) => (
         messages: Object.values(state.entities.messages)
     }
 )
+
 const mdp = dispatch=> ({
     fetchMessages: (channelId) => dispatch(fetchMessages(channelId))
 })

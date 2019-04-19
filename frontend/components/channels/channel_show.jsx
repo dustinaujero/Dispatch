@@ -17,10 +17,7 @@ class ChannelShow extends React.Component {
         if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
             
 
-
-
             App.cable.subscriptions.create(
-                // { channel: `channel-${this.props.channel_id}` },
                 { channel: `RoomChannel`, channel_id: this.props.match.params.channelId },
                 {
                     received: data => {
@@ -40,7 +37,6 @@ class ChannelShow extends React.Component {
     componentDidMount() {
 
         App.cable.subscriptions.create(
-            // { channel: `channel-${this.props.channel_id}` },
             { channel: `RoomChannel`, channel_id: this.props.match.params.channelId },
             {
                 received: data => {
