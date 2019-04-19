@@ -13,16 +13,16 @@ class ChannelShow extends React.Component {
 
     componentDidUpdate(prevProps) {
         // this.bottom.current.scrollIntoView();
-
         if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
-            
-
+            debugger
+            App.cable.subscriptions.subscriptions[0].unsubscribe();
+            debugger
             App.cable.subscriptions.create(
                 { channel: `RoomChannel`, channel_id: this.props.match.params.channelId },
                 {
                     received: data => {
                         this.setState({
-                            messages: this.state.messages.concat(data.message)
+                            messages: this.state.messages.concat(data)
                         });
                     },
                     speak: function (data) {
@@ -30,12 +30,18 @@ class ChannelShow extends React.Component {
                     }
                 }
             );
-            this.props.fetchMessages(this.props.match.params.channelId);
+            this.props.fetchMessages(this.props.match.params.channelId)
 
+            .then((action) => {
+                this.setState({
+                    messages: Object.values(action.messages)
+                });
+            })
+            
+            ;
         }
     }
     componentDidMount() {
-
         App.cable.subscriptions.create(
             { channel: `RoomChannel`, channel_id: this.props.match.params.channelId },
             {
@@ -62,7 +68,6 @@ class ChannelShow extends React.Component {
     }
     render() {
         const messageList = this.state.messages.map(message => {
-            debugger
             return (
                 <li key={message.id}>
                     {message.body}

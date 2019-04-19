@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class MessageForm extends React.Component {
 
@@ -6,8 +8,8 @@ class MessageForm extends React.Component {
         super(props);
         this.state = {
             body: "",
-            user_id: 1,
-            channel_id: 1
+            user_id: this.props.userId,
+            channel_id: this.props.channelId
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,8 +22,17 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger
         App.cable.subscriptions.subscriptions[0].speak(this.state);
         this.setState({ body: "" });
+    }
+    componentDidUpdate(prevProps){
+        if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
+            this.setState({
+                body: "",
+                channel_id: this.props.match.params.channelId
+            });
+        }
     }
     render() {
         return (
@@ -39,4 +50,12 @@ class MessageForm extends React.Component {
         );
     }
 }
-export default MessageForm;
+
+const msp = (state, ownProps) => ({
+    userId: state.session.user,
+    channelId: ownProps.match.params.channelId
+})
+const mdp = dispatch => ({
+
+})
+export default withRouter(connect(msp, null)(MessageForm));
