@@ -148,6 +148,7 @@
     height: 55px;
     width: 100px;
     border-radius: 50%;
+    display: none;
 }
 .server-list .server-list-main ul li input:checked + div {
    border-radius: 14px;
