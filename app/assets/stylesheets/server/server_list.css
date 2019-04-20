@@ -144,9 +144,9 @@
 .server-list .server-list-main ul li input{
     background-color: green;
     position: absolute;
-    left: -30px;
+    left: -150px;
     height: 55px;
-    width: 100px;
+    width: 210px;
     border-radius: 50%;
     display: none;
 }
