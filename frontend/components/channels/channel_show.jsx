@@ -37,10 +37,15 @@ class ChannelShow extends React.Component {
                 this.setState({
                     messages: Object.values(action.messages)
                 });
+                return Object.values(action.messages);
             })
             
-            .then(() => this.scrollToBottom())
-
+            .then((messages) => {
+                if (messages.length >= 1) {
+                    this.scrollToBottom()
+                }
+            }
+            )
             ;
 
         }
@@ -69,9 +74,15 @@ class ChannelShow extends React.Component {
             this.setState({
                 messages: Object.values(action.messages)
             });
+            return Object.values(action.messages);
         })
 
-        .then( () => this.scrollToBottom() )
+        .then( (messages) => {
+            if (messages.length >= 1) {
+                this.scrollToBottom()
+            }
+            }
+        )
 
         ;
     }

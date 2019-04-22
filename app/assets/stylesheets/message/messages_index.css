@@ -64,6 +64,7 @@
 }
 .message-info > div:last-of-type {
     color: rgb(194, 194, 194);
+    font-size: 13px;
 }
 
 
