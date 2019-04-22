@@ -14,6 +14,7 @@ class MessageForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     }
 
     handleUpdate(field) {
@@ -22,9 +23,15 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         App.cable.subscriptions.subscriptions[0].speak(this.state);
         this.setState({ body: "" });
+    }
+    handleKeyDown(e) {        
+        e.preventDefault();
+        if(e.keyCode === 13) {
+            this.handleSubmit(e);
+        }
+
     }
     componentDidUpdate(prevProps){
         if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
@@ -36,15 +43,14 @@ class MessageForm extends React.Component {
     }
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+            <div className="message-div">
+                <form onKeyDown={this.handleKeyDown} className="message-form">
                     <input
                         type="text"
                         value={this.state.body}
                         onChange={this.handleUpdate("body")}
                         placeholder="Type message here"
                     />
-                    <input type="submit" />
                 </form>
             </div>
         );

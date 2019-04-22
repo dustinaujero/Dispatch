@@ -9,6 +9,9 @@
     font-weight: 500;
     font-size: 15px;
     letter-spacing: 0.2px;
+    flex-grow: none;
+    flex-shrink: none;
+
 }
 .server-header div:first-of-type {
     margin-left: 0;

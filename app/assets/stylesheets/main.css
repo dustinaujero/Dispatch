@@ -59,7 +59,8 @@
 
     position: relative;
 
-
+    flex-grow: 0;
+    flex-shrink: 0;
 
     display: flex;
     border-width: 0px 0px 1px 0px;
@@ -68,7 +69,7 @@
     /* box-shadow: 0px 0.5px 1px 0px rgb(36, 36, 36); */
     /* border-bottom:  */
     /* height: 57px; */
-    height: 55px;
+    height: 48px;
     width: 240px;
     align-content: center;
     justify-content: space-around;
@@ -299,6 +300,15 @@
     flex-direction: row;
     height: 100%;
 }
+.third-main {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
 .fourth {
     width: 240px;
     flex-grow: 0;
