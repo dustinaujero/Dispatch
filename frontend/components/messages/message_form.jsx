@@ -49,7 +49,7 @@ class MessageForm extends React.Component {
                         type="text"
                         value={this.state.body}
                         onChange={this.handleUpdate("body")}
-                        placeholder="Type message here"
+                        placeholder={`Message #${this.props.channels[this.props.channelId].channel_name}`}
                     />
                 </form>
             </div>
@@ -59,7 +59,8 @@ class MessageForm extends React.Component {
 
 const msp = (state, ownProps) => ({
     userId: state.session.user,
-    channelId: ownProps.match.params.channelId
+    channelId: ownProps.match.params.channelId,
+    channels: state.entities.channels
 })
 const mdp = dispatch => ({
 
