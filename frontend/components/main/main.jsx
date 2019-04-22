@@ -66,7 +66,7 @@ class Main extends React.Component {
                             <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
                             <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
                             <Route exact path="/channels/channels/:serverId" component={() => (<div>creating channel</div>)} />
-                            <Route exact path="/channels/:serverId" component={() => (<div>SELECT A CHANNEL</div>)} />
+                            <Route exact path="/channels/:serverId" component={() => (<div></div>)} />
                             <Route path="/channels/:serverId/:channelId" component={ChannelHeader} />
                         </Switch>
                     </div>
@@ -77,7 +77,7 @@ class Main extends React.Component {
                                 <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
                                 <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
                                 <Route exact path="/channels/channels/:serverId" component={() => (<div>creating channel</div>)} />
-                                <Route exact path="/channels/:serverId" component={() => (<div>SELECT A CHANNEL</div>)} />
+                                <Route exact path="/channels/:serverId" component={() => (<div>No Channels :(</div>)} />
                                 <Route path="/channels/:serverId/:channelId" component={ChannelShow} />
                             </Switch>
                         </div>
