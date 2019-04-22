@@ -46,8 +46,24 @@
 
 }
 .user-info {
-    color: white;
+    color: rgb(218, 218, 218);
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    display: flex;
+    flex-direction: row;
+}
+.user-info > div:last-of-type{
+    color: rgb(92, 92, 92);
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 8px;
+    margin-top: 4px;
+}
+.message-info > div:last-of-type {
+    color: rgb(194, 194, 194);
 }
 
 
