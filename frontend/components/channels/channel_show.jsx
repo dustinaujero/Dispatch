@@ -39,14 +39,14 @@ class ChannelShow extends React.Component {
                 });
             })
             
-            // .then(() => this.scrollToBottom())
+            .then(() => this.scrollToBottom())
 
             ;
 
         }
     }
     scrollToBottom() {
-        this.bottom.scrollIntoView({ behavior: "smooth" });
+        this.bottom.scrollIntoView(false);
     }
     componentDidMount() {
         App.cable.subscriptions.create(
@@ -71,7 +71,7 @@ class ChannelShow extends React.Component {
             });
         })
 
-        // .then( () => this.scrollToBottom() )
+        .then( () => this.scrollToBottom() )
 
         ;
     }
