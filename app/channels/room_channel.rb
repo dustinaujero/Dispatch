@@ -24,11 +24,10 @@ class RoomChannel < ApplicationCable::Channel
       body: body
     })
     channel = Channel.find(channel_id)
-
     RoomChannel.broadcast_to(channel, message)
-    # RoomChannel.broadcast_to("please_work", message)
+
     # Message.create({
-    #   user_id: sender.id, 
+    #   user_id: sender.id,
     #   channel_id: channel_id,
     #   body: body
     # })

@@ -2,8 +2,8 @@ class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(message)
-    debugger
-    ActionCable.server.broadcast("channel-1", message)
+    channel = Channel.find(message.channel_id)
+    ActionCable.server.broadcast(channel, message)
   end
 
   # private 
