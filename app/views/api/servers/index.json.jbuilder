@@ -17,6 +17,9 @@
                 json.extract! user, :id, :username
             end
         end
+        json.set! server.owner.id do 
+            json.extract! server.owner, :id, :username
+        end
     end
 
 end
