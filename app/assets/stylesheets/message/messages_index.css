@@ -78,5 +78,11 @@
 .message-form input {
     width: 100%;
     outline: none;
+    border: none;
     border-radius: 5px;
+    font-size: 12px;
+    background-color: #474C51;
+    padding: 13px 8px;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
 }
