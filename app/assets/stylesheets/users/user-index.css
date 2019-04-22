@@ -9,5 +9,19 @@
 
 }
 .user-ul {
-    color: white
+    color: rgb(230, 230, 230);
+    list-style: none;
+    padding: 0px;
+}
+.user-ul li {
+    margin: 5px 0px;
+    display: flex;
+    flex-direction: row;
+}
+.user-ul li img {
+    border-radius: 50%;
+    height: 20px;
+}
+.user-ul li div {
+    margin-left: 10px;
 }

@@ -14,7 +14,8 @@ class UsersIndex extends React.Component {
         const users = this.props.currServerUsers.map( userId => {
             return (
                 <li key={userId}>
-                    <div>{this.props.users[userId].username}</div>
+                    <img src={window.whiteFace} />
+                    <div>{this.props.users[userId].username.split("#")[0]}</div>
                 </li>
             )
         })
