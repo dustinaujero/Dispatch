@@ -28,11 +28,10 @@
     padding: 5px 10px;
 }
 .channel-index {
-    overflow: hidden;
+    overflow-y: scroll;
 }
 .channel-index li {
     border-radius: 5px;
-    background-color: transparent;
     padding: 5px;
     margin: 2px 0px;
     color: #72767d;
@@ -42,6 +41,7 @@
 }
 .channel-index li:hover {
     background-color: #41454D;
+    transition-duration: 0.4s;
 }
 .channel-index li div:first-of-type {
     margin: 0;
@@ -71,4 +71,9 @@
 }
 .collapse {
     height: 0px;
+}
+
+.selected-channel {
+    background-color: #43454D;
+
 }
