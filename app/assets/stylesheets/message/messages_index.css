@@ -6,7 +6,7 @@
 }
 
 .message-list {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 100%;
     width: calc(100% - 40px);
     padding: 0px 20px;
@@ -14,6 +14,18 @@
     display: flex;
     flex-direction: column;
     list-style: none;
+}
+.message-list::-webkit-scrollbar { 
+    background-color: transparent;
+}
+.message-list::-webkit-scrollbar-thumb {
+    background-color: rgb(45, 47, 53);
+    border-radius: 5px;
+    width: 1px;
+}
+.message-list { 
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
 }
 .message {
     border-top: 0.5px solid rgb(80, 80, 80);
