@@ -8,16 +8,75 @@
 .message-list {
     overflow-y: scroll;
     height: 100%;
-    width: 100%;
+    width: calc(100% - 40px);
+    padding: 0px 20px;
+
+    display: flex;
+    flex-direction: column;
+    list-style: none;
 }
+.message {
+    border-top: 0.5px solid rgb(80, 80, 80);
+    padding: 20px 0px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.message > div {
+    margin: 0;
+}
+.message-image {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 35px;
+    width: 35px;
+}
+/* .message-image img {
+    height: 30px;
+    width: 30px;
+    
+} */
+.message img {
+    border-radius: 50%;
+    height: 35px;
+    margin-right: 15px;
+}
+.message-info {
+
+}
+.user-info {
+    color: white;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
+
+
+
+
+
 
 
 .message-div {
-    background-color: red;
     width: calc(100% - 40px);
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
+
 }
+
 .message-form {
+    border-top: 0.5px solid rgb(80, 80, 80);
+    /* background-color: red; */
     width: 100%;
     height: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.message-form input {
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
 }

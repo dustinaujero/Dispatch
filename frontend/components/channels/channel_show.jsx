@@ -9,14 +9,15 @@ class ChannelShow extends React.Component {
         }
 
         // this.bottom = React.createRef();
+        this.scrollToBottom = this.scrollToBottom.bind(this);
     }
 
     componentDidUpdate(prevProps) {
-        // this.bottom.current.scrollIntoView();
+        
         if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
-            debugger
+
             App.cable.subscriptions.subscriptions[0].unsubscribe();
-            debugger
+
             App.cable.subscriptions.create(
                 { channel: `RoomChannel`, channel_id: this.props.match.params.channelId },
                 {
@@ -38,8 +39,14 @@ class ChannelShow extends React.Component {
                 });
             })
             
+            // .then(() => this.scrollToBottom())
+
             ;
+
         }
+    }
+    scrollToBottom() {
+        this.bottom.scrollIntoView({ behavior: "smooth" });
     }
     componentDidMount() {
         App.cable.subscriptions.create(
@@ -64,14 +71,39 @@ class ChannelShow extends React.Component {
             });
         })
 
+        // .then( () => this.scrollToBottom() )
+
         ;
     }
     render() {
-        const messageList = this.state.messages.map(message => {
+        const messageList = this.state.messages.map((message, i) => {
+            // if (i >= 1) {
+            //     if (this.state.messages[i - 1].user_id === message.user_id) {
+            //         return (
+            //             <div className="follow-message">
+            //                 {message.body}
+            //             </div>
+            //         )
+            //     }
+            // }
             return (
-                <li key={message.id}>
-                    {message.body}
-                    <div ref={this.bottom} />
+                <li key={message.id} className="message">
+                    {/* <img src="" alt=""/> */}
+                    {/* <div className="message-image"> */}
+                    <img src={window.whiteFace} />
+                    {/* </div> */}
+                    <div className="message-info">
+                        <div className="user-info">
+                            <div>{this.props.users[message.user_id].username.split("#")[0]}</div>
+                            <div>{message.created_at}</div>
+                        </div>
+                        <div>
+                            {message.body}
+                        </div>
+
+                    </div>
+
+                    <div ref={(el) => this.bottom = el} />
                 </li>
             );
         });
