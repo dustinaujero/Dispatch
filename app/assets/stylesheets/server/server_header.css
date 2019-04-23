@@ -13,11 +13,40 @@
     flex-shrink: none;
 
 }
-.server-header div:first-of-type {
+
+.server-header > div:first-of-type {
     margin-left: 0;
 }
 
-.server-header div:last-of-type {
+.server-header .server-header-icon {
     margin-right: 0; 
     color: rgb(185, 185, 185);
+
+    position: relative;
+}
+
+.server-header-icon .server-inv-code {
+    position: absolute;
+    top: 45px;
+    left: -200px;
+    background-color: white;
+    width: 200px;
+    padding: 8px;
+    border-radius: 5px;
+    z-index: 10;
+}
+.code-show {
+    display: block;
+}
+.code-hide {
+    display: none;
+}
+
+.server-inv-code input {
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid #7289DA;
+    padding: 4px;
+    width: 102px;
+    margin-left: 5px;
 }
