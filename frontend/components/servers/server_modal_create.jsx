@@ -48,7 +48,8 @@ class ServerModalCreate extends React.Component {
         this.props.createServer(this.state).then(
             ({server}) => this.props.fetchChannels(server.id).then((server) => {
                 const sId = Object.values(server.channels)[0].server_id;
-                this.props.history.push(`/channels/${sId}`);
+                const cId = Object.values(server.channels)[0].id;
+                this.props.history.push(`/channels/${sId}/${cId}`);
             })
         );
     }
