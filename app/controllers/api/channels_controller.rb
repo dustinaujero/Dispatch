@@ -46,8 +46,8 @@ class Api::ChannelsController < ApplicationController
     end
 
     def all 
-        @channels = current_user.channels
-        @owned_channels = current_user.owned_channels
+        @channels = current_user.servers.map {|server| server.channels.to_a }.flatten
+        @owned_channels = current_user.owned_servers.map {|server| server.channels.to_a }.flatten
         render :all
     end
 
