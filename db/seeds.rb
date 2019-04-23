@@ -37,7 +37,7 @@ chTwo = Channel.create({channel_name:"lyfe", server_id: serverOne.id})
 
 
 
-serverTwo = Server.create({server_name:"G G", owner_id: demo.id, img_url: "/assets/basic-discord-645038d22a7d96fb1d5c8e85bc78b7055b9bbb022c62a0258b76b3a8a03f060e.png"})
+serverTwo = Server.create({server_name:"G G", owner_id: demo.id})
 Userserver.create({user_id: dustin.id, server_id: serverTwo.id})
 ch3 = Channel.create({channel_name:"fun games", server_id: serverTwo.id})
 ch4 = Channel.create({channel_name:"fun profiles", server_id: serverTwo.id})
