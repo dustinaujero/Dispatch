@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
     }
     demo() {
         this.setState({
-            email: "demo@demo.com",
+            email: "brian@brian.com",
             password: "password"
         }, () => {
             this.props.clearSessionErrors();
