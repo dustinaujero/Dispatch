@@ -88,15 +88,15 @@ class ChannelShow extends React.Component {
     }
     render() {
         const messageList = this.state.messages.map((message, i) => {
-            // if (i >= 1) {
-            //     if (this.state.messages[i - 1].user_id === message.user_id) {
-            //         return (
-            //             <div className="follow-message">
-            //                 {message.body}
-            //             </div>
-            //         )
-            //     }
-            // }
+            if (i >= 1) {
+                if (this.state.messages[i - 1].user_id === message.user_id) {
+                    return (
+                        <li key={message.id} className="follow-message">
+                            {message.body}
+                        </li>
+                    )
+                }
+            }
             return (
                 <li key={message.id} className="message">
                     {/* <img src="" alt=""/> */}

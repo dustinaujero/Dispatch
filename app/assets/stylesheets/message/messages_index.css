@@ -28,8 +28,9 @@
     -ms-overflow-style: none;
 }
 .message {
+    margin-top: 15px;
     border-top: 0.5px solid rgb(80, 80, 80);
-    padding: 20px 0px;
+    padding: 20px 0px 0px;
 
     display: flex;
     flex-direction: row;
@@ -77,14 +78,16 @@
     margin-left: 8px;
     margin-top: 4px;
 }
-.message-info > div:last-of-type {
+.message-info > div:last-of-type, .follow-message {
     color: rgb(194, 194, 194);
     font-size: 13px;
 }
 
 
 
-
+.follow-message {
+    margin-left: 50px;
+}
 
 
 
