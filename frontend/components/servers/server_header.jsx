@@ -19,15 +19,20 @@ const msp = (state, ownProps) => {
 class ServerHeader extends React.Component {
 
     handleAddChannel() {
-        $(".server-icon").toggleClass("upright rotate");
-        $(".server-inv-code").toggleClass("code-show code-hide")
+        return (e) => {
+            if (e.target.tagName === "path" || e.target.tagName === "svg" ) {
+                $(".server-icon").toggleClass("upright rotate");
+                $(".server-inv-code").toggleClass("code-show code-hide");
+                e.stopPropagation();
+            }
+        }
     }
 
     render() {
         return (
             <div className="server-header">
                 <div>{this.props.server.server_name}</div>
-                <div className="server-header-icon" onClick={this.handleAddChannel}><i className="fas fa-chevron-down fa-sm server-icon"></i>
+                <div className="server-header-icon" onClick={this.handleAddChannel()}><i className="fas fa-chevron-down fa-sm server-icon"></i>
                     <div className="server-inv-code code-hide">Invite code: 
                         <input type="text" defaultValue={this.props.server.inv_code}/>
                     </div>
