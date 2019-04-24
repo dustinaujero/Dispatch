@@ -26,6 +26,10 @@ class User < ApplicationRecord
     #message 
     has_many :messages, class_name: :Message, foreign_key: :user_id
 
+    #directs 
+    has_many :directs, through: :channel_memberships, source: :direct
+    has_many :dms, class_name: :Dm, foreign_key: :user_id
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil unless user && user.is_password?(password)
