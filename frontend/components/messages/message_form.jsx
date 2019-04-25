@@ -18,7 +18,10 @@ class MessageForm extends React.Component {
     }
 
     handleUpdate(field) {
-        return e => this.setState({[field]: e.target.value})
+        return e => {
+            this.setState({[field]: e.target.value});
+            App.cable.subscriptions.subscriptions[0].typing(this.state);
+        }
     }
 
     handleSubmit(e) {

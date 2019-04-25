@@ -6,100 +6,84 @@ class ChannelShow extends React.Component {
         super(props);
         this.state = { 
             messages: this.props.messages,
-            typing: false
+            typing: {typing: false}
         }
 
         // this.bottom = React.createRef();
         this.scrollToBottom = this.scrollToBottom.bind(this);
+        this.setupNewRoom = this.setupNewRoom.bind(this);
+        this.activeTyping = this.activeTyping.bind(this);
     }
     componentDidUpdate(prevProps) {
-        
         if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
-
             App.cable.subscriptions.subscriptions[0].unsubscribe();
-
-            App.cable.subscriptions.create(
-                { channel: `RoomChannel`, channel_id: this.props.match.params.channelId },
-                {
-                    received: data => {
-                        if(data.type === "msg") {
-                            this.setState({
-                                messages: this.state.messages.concat(data)
-                            });
-                            this.scrollToBottom();
-                        }
-                        else {
-                            this.setState({
-                                typing: true
-                            });
-                        }
-                    },
-                    speak: function (data) {
-                        return this.perform("speak", data);
-                    },
-                    typing: data => {
-                        return this.perform("typing", data);
-                    }
-                }
-            );
-            this.props.fetchMessages(this.props.match.params.channelId)
-
-            .then((action) => {
-                this.setState({
-                    messages: Object.values(action.messages)
-                });
-                return Object.values(action.messages);
-            })
-            
-            .then((messages) => {
-                if (messages.length >= 1) {
-                    this.scrollToBottom();
-                }
-            }
-            )
-            ;
-
+            this.setupNewRoom();
         }
     }
     scrollToBottom() {
         this.bottom.scrollIntoView(false);
     }
-    componentDidMount() {
+    setupNewRoom() {
         App.cable.subscriptions.create(
             { channel: `RoomChannel`, channel_id: this.props.match.params.channelId },
             {
                 received: data => {
-                    this.setState({
-                        messages: this.state.messages.concat(data)
-                    });
-                    this.scrollToBottom();
+                    if (data.type === "msg") {
+                        this.setState({
+                            messages: this.state.messages.concat(data)
+                        });
+                        this.scrollToBottom();
+                    }
+                    else {
+                        this.setState({
+                            typing: data
+                        }, () => setTimeout(() => { this.setState({ typing: { typing: false }}) }, 3000));
+                    }
                 },
                 speak: function (data) {
                     return this.perform("speak", data);
                 },
-                typing: data => {
+                typing: function (data) {
                     return this.perform("typing", data);
                 }
             }
 
         );
         this.props.fetchMessages(this.props.match.params.channelId)
-
         .then((action) => {
             this.setState({
                 messages: Object.values(action.messages)
             });
             return Object.values(action.messages);
         })
-
-        .then( (messages) => {
+        .then((messages) => {
             if (messages.length >= 1) {
                 this.scrollToBottom()
             }
-            }
-        )
+        });
+    }
+    componentDidMount() {
+        this.setupNewRoom();
+    }
+    activeTyping() {
+        debugger
+        if (this.state.typing.typing) {
+            debugger
+            return (
+                <div>
+                    someone is typing
+                    {this.state.typing.user_id}
+                </div>
+            )
+        }
+        else {
+            debugger
+            return (
+                <div>
 
-        ;
+                </div>
+            )
+        }
     }
     render() {
         const messageList = this.state.messages.map((message, i) => {
@@ -134,17 +118,31 @@ class ChannelShow extends React.Component {
                 </li>
             );
         });
-        return (
-            <div className="chatroom-container">
-                <div className="message-list">
-                    {messageList}
+        if (this.state.typing.typing) {
+            return (
+
+                <div className="chatroom-container">
+                    <div className="message-list">
+                        {messageList}
+                    </div>
+                    <div>
+                        someone is typing
+                    </div>
+                    <MessageForm />
                 </div>
-                <div className="typing">
-                    Someone is typing
+            );
+        }
+        else {
+            return (
+
+                <div className="chatroom-container">
+                    <div className="message-list">
+                        {messageList}
+                    </div>
+                    <MessageForm />
                 </div>
-                <MessageForm />
-            </div>
-        );
+            );
+        }
     }
 }
 
