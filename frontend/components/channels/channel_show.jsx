@@ -76,6 +76,9 @@ class ChannelShow extends React.Component {
     componentDidMount() {
         this.setupNewRoom();
     }
+    componentDidUnmount() {
+        App.cable.subscriptions.subscriptions[0].unsubscribe();
+    }
     render() {
         const messageList = this.state.messages.map((message, i) => {
             if (i >= 1) {
