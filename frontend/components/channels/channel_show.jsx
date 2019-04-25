@@ -5,13 +5,13 @@ class ChannelShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            messages: this.props.messages
+            messages: this.props.messages,
+            typing: false
         }
 
         // this.bottom = React.createRef();
         this.scrollToBottom = this.scrollToBottom.bind(this);
     }
-
     componentDidUpdate(prevProps) {
         
         if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
@@ -22,12 +22,23 @@ class ChannelShow extends React.Component {
                 { channel: `RoomChannel`, channel_id: this.props.match.params.channelId },
                 {
                     received: data => {
-                        this.setState({
-                            messages: this.state.messages.concat(data)
-                        });
+                        if(data.type === "msg") {
+                            this.setState({
+                                messages: this.state.messages.concat(data)
+                            });
+                            this.scrollToBottom();
+                        }
+                        else {
+                            this.setState({
+                                typing: true
+                            });
+                        }
                     },
                     speak: function (data) {
                         return this.perform("speak", data);
+                    },
+                    typing: data => {
+                        return this.perform("typing", data);
                     }
                 }
             );
@@ -42,7 +53,7 @@ class ChannelShow extends React.Component {
             
             .then((messages) => {
                 if (messages.length >= 1) {
-                    this.scrollToBottom()
+                    this.scrollToBottom();
                 }
             }
             )
@@ -61,9 +72,13 @@ class ChannelShow extends React.Component {
                     this.setState({
                         messages: this.state.messages.concat(data)
                     });
+                    this.scrollToBottom();
                 },
                 speak: function (data) {
                     return this.perform("speak", data);
+                },
+                typing: data => {
+                    return this.perform("typing", data);
                 }
             }
 
@@ -93,6 +108,7 @@ class ChannelShow extends React.Component {
                     return (
                         <li key={message.id} className="follow-message">
                             {message.body}
+                            <div ref={(el) => this.bottom = el} />
                         </li>
                     )
                 }
@@ -122,6 +138,9 @@ class ChannelShow extends React.Component {
             <div className="chatroom-container">
                 <div className="message-list">
                     {messageList}
+                </div>
+                <div className="typing">
+                    Someone is typing
                 </div>
                 <MessageForm />
             </div>
