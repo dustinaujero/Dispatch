@@ -18,6 +18,7 @@ class RoomChannel < ApplicationCable::Channel
       body: body
     })
     msg = {
+      type: "msg",
       id: message.id,
       user_id: sender.id,
       body: body, 
@@ -26,6 +27,20 @@ class RoomChannel < ApplicationCable::Channel
 
     channel = Channel.find(channel_id)
     RoomChannel.broadcast_to(channel, msg)
+  end
+
+  def typing(data)
+    typer = User.find_by(id: data['user_id'])
+    
+
+    payload = {
+      type: "type",
+      user_id: typer.id,
+      typing: true
+    }
+    channel_id = data['channel_id']
+    channel = Channel.find(channel_id)
+    RoomChannel.broadcast_to(channel, payload)
   end
 
   def unsubscribed
