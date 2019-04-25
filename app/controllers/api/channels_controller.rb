@@ -51,6 +51,21 @@ class Api::ChannelsController < ApplicationController
         render :all
     end
 
+    def dms
+        @dms = current_user.dms.includes(:members)
+        render :dms
+    end
+
+    def slide 
+        @dm = Channel.new({channel_name: params[:username]})
+        @dmee = User.find_by(username: params[:username])
+        if @dmee && @dm.save
+            render :slide
+        else
+            render json: ["Can't find user"], status: 404
+        end
+    end
+    
     private
 
     def channel_params
