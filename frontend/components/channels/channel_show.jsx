@@ -111,14 +111,16 @@ class ChannelShow extends React.Component {
         });
         if (this.state.typing.typing && this.state.typing.user_id !== this.props.currentUserId) {
             return (
+                <>
                 <div className="chatroom-container">
                     <div className="message-list">
                         {messageList}
                     </div>
-                    <div>
-                        {this.props.users[this.state.typing.user_id].username.split("#")[0]} is typing
-                    </div>
                 </div>
+                <div className="active-typing">
+                    {this.props.users[this.state.typing.user_id].username.split("#")[0]} is typing...
+                </div>
+                </>
             );
         }
         else {

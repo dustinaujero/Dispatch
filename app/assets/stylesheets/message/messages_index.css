@@ -4,7 +4,14 @@
     justify-content: space-between;
     height: calc(100% - 125px);
 }
-
+.active-typing {
+    position: absolute;
+    color: rgb(163, 163, 163);
+    bottom: 108px;
+    font-size: 12px;
+    left: 22px;
+    font-style: italic;
+}
 .message-list {
     overflow-y: auto;
     height: 100%;
