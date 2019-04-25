@@ -118,17 +118,15 @@ class ChannelShow extends React.Component {
                 </li>
             );
         });
-        if (this.state.typing.typing) {
+        if (this.state.typing.typing && this.state.typing.user_id !== this.props.currentUserId) {
             return (
-
                 <div className="chatroom-container">
                     <div className="message-list">
                         {messageList}
                     </div>
                     <div>
-                        someone is typing
+                        {this.props.users[this.state.typing.user_id].username.split("#")[0]} is typing
                     </div>
-                    <MessageForm />
                 </div>
             );
         }
@@ -139,7 +137,6 @@ class ChannelShow extends React.Component {
                     <div className="message-list">
                         {messageList}
                     </div>
-                    <MessageForm />
                 </div>
             );
         }

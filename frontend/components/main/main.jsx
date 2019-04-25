@@ -10,7 +10,7 @@ import ServerHeader from '../servers/server_header';
 import ChannelHeader from '../channels/channel_header';
 import ChannelShow from '../channels/channel_show_container';
 import UsersIndex from '../users/users_index';
-
+import MessageForm from '../messages/message_form';
 
 class Main extends React.Component {
 
@@ -80,6 +80,7 @@ class Main extends React.Component {
                                 <Route exact path="/channels/:serverId" component={() => (<div>No Channels :(</div>)} />
                                 <Route path="/channels/:serverId/:channelId" component={ChannelShow} />
                             </Switch>
+                            <Route path="/channels/:serverId/:channelId" component={MessageForm} />
                         </div>
                         <div className="users-show">
                             <Switch>

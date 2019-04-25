@@ -9,7 +9,8 @@ const msp = (state, ownProps) => (
         channelMessages: state.entities.channels[ownProps.match.params.channelId].messages,
         allMessages: state.entities.messages,
         messages: Object.values(state.entities.messages),
-        users: state.entities.users
+        users: state.entities.users,
+        currentUserId: state.session.user
     }
 )
 
