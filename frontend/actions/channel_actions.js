@@ -81,7 +81,7 @@ export const fetchDMs = () => dispatch => (
     )
 )
 
-export const createChannel = (username) => dispatch => (
+export const createDM = (username) => dispatch => (
     ChannelAPIUtil.createChannel(username).then(
         (channel) => dispatch(receiveChannel(channel)),
         (errors) => dispatch(receiveChannelErrors(errors.responseJSON))
