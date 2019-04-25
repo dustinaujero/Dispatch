@@ -73,3 +73,17 @@ export const deleteChannel = (id) => dispatch => (
         (errors) => dispatch(receiveChannelErrors(errors.responseJSON))
     )
 )
+
+export const fetchDMs = () => dispatch => (
+    ChannelAPIUtil.fetchDMs().then(
+        (channels) => dispatch(receiveChannels(channels)),
+        (errors) => dispatch(receiveChannelErrors(errors.responseJSON))
+    )
+)
+
+export const createChannel = (username) => dispatch => (
+    ChannelAPIUtil.createChannel(username).then(
+        (channel) => dispatch(receiveChannel(channel)),
+        (errors) => dispatch(receiveChannelErrors(errors.responseJSON))
+    )
+)
