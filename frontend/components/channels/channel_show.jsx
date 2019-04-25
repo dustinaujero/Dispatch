@@ -1,5 +1,6 @@
 import React from 'react';
 import MessageForm from '../messages/message_form';
+import { runInThisContext } from 'vm';
 
 class ChannelShow extends React.Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class ChannelShow extends React.Component {
         // this.bottom = React.createRef();
         this.scrollToBottom = this.scrollToBottom.bind(this);
         this.setupNewRoom = this.setupNewRoom.bind(this);
-        this.activeTyping = this.activeTyping.bind(this);
+        this.timer = null;
     }
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.channelId !== this.props.match.params.channelId) {
@@ -37,7 +38,17 @@ class ChannelShow extends React.Component {
                     else {
                         this.setState({
                             typing: data
-                        }, () => setTimeout(() => { this.setState({ typing: { typing: false }}) }, 3000));
+                        }, () => {
+                            if (this.timer) {
+                                clearTimeout(this.timer);
+                            }
+                            this.timer = setTimeout(() => {
+                                this.setState({ typing: { typing: false }});
+                                this.timer = null;
+                            }, 3000
+                            );
+                            
+                        });
                     }
                 },
                 speak: function (data) {
@@ -64,26 +75,6 @@ class ChannelShow extends React.Component {
     }
     componentDidMount() {
         this.setupNewRoom();
-    }
-    activeTyping() {
-        debugger
-        if (this.state.typing.typing) {
-            debugger
-            return (
-                <div>
-                    someone is typing
-                    {this.state.typing.user_id}
-                </div>
-            )
-        }
-        else {
-            debugger
-            return (
-                <div>
-
-                </div>
-            )
-        }
     }
     render() {
         const messageList = this.state.messages.map((message, i) => {
