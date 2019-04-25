@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     get '/servers/:id/invite', to: 'servers#getCode', as: 'server_getCode'
     post '/servers/invite', to: 'servers#join', as: 'server_join'
     get 'channels/all', to: 'channels#all', as: 'all_channels'
+    get 'channels/dms', to: 'channels#dms', as: 'dms'
+    post 'channels/slide', to: 'channels#slide', as: 'slide'
     resources :users, only: [:show, :create, :update]
     resource :session, only: [:create, :destroy]
     resources :servers, only: [:index, :show, :create, :update, :destroy] do 
