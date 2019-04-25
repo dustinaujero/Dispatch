@@ -24,6 +24,7 @@ class Api::DirectsController < ApplicationController
                 render json: ["ok"], status: 200
             else
                 render json: @direct.errors.full_messages, status: 422
+            end
         else
             render json: ["Can't find user"], status: 404
         end
