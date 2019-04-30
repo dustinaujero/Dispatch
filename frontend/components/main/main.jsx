@@ -10,7 +10,7 @@ import ServerHeader from '../servers/server_header';
 import ChannelHeader from '../channels/channel_header';
 import ChannelShow from '../channels/channel_show_container';
 import UsersIndex from '../users/users_index';
-import MessageForm from '../messages/message_form';
+import DMsIndexContainer from '../channels/dms/dms_index_container';
 
 class Main extends React.Component {
 
@@ -38,17 +38,7 @@ class Main extends React.Component {
                     </div>
                     <div className="secondary-main">
                         <Switch>
-                                <Route exact path="/channels/@me" component={() => (
-                                    <div className="channel-type">
-                                        <div>
-                                            <i className="fas fa-chevron-down fa-xs channelChev upright"></i>
-                                        </div>
-                                        <p>DIRECT MESSAGES</p>
-                                        <div className="addChannelDIV">
-                                            <svg className="addChannelSVG upright" width="18" height="18" viewBox="0 0 18 18"><polygon fillRule="nonzero" fill="currentColor" points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8"></polygon></svg>
-                                        </div>
-                                    </div>
-                                )} />
+                                <Route exact path="/channels/@me" component={DMsIndexContainer} />
                             <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
                             <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
                             <Route exact path="/channels/channels/:serverId" component={() => (<div>creating channel</div>)} />
