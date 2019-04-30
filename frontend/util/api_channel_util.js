@@ -38,7 +38,7 @@ export const deleteChannel = (id) => (
 export const createDM = (username) => {
     $.ajax({
         url: `/api/channels/slide`,
-        method: 'GET',
+        method: 'POST',
         data: {username}
     }) 
 }
