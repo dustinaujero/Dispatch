@@ -14,11 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.currentUser) {
         $.when(
             $.ajax({ method: "GET", url: "/api/servers" }),
-            $.ajax({ method: "GET", url: "/api/channels/all" })
-        ).done( (payload, channels) => {
+            $.ajax({ method: "GET", url: "/api/channels/all" }),
+            $.ajax({ method: 'GET', url: `/api/channels/dms` })
+        ).done( (payload, channels, dms) => {
             const state = {
                 session: { user: window.currentUser.id },
-                entities: { servers: payload[0].servers, channels: channels[0], users: merge({}, payload[0].users, {[window.currentUser.id]: window.currentUser}) }
+                entities: { servers: payload[0].servers, 
+                            users: merge({}, payload[0].users, {[window.currentUser.id]: window.currentUser}),
+                            channels: channels[0], 
+                            dms: merge({}, dms[0])
+                        }
             };
             const store = configureStore(state);
             delete window.currentUser;
