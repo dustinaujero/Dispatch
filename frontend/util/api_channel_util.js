@@ -35,16 +35,16 @@ export const deleteChannel = (id) => (
     })
 )
 
-export const createDM = (username) => {
+export const createDM = (username) => (
     $.ajax({
         url: `/api/channels/slide`,
         method: 'POST',
         data: {username}
     }) 
-}
-export const fetchDMs = () => {
+)
+export const fetchDMs = () => (
     $.ajax({
         url: `/api/channels/dms`,
         method: 'GET',
     })
-}
+)
