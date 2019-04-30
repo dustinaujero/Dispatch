@@ -5,7 +5,8 @@ import { createDM, fetchDMs } from '../../../actions/channel_actions';
 
 const msp = state => ({
     dms: Object.values(state.entities.dms),
-    users: state.entities.users
+    users: state.entities.users,
+    currentUser: state.session.user
 })
 
 const mdp = dispatch => ({
