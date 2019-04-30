@@ -52,7 +52,7 @@ class Api::ChannelsController < ApplicationController
     end
 
     def dms
-        @dms = current_user.dms.includes(:members)
+        @dms = current_user.dms.includes(:members, :messages)
         render :dms
     end
 
@@ -60,9 +60,11 @@ class Api::ChannelsController < ApplicationController
         @dm = Channel.new({channel_name: params[:username]})
         @dmee = User.find_by(username: params[:username])
         if @dmee && @dm.save
+            Membership.create!({user_id: @dmee.id, channel_id: @dm.id})
+            Membership.create!({user_id: current_user.id, channel_id: @dm.id})
             render :slide
         else
-            render json: ["Can't find user"], status: 404
+            render json: @dm.errors.full_messages, status: 404
         end
     end
     
