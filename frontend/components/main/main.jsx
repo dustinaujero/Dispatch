@@ -80,10 +80,6 @@ class Main extends React.Component {
                                 <Route exact path="/channels/:serverId" component={() => (<div>No Channels :(</div>)} />
                                 <Route path="/channels/:serverId/:channelId" component={ChannelShow} />
                             </Switch>
-<<<<<<< HEAD
-                            
-=======
->>>>>>> 8a12bbe6175c8de95b6b4b4e96c03fa8033e086a
                         </div>
                         <div className="users-show">
                             <Switch>
