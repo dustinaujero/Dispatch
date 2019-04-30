@@ -4,9 +4,9 @@
         json.messages do
             json.array! channel.messages.ids
         end
-    end
-    json.users do 
-        json.array! channel.members.ids
+        json.users do 
+            json.array! channel.members.ids
+        end
     end
 end
 

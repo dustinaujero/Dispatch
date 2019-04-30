@@ -1,4 +1,7 @@
-json.extract! @channel, :id
+json.extract! @dm, :id
 json.messages do
-    json.array! @channel.messages.ids
+    json.array! @dm.messages.ids
+end
+json.users do 
+    json.array! @dm.members.ids
 end
