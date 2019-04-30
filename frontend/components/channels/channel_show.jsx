@@ -1,7 +1,5 @@
 import React from 'react';
 import MessageForm from '../messages/message_form';
-import { runInThisContext } from 'vm';
-
 class ChannelShow extends React.Component {
     constructor(props) {
         super(props);
@@ -128,12 +126,14 @@ class ChannelShow extends React.Component {
         }
         else {
             return (
-
+                <>
                 <div className="chatroom-container">
                     <div className="message-list">
                         {messageList}
                     </div>
                 </div>
+                <MessageForm />
+                </>
             );
         }
     }
