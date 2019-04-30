@@ -125,12 +125,14 @@ class ChannelShow extends React.Component {
         }
         else {
             return (
-
+                <>
                 <div className="chatroom-container">
                     <div className="message-list">
                         {messageList}
                     </div>
                 </div>
+                <MessageForm />
+                </>
             );
         }
     }
