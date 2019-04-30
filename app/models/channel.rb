@@ -2,7 +2,7 @@ class Channel < ApplicationRecord
 
     validates :channel_name, presence: true 
 
-    belongs_to :server, class_name: :Server, foreign_key: :server_id
+    belongs_to :server, class_name: :Server, foreign_key: :server_id, optional: true
     has_many :messages, class_name: :Message, foreign_key: :channel_id 
     has_many :aliases, class_name: :Nickname, foreign_key: :channel_id
 
