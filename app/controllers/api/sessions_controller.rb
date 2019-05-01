@@ -8,7 +8,6 @@ class Api::SessionsController < ApplicationController
             owned_servers = current_user.owned_servers.includes(:users, :channels)
             @all_servers = servers.to_a.concat(owned_servers.to_a)
             @dms = current_user.dms.includes(:members, :messages)
-            debugger
             render :payload
         else
             erArr = ["Invalid email or password"]
