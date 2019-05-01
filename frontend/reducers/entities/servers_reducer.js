@@ -1,4 +1,5 @@
 import { RECEIVE_SERVERS, RECEIVE_SERVER, REMOVE_SERVER } from "../../actions/server_actions";
+import { LOGIN_CURRENT_USER } from '../../actions/session_actions';
 import { merge } from 'lodash';
 
 const serversReducer = (state = {}, action) => {
@@ -16,6 +17,9 @@ const serversReducer = (state = {}, action) => {
             const newState = merge({}, state);
             delete newState[action.serverId];
             return newState
+        }
+        case LOGIN_CURRENT_USER: {
+            return merge({}, state, action.payload.servers);
         }
         default: return state;
     }

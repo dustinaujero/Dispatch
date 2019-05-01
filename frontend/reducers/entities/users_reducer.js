@@ -7,13 +7,13 @@ const userReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case LOGIN_CURRENT_USER: {  
-            return merge({}, state, {[action.user.id]: action.user})
+            return merge({}, state, action.payload.dmers, action.payload.users);
         }
         case LOGOUT_CURRENT_USER: {
             return {};
         }
         case RECEIVE_SERVERS: {
-            return merge({}, state, action.payload.users)
+            return merge({}, state, action.payload.users);
         }
         default: return state;
     }

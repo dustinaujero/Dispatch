@@ -6,10 +6,10 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 
-export const loginCurrentUser = (user) => {
+export const loginCurrentUser = (payload) => {
     return {
         type: LOGIN_CURRENT_USER,
-        user
+        payload
     };
 }
 

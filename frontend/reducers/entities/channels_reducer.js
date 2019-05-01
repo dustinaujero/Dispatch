@@ -1,4 +1,5 @@
 import { RECEIVE_CHANNEL, RECEIVE_CHANNELS, REMOVE_CHANNEL} from "../../actions/channel_actions";
+import { LOGIN_CURRENT_USER } from '../../actions/session_actions';
 import { merge } from 'lodash';
 
 const channelsReducer = (state = {}, action) => {
@@ -15,7 +16,10 @@ const channelsReducer = (state = {}, action) => {
         case REMOVE_CHANNEL: {
             const newState = merge({}, state);
             delete newState[action.channelId];
-            return newState
+            return newState;
+        }
+        case LOGIN_CURRENT_USER: {
+            return merge({}, state, action.payload.channels);
         }
         default: return state;
     }
