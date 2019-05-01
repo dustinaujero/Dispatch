@@ -74,7 +74,7 @@ class ChannelShow extends React.Component {
     componentDidMount() {
         this.setupNewRoom();
     }
-    componentDidUnmount() {
+    componentWillUnmount() {
         App.cable.subscriptions.subscriptions[0].unsubscribe();
     }
     render() {
