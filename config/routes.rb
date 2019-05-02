@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get 'channels/all', to: 'channels#all', as: 'all_channels'
     resources :users, only: [:show, :create, :update]
     resource :session, only: [:create, :destroy]
+    resources :calls, only: [:create]
     resources :servers, only: [:index, :show, :create, :update, :destroy] do 
       resources :channels, only: [:index, :create]
     end
