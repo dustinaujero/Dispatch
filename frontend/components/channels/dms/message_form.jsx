@@ -54,7 +54,7 @@ class MessageForm extends React.Component {
                         type="text"
                         value={this.state.body}
                         onChange={this.handleUpdate("body")}
-                        placeholder={`Message #${otherUsers}`}
+                        placeholder={`Message @${otherUsers}`}
                     />
                 </form>
             </div>

@@ -12,7 +12,7 @@ import ChannelShow from '../channels/channel_show_container';
 import UsersIndex from '../users/users_index';
 import DMsIndexContainer from '../channels/dms/dms_index_container';
 import DMShow from '../channels/dms/dms_show_container';
-
+import DMHeader from '../channels/dms/dms_header';
 class Main extends React.Component {
 
 
@@ -54,7 +54,8 @@ class Main extends React.Component {
                 <div className="third">
                     <div className="third-header">
                         <Switch>
-                            <Route path="/channels/@me/" component={() => (<div></div>)} />
+                            <Route exact path="/channels/@me/" component={() => (<div></div>)} />
+                            <Route exact path="/channels/@me/:dmId" component={DMHeader} />
                             <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
                             <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
                             <Route exact path="/channels/channels/:serverId" component={() => (<div>creating channel</div>)} />
