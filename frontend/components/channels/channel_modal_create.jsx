@@ -42,7 +42,6 @@ class ChannelModalCreate extends React.Component {
                 this.props.fetchServers().then(() => this.props.history.push(`/channels/${channel.server_id}/${channel.id}`))
             } 
         );
-        // this.props.createChannel(this.props.serverId, this.state).then(({channel}) => this.props.history.push(`/channels/${channel.server_id}/${channel.id}`));
     }
     render() {
         let error = ""
@@ -50,7 +49,7 @@ class ChannelModalCreate extends React.Component {
             error = " - This field is required"
         }
         return (
-            <div className="loading" onClick={this.handleClick()}>
+            <div className="modal-bg" onClick={this.handleClick()}>
                 <div className="ch-modal">
                     <div className="ch-modal-header">
                         <div>

@@ -51,7 +51,7 @@ class ServerModalJoin extends React.Component {
             error = " - Invalid invite code"
         }
         return (
-            <div className="loading" onClick={this.handleClick()}>
+            <div className="modal-bg" onClick={this.handleClick()}>
                 <div className="server-alt-modal" >
                     <div className="server-join-top">JOIN A SERVER</div>
                     <div className="server-join-header">Enter an Instant Invite below to join an existing server. The invite will look something like this:</div>

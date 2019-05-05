@@ -15,7 +15,6 @@ class ServerModal extends React.Component {
 
         this.handleClick = this.handleClick.bind(this);
     }
-                    // HOW TO GET History.LOCATION.PATHNAME
     handleClick() {                     
         return (e) => {
             if (typeof e.target.classList[1] === "undefined") {
@@ -24,28 +23,12 @@ class ServerModal extends React.Component {
                 this.props.history.push(`/channels/servers/${e.target.classList[1]}`);
             }
         };
-        // return (e) => {
-        //     if (e.target === e.currentTarget) {
-
-        //     }
-        // }
     }
-    // handleExit() {
-    //     return (e) => {
-    //         debugger
-    //         if (e.target.classList[1] === "create" || e.target.classList[1] === "join") {
-
-    //         } else {
-    //             $(".loading").css("visibility", "hidden");
-    //             this.props.history.goBack();
-    //         }
-    //     };
-    // }
     render() {
         return (
             <Switch>
                 <Route exact path="/channels/servers" component={() => 
-                    <div className="loading" onClick={this.handleClick()}>
+                    <div className="modal-bg" onClick={this.handleClick()}>
                         <div className="server-modal" >
                             <div className="saction-area">
                                 <div className="saction-create create"onClick={this.handleClick("create")}>
@@ -60,7 +43,6 @@ class ServerModal extends React.Component {
                 }/>
                 <Route exact path="/channels/servers/create" component={ServerModalCreate} />
                 <Route exact path="/channels/servers/join" component={ServerModalJoin} />
-
             </Switch> 
         )
     }

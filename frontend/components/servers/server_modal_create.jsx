@@ -26,13 +26,6 @@ class ServerModalCreate extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick() {
-        // return (e) => {
-        //     if (typeof e.target.classList[1] === "undefined") {
-        //         this.props.history.push("/channels/@me");
-        //     } else {
-        //         this.props.history.push(`/channels/servers/${e.target.classList[1]}`);
-        //     }
-        // };
         return (e) => {
             if (e.target === e.currentTarget) {
                 this.props.history.goBack();
@@ -59,7 +52,7 @@ class ServerModalCreate extends React.Component {
             error = " - Server name can't be blank"
         }
         return (
-            <div className="loading" onClick={this.handleClick()}>
+            <div className="modal-bg" onClick={this.handleClick()}>
                 <div className="server-alt-modal" >
                     <div className="server-modal-top">
                         <div>CREATE YOUR SERVER</div>
