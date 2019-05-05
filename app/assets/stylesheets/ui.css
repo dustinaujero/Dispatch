@@ -1,0 +1,26 @@
+.wumpus-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 50px);
+}
+.wumpus-info {
+    filter: blur(0.28px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: rgb(206, 206, 206);
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.wumpus-info a{
+    text-decoration: underline;
+    color: inherit;
+}
+.wumpus-info svg {
+    margin-left: 5px;
+}
+.wumpus-info div a {
+    text-decoration: none;
+}
