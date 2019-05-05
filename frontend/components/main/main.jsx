@@ -68,8 +68,7 @@ class Main extends React.Component {
                     <div className="third-body">
                         <div className="third-main">
                             <Switch>
-                                {/* <Route exact path="/channels/@me" component={Wumpus} /> */}
-                                <Route exact path="/channels/@me" component={UserSearch} />
+                                <Route exact path="/channels/@me" component={Wumpus} />
                                 <Route path="/channels/@me/:dmId/" component={DMShow} />
                                 <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
                                 <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />

@@ -1,9 +1,13 @@
 import React from 'react';
-
+import UserSearch from './dm_modal';
 class DMsIndex extends React.Component {
 
     constructor(props){
         super(props);
+
+        this.state = {
+            newDM: false
+        };
 
         this.handleNewDM = this.handleNewDM.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
@@ -22,7 +26,7 @@ class DMsIndex extends React.Component {
         this.props.history.push(`/channels/@me/${dmId}`);
     }
     handleNewDM() {
-
+        this.setState({newDM: true});
     }
     render() {
         const dms = this.props.dms.map(dm => {
@@ -35,19 +39,20 @@ class DMsIndex extends React.Component {
         });
 
         return (
-            <>
+            <>  
                 <div className="channel-type">
                     <div onClick={() => this.handleCollapseChannels()}>
                         <i className="fas fa-chevron-down fa-xs channelChev upright"></i>
                     </div>
                     <p>DIRECT MESSAGES</p>
-                    <div onClick={() => this.handleAddChannel()} className="addChannelDIV">
+                    <div onClick={() => this.handleNewDM()} className="addChannelDIV">
                         <svg className="addChannelSVG upright" width="18" height="18" viewBox="0 0 18 18"><polygon fillRule="nonzero" fill="currentColor" points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8"></polygon></svg>
                     </div>
                 </div>
                 <ul className="channel-index show">
                     {dms}
                 </ul>
+                {this.state.newDM ? <UserSearch parent={this} /> : <div></div>}
             </>
         );
     }
