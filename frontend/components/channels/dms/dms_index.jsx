@@ -1,5 +1,5 @@
 import React from 'react';
-import UserSearch from './dm_modal';
+import UserSearch from './quick_switcher';
 class DMsIndex extends React.Component {
 
     constructor(props){
