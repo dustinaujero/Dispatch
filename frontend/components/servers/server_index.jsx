@@ -42,13 +42,11 @@ class ServerIndex extends React.Component {
                                 }).join("")
                             }</p>
                         </div>
-                        <div className="server-li-stick">
-                            <div className="s-list-item-info">
-                                {server.server_name}
-                            </div>
-                            <div className="currServer">
+                        <div className="s-list-item-info">
+                            <div>{server.server_name}</div>
+                        </div>
+                        <div className="currServer">
 
-                            </div>
                         </div>
                     </li>
                 )
@@ -58,13 +56,11 @@ class ServerIndex extends React.Component {
                     <li key={server.id}>
                         <input type="radio" name="something" onClick={() => this.handleSelect(server)}/>
                         <img src={server.img_url} />
-                        <div className="server-li-stick">
-                            <div className="s-list-item-info">
-                                {server.server_name}
-                            </div>
-                            <div className="currServer">
+                        <div className="s-list-item-info">
+                            <p>{server.server_name}</p>
+                        </div>
+                        <div className="currServer">
 
-                            </div>
                         </div>
                     </li>
                 )

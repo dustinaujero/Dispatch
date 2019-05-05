@@ -1,6 +1,4 @@
 .server-list {
-    /* overflow-y: scroll; */
-    /* width: 73px; */
     width: 73px;
     height: 100vh;
     overflow: visible;
@@ -10,14 +8,14 @@
 
     display: flex;
     background-color: #202225;
-    /* background-color: green; */
+
     flex-direction: column;
     align-content: flex-end;
-    /* margin: 0px 20px 0px 0px; */
+
     margin: 0;
     flex-grow: 0;
     flex-shrink: 0;
-    /* overflow-x: visible; */
+
 }
 @keyframes serverHover {
     0%{
@@ -100,8 +98,6 @@
     overflow: visible;
     margin: 0px;
     z-index: 10;
-
-    overflow-y: scroll;
     height: 100vh;
 }
 .server-list .server-list-main::-webkit-scrollbar { 
@@ -157,12 +153,10 @@
    border-radius: 14px;
 }
 .server-list .server-list-main ul li input:checked ~ div > .currServer {
-    /* display: block; */
     height: 40px;
     transition-duration: 0.3s;
 }
 .currServer {
-    /* display: none; */
     position: absolute;
     width: 10px;
     height: 0px;
@@ -217,9 +211,8 @@
     display: none;
     position: absolute;
     width: auto;
-    bottom: 22px;
-    /* left: 60px; */
-    left: 80px;
+    bottom: 18px;
+    left: 65px;
     color: white;
     background-color: black;
     padding: 5px;
@@ -228,6 +221,9 @@
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: 0.5px;
     z-index: 10;
+}
+.server-list .server-list-main .s-list-item-info div {
+    white-space: nowrap;
 }
 
 .server-list .server-list-main button {
