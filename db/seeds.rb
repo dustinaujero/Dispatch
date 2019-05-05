@@ -53,4 +53,6 @@ Userserver.create({user_id: ruby.id, server_id: serverFour.id})
 uhhh = Channel.create({channel_name:"check the message", server_id: serverFour.id})
 Message.create({user_id: ruby.id, channel_id: uhhh.id, body: "check A06"})
 
-
+dm = Channel.create({channel_name:"dm",})
+Membership.create!({user_id: demo.id, channel_id: dm.id})
+Membership.create!({user_id: demo1.id, channel_id: dm.id})
