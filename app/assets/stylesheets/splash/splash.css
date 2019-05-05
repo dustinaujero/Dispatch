@@ -4,8 +4,6 @@
     justify-content: center;
     position: relative;
 }
-
-
 .splash-header {
     padding: 8px 0px;
     color: rgb(223, 223, 223);
@@ -23,14 +21,6 @@
     justify-content: space-between;
     width: 1700px;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -65,14 +55,6 @@
 .left-nav .pg-div {
     position: relative;
 }
-
-
-
-
-
-
-
-
 .left-nav .splash-dropdwn {
     display: none;
     position: absolute;
@@ -81,10 +63,8 @@
     border-radius: 10px;
     width: 160px;
     overflow: hidden;
-    /* background-color: rgba(0, 0, 0, 0.55); */
     background-color: rgb(238, 238, 238);
     color: gray;
-
 }
 .left-nav .pg-div:hover .splash-dropdwn {
     display: block;
@@ -98,14 +78,6 @@
 .left-nav .splash-dropdwn a:hover {
     background-color: rgb(207, 207, 207);
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -123,16 +95,6 @@
     text-decoration: none;
     color: inherit;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

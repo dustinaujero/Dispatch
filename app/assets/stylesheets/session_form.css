@@ -87,11 +87,6 @@
     font-size: 26px;
     font-weight: 300;
     margin-bottom: 10px;
-    /* text-shadow:
-		-0.05px -0.05px 0 #727981,
-		0.05px -0.05px 0 #727981,
-		-0.05px 0.05px 0 #727981,
-		0.05px 0.05px 0 #727981; */
 }
 .session-form > div:nth-of-type(2){
     color: #72767d;

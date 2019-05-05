@@ -52,11 +52,6 @@
     height: 35px;
     width: 35px;
 }
-/* .message-image img {
-    height: 30px;
-    width: 30px;
-    
-} */
 .message img {
     border-radius: 50%;
     height: 35px;
@@ -109,7 +104,6 @@
 
 .message-form {
     border-top: 0.5px solid rgb(80, 80, 80);
-    /* background-color: red; */
     width: 100%;
     height: 55px;
 

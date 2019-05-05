@@ -70,8 +70,6 @@
     color: white;
 }
 
-
-
 .server-alt-modal {
     background-color: white;
     width: 540px;
@@ -104,21 +102,11 @@
     font-weight: 440;
     line-height: 20px;
 }   
-
-
-
-
-
-
-
 .server-modal-middle {
     display: flex;
     flex-direction: row;
     width: 450px;
-
     height: 200px;
-
-
 }
 .server-modal-middle > div:first-of-type {
     display: flex;
@@ -222,29 +210,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .server-modal-bottom {
     width: 540px;
     display: flex;
@@ -277,44 +242,8 @@
     padding: 10px 30px;
 }
 
-/* SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN  
-SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN  */
-/* SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN  
-SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN  */
-/* SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN  
-SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN  */
-/* SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN  
-SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN  */
-/* SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN  
-SERVER JOIN 
-SERVER JOIN 
-SERVER JOIN  */
 .server-join-top {
     color: #43B581;
-    /* background-color: yellow; */
     padding: 25px 0px 20px;
     font-weight: bold;
     font-size: 18px;
@@ -322,7 +251,6 @@ SERVER JOIN  */
 }
 .server-join-header {
     color: #99AAB5;
-    /* background-color: blue; */
     height: 50px;
     text-align: center;
     padding-top: 10px;
@@ -332,7 +260,6 @@ SERVER JOIN  */
 }
 .server-join-body {
     color: #7289DA;
-    /* background-color: red; */
     width: 100%;
     text-align: center;
     margin-top: 10px;
@@ -342,9 +269,7 @@ SERVER JOIN  */
 }
 
 .server-join-form {
-    /* background-color: red; */
     height: 230px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
