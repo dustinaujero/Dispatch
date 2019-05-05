@@ -13,6 +13,7 @@ class UserSearch extends React.Component {
         this.handleUpdate = this.handleUpdate.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
         this.handleExit = this.handleExit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
     handleUpdate() {
         return e => {
@@ -50,6 +51,13 @@ class UserSearch extends React.Component {
     handleExit() {
         this.props.parent.setState({newDM: false});
     }
+    handleClick() {
+        return(e) => {
+            if (e.target === e.currentTarget) {
+                this.handleExit();
+            }
+        }
+    }
     render() {
         const res = this.state.results.map(user => (
             <li key={user.id}>
@@ -57,7 +65,7 @@ class UserSearch extends React.Component {
             </li>
         ));
         return (
-            <div className="modal-bg">
+            <div className="modal-bg" onClick={this.handleClick()}>
                 <div className="quick-switch">
                     <div>Search for servers, channels, or DMs</div>
                     <div>
@@ -80,7 +88,6 @@ class UserSearch extends React.Component {
                             </>
                         }
                         <button className="hidden-button"></button>
-                        <button onClick={this.handleExit}>exit2</button>
                     </div>
                 </div>
             </div>
