@@ -14,6 +14,7 @@ import DMsIndexContainer from '../channels/dms/dms_index_container';
 import DMShow from '../channels/dms/dms_show_container';
 import DMHeader from '../channels/dms/dms_header';
 import Wumpus from '../ui/wumpus';
+import UserSearch from '../channels/dms/dm_modal';
 class Main extends React.Component {
 
 
@@ -67,7 +68,8 @@ class Main extends React.Component {
                     <div className="third-body">
                         <div className="third-main">
                             <Switch>
-                                <Route exact path="/channels/@me" component={Wumpus} />
+                                {/* <Route exact path="/channels/@me" component={Wumpus} /> */}
+                                <Route exact path="/channels/@me" component={UserSearch} />
                                 <Route path="/channels/@me/:dmId/" component={DMShow} />
                                 <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
                                 <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />

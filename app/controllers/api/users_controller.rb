@@ -1,4 +1,14 @@
 class Api::UsersController < ApplicationController
+
+    def index
+        if params[:username].length > 0
+            @users = User.where("username LIKE ?", "#{params[:username]}%")
+            render :search
+        else 
+            render json: [], status: 200
+        end
+    end
+
     def create
         @user = User.new(user_params)
         if @user.save
