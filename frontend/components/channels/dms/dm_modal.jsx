@@ -47,7 +47,8 @@ class UserSearch extends React.Component {
             </li>
         ));
         return (
-            <div className="">
+            // <div className="loading">
+            <div className="modal-bg">
                 <div>USER SEARCH</div>
                 <input type="text" value={this.state.input} onChange={this.handleUpdate()} autoFocus/>
                 {this.state.input.length === 0 ? 

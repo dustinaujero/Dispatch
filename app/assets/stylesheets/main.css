@@ -64,7 +64,6 @@
     width: 240px;
     height: 100%;
     overflow: visible;
-    z-index: 5;
 }
 .secondary .secondary-main ul {
     list-style: none;
@@ -283,9 +282,10 @@
 }
 
 .loading {
-    position: absolute;
+    position: sticky;
     height: 100vh;
     width: 100vw;
+    top: 0px;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 50;
 }
