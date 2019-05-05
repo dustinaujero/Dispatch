@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
 
     def index
         if params[:username].length > 0
-            @users = User.where("username LIKE ?", "#{params[:username]}%")
+            @users = User.where("username ILIKE ?", "#{params[:username]}%")
             render :search
         else 
             render json: [], status: 200
