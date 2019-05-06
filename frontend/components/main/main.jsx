@@ -69,10 +69,10 @@ class Main extends React.Component {
                             <Switch>
                                 <Route exact path="/channels/@me" component={Wumpus} />
                                 <Route path="/channels/@me/:dmId/" component={DMShow} />
-                                <Route exact path="/channels/servers" component={() => (<div>server actions</div>)} />
-                                <Route exact path="/channels/servers/:type" component={() => (<div>server tings</div>)} />
-                                <Route exact path="/channels/channels/:serverId" component={() => (<div>creating channel</div>)} />
-                                <Route exact path="/channels/:serverId" component={() => (<div>No Channels :(</div>)} />
+                                <Route exact path="/channels/servers" component={Wumpus} />
+                                <Route exact path="/channels/servers/:type" component={Wumpus} />
+                                <Route exact path="/channels/channels/:serverId" component={Wumpus} />
+                                <Route exact path="/channels/:serverId" component={Wumpus} />
                                 <Route path="/channels/:serverId/:channelId" component={ChannelShow} />
                             </Switch>
                         </div>
