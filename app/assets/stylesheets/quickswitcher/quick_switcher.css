@@ -28,6 +28,7 @@
     border-radius: 5px;
     padding: 20px;
     width: 550px;
+    color: white;
 }
 .quick-switch > div:last-of-type input {
     outline: none;
