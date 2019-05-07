@@ -1,6 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-class UserSearch extends React.Component {
+class QuickSwitcher extends React.Component {
     constructor(props) {
         super(props);
 
@@ -33,20 +34,33 @@ class UserSearch extends React.Component {
                 ));
             }
             //CHANNELS
-            else if (this.state.input.split("")[0] === "!") {
-                this.setState({ input: e.target.value, type: "channels" });
+            else if (this.state.input.split("")[0] === "#") {
+                this.setState({ input: e.target.value, type: "channels", results: Object.values(this.props.channels) });
             }
             //SERVERS
             else if (this.state.input.split("")[0] === "*") { 
-                this.setState({ input: e.target.value, type: "servers" });
+                this.setState({ input: e.target.value, type: "servers", results: Object.values(this.props.servers) });
             }
             else {
                 this.setState({ input: e.target.value, type: "something" });
             }
         }
     }
-    handleSelect() {
+    handleSelect(data) {
+        switch(this.state.type) {
+            case "users": {
 
+                break;
+            }
+            case "channels": {
+
+                break;
+            }
+            case "servers": {
+
+                break;
+            }
+        }
     }
     handleExit() {
         this.props.parent.setState({newDM: false});
@@ -59,11 +73,34 @@ class UserSearch extends React.Component {
         }
     }
     render() {
-        const res = this.state.results.map(user => (
-            <li key={user.id}>
-                {user.username}
-            </li>
-        ));
+        let res;
+        switch (this.state.type) {
+            case "users": {
+                res = this.state.results.map(user => (
+                    <li key={user.id}>
+                        {user.username}
+                    </li>
+                ));
+                break;
+            }
+            case "channels": {
+                res = this.state.results.map(channel => (
+                    <li key={channel.id}>
+                        {channel.channel_name}
+                    </li>
+                ));
+                break;
+            }
+            case "servers": {
+                res = this.state.results.map(server => (
+                    <li key={server.id}>
+                        {server.server_name}
+                    </li>
+                ));
+                break;
+            }
+        }
+        
         return (
             <div className="modal-bg" onClick={this.handleClick()}>
                 <div className="quick-switch">
@@ -94,4 +131,13 @@ class UserSearch extends React.Component {
         )
     }
 }
-export default UserSearch;
+
+const msp = state => ({
+    channels: state.entities.channels,
+    servers: state.entities.servers
+});
+const mdp = dispatch => ({
+
+});
+
+export default connect(msp, mdp)(QuickSwitcher);
