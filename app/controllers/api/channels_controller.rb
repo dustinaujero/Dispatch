@@ -67,6 +67,15 @@ class Api::ChannelsController < ApplicationController
             render json: @dm.errors.full_messages, status: 404
         end
     end
+
+    def find
+        if params[:channel_name].length > 0
+            @channels = Channel.where("channel_name ILIKE ?", "#{params[:channel_name]}%")
+            render :search
+        else 
+            render json: [], status: 200
+        end
+    end
     
     private
 
