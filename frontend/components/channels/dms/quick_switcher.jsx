@@ -102,7 +102,7 @@ class QuickSwitcher extends React.Component {
             case "channels": {
                 res = this.state.results.map(channel => (
                     <li key={channel.id}>
-                        {channel.channel_name}
+                        {this.props.servers[channel.server_id].server_name}:{channel.channel_name}
                     </li>
                 ));
                 break;
