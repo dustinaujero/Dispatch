@@ -19,7 +19,20 @@ class QuickSwitcher extends React.Component {
     handleUpdate() {
         return e => {
             if (this.state.input.length === 0) {
-                this.setState({input: e.target.value, type: "something"});
+                switch(e.target.value) {
+                    case "@": {
+                        this.setState({ input: e.target.value, type: "users" });
+                        break;
+                    } 
+                    case "#": {
+                        this.setState({ input: e.target.value, type: "channels" });
+                        break;
+                    }   
+                    case "*": {
+                        this.setState({ input: e.target.value, type: "servers" });
+                        break;
+                    }
+                }
             }
             //USERS
             else if (this.state.input.split("")[0] === "@") {
@@ -57,9 +70,22 @@ class QuickSwitcher extends React.Component {
                     })
                 ));
             }
-            else {
-                this.setState({ input: e.target.value, type: "something" });
-            }
+            // else {
+            //     switch (this.state.type) {
+            //         case "users": {
+
+            //             break;
+            //         }
+            //         case "channels": {
+
+            //             break;
+            //         }
+            //         case "servers": {
+
+            //             break;
+            //         }
+            //     }
+            // }
         }
     }
     handleSelect(data) {
