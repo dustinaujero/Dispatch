@@ -75,6 +75,14 @@ class Api::ServersController < ApplicationController
         end
     end
 
+    def find
+        if params[:server_name].length > 0
+            @servers = User.where("server_name ILIKE ?", "#{params[:server_name]}%")
+            render :search
+        else 
+            render json: [], status: 200
+        end
+    end
     private
 
     def server_params
