@@ -45,3 +45,13 @@
 .hidden-button {
     visibility: hidden;
 }
+.qs-results-ul{
+    padding: 0px;
+}
+.qs-channel-li {
+    display: flex;
+    justify-content: space-between;
+}
+.qs-channel-li div {
+    margin: 0px;
+}
