@@ -1,0 +1,1 @@
+json.array! @servers, :id, :server_name

@@ -1,0 +1,1 @@
+json.array! @channels, :id, :channel_name, :server_id
