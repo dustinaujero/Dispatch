@@ -35,11 +35,27 @@ class QuickSwitcher extends React.Component {
             }
             //CHANNELS
             else if (this.state.input.split("")[0] === "#") {
-                this.setState({ input: e.target.value, type: "channels", results: Object.values(this.props.channels) });
+                this.setState({ input: e.target.value, type: "channels"}, () => (
+                    $.ajax({
+                        method: "GET",
+                        url: "/api/channels/find",
+                        data: { channel_name: this.state.input.split("").slice(1).join("") }
+                    }).then( channels => {
+                        this.setState({ results: channels });
+                    })
+                ));
             }
             //SERVERS
             else if (this.state.input.split("")[0] === "*") { 
-                this.setState({ input: e.target.value, type: "servers", results: Object.values(this.props.servers) });
+                this.setState({ input: e.target.value, type: "servers" }, () => (
+                    $.ajax({
+                        method: "GET",
+                        url: "/api/servers/find",
+                        data: { server_name: this.state.input.split("").slice(1).join("") }
+                    }).then( servers => {
+                        this.setState({ results: servers });
+                    })
+                ));
             }
             else {
                 this.setState({ input: e.target.value, type: "something" });
