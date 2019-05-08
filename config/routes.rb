@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'channels/dms', to: 'channels#dms', as: 'dms'
     post 'channels/slide', to: 'channels#slide', as: 'slide'
     get 'channels/find', to: 'channels#find', as: 'channels_qs'
-    get 'servers/find', to: 'channels#find', as: 'servers_qs'
+    get 'servers/find', to: 'servers#find', as: 'servers_qs'
     resources :users, only: [:index, :show, :create, :update]
     resource :session, only: [:create, :destroy]
     resources :servers, only: [:index, :show, :create, :update, :destroy] do 
