@@ -101,7 +101,7 @@ class QuickSwitcher extends React.Component {
                 break;
             }
             case "servers": {
-                // this.props.history.push(`/channels/${data.id}/${this.props.servers[data.id].channels[0]}`);
+                this.props.history.push(`/channels/${data.id}/${this.props.servers[data.id].channels[0]}`);
                 break;  
             }
         }
