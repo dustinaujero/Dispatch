@@ -71,22 +71,6 @@ class QuickSwitcher extends React.Component {
                     })
                 ));
             }
-            // else {
-            //     switch (this.state.type) {
-            //         case "users": {
-
-            //             break;
-            //         }
-            //         case "channels": {
-
-            //             break;
-            //         }
-            //         case "servers": {
-
-            //             break;
-            //         }
-            //     }
-            // }
         }
     }
     handleSelect(data) {
