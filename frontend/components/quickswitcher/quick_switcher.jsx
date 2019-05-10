@@ -91,7 +91,7 @@ class QuickSwitcher extends React.Component {
         }
     }
     handleExit() {
-        this.props.parent.setState({newDM: false});
+        this.props.parent.setState({qs: false});
     }
     handleClick() {
         return(e) => {
@@ -145,9 +145,9 @@ class QuickSwitcher extends React.Component {
                             <div>
                                 <div>Don't know how to use the Quick Switcher?</div>
                                 <ul>
-                                    <li>@ to search for users</li>
-                                    <li># to search for text channels (not yet working)</li>
-                                    <li>* to search for servers (not yet working)</li>
+                                    <li>@ to search for users (not fully functional)</li>
+                                    <li># to search for text channels</li>
+                                    <li>* to search for servers</li>
                                 </ul>
                             </div>
                         :

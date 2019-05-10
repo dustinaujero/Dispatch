@@ -76,6 +76,37 @@ class Api::ChannelsController < ApplicationController
             render json: [], status: 200
         end
     end
+
+    def dm_find
+        if params[:username].length > 0
+            # @dms = Channel.find_by_sql([
+            #             'SELECT title FROM posts WHERE author = ? AND created > ?',
+            #             author_id,
+            #             start_date
+            #         ])
+            # find dm channels with given username
+            @dmss = Channel.find_by_sql("
+                        SELECT
+                            channels.*
+                        FROM
+                            channels
+                        JOIN
+                            memberships ON channels.id = membership.channel_id
+                        JOIN (
+                            SELECT
+                            users.*
+                            FROM
+                            users
+                            WHERE
+                            username LIKE ?
+                        ) ON (memberships.user_id = users.id)
+                        ", "#{params[:username]}%")
+            debugger
+        else
+            render json: ["No DM's found"], status: 200
+        end
+
+    end
     
     private
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import UserSearch from './quick_switcher';
+import QuickSwitcher from '../../quickswitcher/quick_switcher';
 class DMsIndex extends React.Component {
 
     constructor(props){
         super(props);
 
         this.state = {
-            newDM: false
+            qs: false
         };
 
         this.handleNewDM = this.handleNewDM.bind(this);
@@ -26,7 +26,7 @@ class DMsIndex extends React.Component {
         this.props.history.push(`/channels/@me/${dmId}`);
     }
     handleNewDM() {
-        this.setState({newDM: true});
+        this.setState({qs: true});
     }
     render() {
         const dms = this.props.dms.map(dm => {
@@ -52,7 +52,7 @@ class DMsIndex extends React.Component {
                 <ul className="channel-index show">
                     {dms}
                 </ul>
-                {this.state.newDM ? <UserSearch parent={this} /> : <div></div>}
+                {this.state.qs ? <QuickSwitcher parent={this} /> : <div></div>}
             </>
         );
     }

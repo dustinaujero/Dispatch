@@ -14,6 +14,7 @@ import DMsIndexContainer from '../channels/dms/dms_index_container';
 import DMShow from '../channels/dms/dms_show_container';
 import DMHeader from '../channels/dms/dms_header';
 import Wumpus from '../ui/wumpus';
+import QuickSwitcher from '../quickswitcher/quick_switcher';
 class Main extends React.Component {
 
 
