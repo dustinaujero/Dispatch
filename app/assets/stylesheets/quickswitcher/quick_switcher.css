@@ -48,6 +48,15 @@
 .qs-results-ul{
     padding: 0px;
 }
+.qs-results-ul li{
+    margin: 5px 0px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.qs-results-ul li:hover{
+    background-color: rgb(195, 195, 195);
+    transition-duration: 0.6srrs;
+}
 .qs-channel-li {
     display: flex;
     justify-content: space-between;
