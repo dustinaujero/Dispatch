@@ -9,7 +9,7 @@ class DMsIndex extends React.Component {
             qs: false
         };
 
-        this.handleNewDM = this.handleNewDM.bind(this);
+        this.handleQS = this.handleQS.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
     }
 
@@ -25,7 +25,7 @@ class DMsIndex extends React.Component {
     handleSelect(dmId) {
         this.props.history.push(`/channels/@me/${dmId}`);
     }
-    handleNewDM() {
+    handleQS() {
         this.setState({qs: true});
     }
     render() {
@@ -45,7 +45,7 @@ class DMsIndex extends React.Component {
                         <i className="fas fa-chevron-down fa-xs channelChev upright"></i>
                     </div>
                     <p>DIRECT MESSAGES</p>
-                    <div onClick={() => this.handleNewDM()} className="addChannelDIV">
+                    <div onClick={() => this.handleQS()} className="addChannelDIV">
                         <svg className="addChannelSVG upright" width="18" height="18" viewBox="0 0 18 18"><polygon fillRule="nonzero" fill="currentColor" points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8"></polygon></svg>
                     </div>
                 </div>
