@@ -14,7 +14,7 @@ import DMsIndexContainer from '../channels/dms/dms_index_container';
 import DMShow from '../channels/dms/dms_show_container';
 import DMHeader from '../channels/dms/dms_header';
 import Wumpus from '../ui/wumpus';
-import QuickSwitcher from '../quickswitcher/quick_switcher';
+import QSDiv from '../quickswitcher/qs_div';
 class Main extends React.Component {
 
 
@@ -33,8 +33,8 @@ class Main extends React.Component {
                 <div className="secondary"> 
                     <div className="secondary-header">
                         <Switch>
-                            <Route path="/channels/@me/" component={() => <div className="search-div"><p>Find or start a conversation</p></div>} />
-                            <Route path="/channels/@me/:dmId" component={() => <div className="search-div"><p>Find or start a conversation</p></div>}/>
+                            <Route path="/channels/@me/" component={QSDiv} />
+                            <Route path="/channels/@me/:dmId" component={QSDiv}/>
                             <Route exact path="/channels/servers" component={() => <div className="search-div"><p>Find or start a conversation</p></div>}/>
                             <Route exact path="/channels/channels/:serverId" component={() => <div className="search-div"><p>Find or start a conversation</p></div>}/>
                             <Route path="/channels/:serverId/:channelId" component={ServerHeader}/>
