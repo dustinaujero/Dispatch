@@ -20,7 +20,7 @@
     z-index: 5;
     padding-bottom: 166px; 
     height: 200px;
-    left: calc(52% + 350px);
+    left: calc(50% + 320px);
 }
 #controller{
     position: absolute;
@@ -64,7 +64,7 @@
     position: absolute;
     z-index: 1;
     padding-bottom: 350px; 
-    left: calc(20%);
+    left: calc(16%);
     animation: hover 5s infinite 0.5s linear;
 }
 
