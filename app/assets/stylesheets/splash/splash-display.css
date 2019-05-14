@@ -25,7 +25,7 @@
 #controller{
     position: absolute;
     z-index: 4;
-    left: calc(36%);
+    left: calc(33%);
 }
 #right-phone{
     position: absolute;
