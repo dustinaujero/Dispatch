@@ -90,7 +90,7 @@ class Splash extends React.Component {
                 <img src={window.rightPhone} id="right-phone" />
                 <img src={window.cd} id="cd" />
                 <img src={window.triangle} id="triangle" />
-                <img src={window.coin} id="coin" />
+                <img src={window.coin} id="right-coin" />
                 <img src={window.bomb} id="bomb" />
             </div>
             </div>

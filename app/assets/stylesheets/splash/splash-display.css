@@ -47,11 +47,11 @@
     z-index: 1;
     left: calc(80%);
 }
-#coin {
+#right-coin {
     position: absolute;
     z-index: 1;
     padding-bottom: 500px; 
-    left: calc(60%);
+    left: calc(55%);
     animation: hover 5s infinite 0s linear;
 }
 #triangle {
