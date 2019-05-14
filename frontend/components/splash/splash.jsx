@@ -81,9 +81,9 @@ class Splash extends React.Component {
                     <button onClick={() => this.handleClick("/login")}>Come here often?</button>
             </div>
             <div className="splash-display">
-                <img src={window.flask} id="flask" />
+                {/* <img src={window.flask} id="flask" /> */}
                 <img src={window.mainComp} id="main-comp" />
-                <img src={window.rightComp} id="right-comp" />
+                {/* <img src={window.rightComp} id="right-comp" />
                 <img src={window.headphones} id="headphones" />
                 <img src={window.controller} id="controller" />
                 <img src={window.leftPhone} id="left-phone" />
@@ -92,7 +92,8 @@ class Splash extends React.Component {
                 <img src={window.triangle} id="triangle" />
                 <img src={window.coin} id="right-coin" />
                 <img src={window.bomb} id="bomb" />
-                <img src={window.questionBox} id="question-box" />
+                <img src={window.questionBox} id="question-box" /> */}
+                <img src={window.gameCartridge} id="game-cartridge" />
 
 
             </div>
