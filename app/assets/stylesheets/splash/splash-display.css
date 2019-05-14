@@ -35,7 +35,7 @@
 #left-phone{
     position: absolute;
     z-index: 3;
-    left: calc(16% + 90px);
+    left: calc(7% + 90px);
 }
 #flask {
     position: absolute;
