@@ -30,7 +30,7 @@
 #right-phone{
     position: absolute;
     z-index: 3;
-    left: calc(25% + 70px);
+    left: calc(18% + 70px);
 }
 #left-phone{
     position: absolute;
