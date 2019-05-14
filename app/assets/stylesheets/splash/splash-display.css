@@ -40,7 +40,7 @@
 #flask {
     position: absolute;
     z-index: 2;
-    left: calc(15% + 30px);
+    left: calc(5% + 50px);
 }
 #cd {
     position: absolute;
