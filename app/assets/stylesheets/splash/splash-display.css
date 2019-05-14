@@ -45,7 +45,7 @@
 #cd {
     position: absolute;
     z-index: 1;
-    left: calc(75%);
+    left: calc(80%);
 }
 #coin {
     position: absolute;
