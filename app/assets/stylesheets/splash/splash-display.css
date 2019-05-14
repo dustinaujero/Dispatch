@@ -13,7 +13,7 @@
 #right-comp {
     position: absolute;
     z-index: 2;
-    left: calc(52%);
+    left: calc(50%);
 }
 #headphones {
     position: absolute;
