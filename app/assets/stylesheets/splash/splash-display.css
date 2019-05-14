@@ -67,6 +67,12 @@
     left: calc(16%);
     animation: hover 5s infinite 0.5s linear;
 }
+#question-box {
+    position: absolute;
+    z-index: -1;
+    left: calc(34%);
+    padding-bottom: 450px; 
+}
 
 @keyframes hover{
     0%{

@@ -92,6 +92,9 @@ class Splash extends React.Component {
                 <img src={window.triangle} id="triangle" />
                 <img src={window.coin} id="right-coin" />
                 <img src={window.bomb} id="bomb" />
+                <img src={window.questionBox} id="question-box" />
+
+
             </div>
             </div>
             </>
