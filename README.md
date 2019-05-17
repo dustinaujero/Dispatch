@@ -14,7 +14,7 @@ Dispatch was mostly built within a span of 10 days
 #### Backend
  * PostgreSQL Database
  * Ruby on Rails
-   * ActionCable (WebSockets) 
+   * ActionCable (WebSockets) for live-chat
 
 #### Frontend
  * React.js with Redux.js
