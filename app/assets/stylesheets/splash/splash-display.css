@@ -5,6 +5,7 @@
     justify-content: center;
     position: relative;
     width: 1300px;
+    z-index: 1;
     margin-bottom: 200px;
 }
 #main-comp {
