@@ -68,6 +68,7 @@
     z-index: 1;
     padding-bottom: 540px; 
     left: calc(52%);
+    color: #9d9d9d;
 }
 #left-triangle {
     position: absolute;
