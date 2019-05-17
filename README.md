@@ -1,58 +1,61 @@
 # DISPATCH
 [Live Site](https://dispatch-aa.herokuapp.com/#/)
 
+<img src="https://i.imgur.com/gTJBwof.gif" title="source: imgur.com" />
+
 ## Overview
 
-Dispatch 
+[Dispatch](https://dispatch-aa.herokuapp.com/#/) is a pixel-perfect clone of the popular chatting application, [Discord](https://discordapp.com/).
 
 Dispatch was mostly built within a span of 10 days
 
 ## Technologies
- * rails
- * * action cable (WebSockets)
- (live chattinig gif)
 
- * React.js
-()
+#### Backend
+ * PostgreSQL Database
+ * Ruby on Rails
+   * ActionCable (WebSockets) 
 
- * Redux.js
- (store snippet)
-
- * aws s3 active storage
-
+#### Frontend
+ * React.js with Redux.js
+ 
 ## Features
+
+### Quick Switcher (©Discord)
+ * Users can find a user to direct message
+ * Users can quickly navigate directly to a server or channel that they belong to
+ 
+<img src="https://i.imgur.com/7rdGeSn.gif" title="source: imgur.com" /></a>
 
 ### Users
 
- * Users can change their username/email
- * Users can have a nickaname within servers
- * U
+ * Users will be able to change their username/email
+ * Users will be able to have a nickaname within servers
 
 ### Servers
 
  * Users can create servers that they have complete control over
- * Only server owners can delete servers
+ * Only server owners will be able to delete servers
 
 (server modal clip)
 
 ### Channels
 
  * Server members can create channels
- * Only server owners can delete channels
+ * Only server owners will be able to delete channels
  
-(channel modal clip)
+<img src="https://i.imgur.com/hxdGev4.gif" title="source: imgur.com" />
 
-### Quick Switcher
+## Coming soon...
 
- * Users can find a user to direct message
- * Users can quickly navigate directly to a server or channel that they belong to
+### Voice Chat with WebRTC
+ * Users can speak with each other through voice chat
  
- (qs clip)
-
 ### AWS S3
-
  * Users can upload profile pictures
  * Servers can have custom icons
  * Messages can include files
 
+### Nicknames
+ * Users can set their own nicknames within a server
 
