@@ -152,7 +152,7 @@ class QuickSwitcher extends React.Component {
                             </div>
                         :
                             <>
-                            <div>Searching all {this.state.type}</div>
+                            <div className="qs-type">Searching all {this.state.type}</div>
                             <ul className="qs-results-ul">
                                 {res}
                             </ul>

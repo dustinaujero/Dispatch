@@ -19,7 +19,7 @@
     margin-top: 100px;
 }
 .quick-switch > div:first-of-type {
-    color: white;
+    color: rgb(197, 197, 197);
     letter-spacing: 0.3px;
     margin: 10px 0px;
 }
@@ -28,7 +28,7 @@
     border-radius: 5px;
     padding: 20px;
     width: 550px;
-    color: white;
+    color: rgb(197, 197, 197);
 }
 .quick-switch > div:last-of-type input {
     outline: none;
@@ -36,25 +36,31 @@
     background-color: #72767C;
     border: 1px solid #72767C;
     border-radius: 5px;
-    color: white;
+    color: rgb(197, 197, 197);
     padding: 0px 10px;
     font-size: 22px;
     line-height: 70px;
     box-shadow: 0 2px 5px rgba(0,0,0,.2), 0 0 0 1px rgba(0,0,0,.1);
 }
+.qs-type {
+    padding: 0px;
+    margin: 5px 0px 2px;
+}
 .hidden-button {
     visibility: hidden;
 }
 .qs-results-ul{
-    padding: 0px;
+    padding-left: 10px;
+    list-style: none;
+    margin: 0px;
 }
 .qs-results-ul li{
-    margin: 5px 0px;
+    margin: 0px 0px;
     padding: 5px;
     border-radius: 5px;
 }
 .qs-results-ul li:hover{
-    background-color: rgb(195, 195, 195);
+    background-color: rgb(38, 40, 44);
     transition-duration: 0.6srrs;
 }
 .qs-channel-li {
