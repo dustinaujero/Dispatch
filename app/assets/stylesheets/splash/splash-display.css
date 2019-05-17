@@ -56,11 +56,11 @@
     left: calc(55%);
     animation: hover 5s infinite 0s linear;
 }
-#triangle {
+#right-triangle {
     position: absolute;
     z-index: 1;
     padding-bottom: 500px; 
-    left: calc(75%);
+    left: calc(52%);
 }
 #bomb {
     position: absolute;
