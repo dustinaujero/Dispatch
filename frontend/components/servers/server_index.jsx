@@ -56,8 +56,8 @@ class ServerIndex extends React.Component {
                     <li key={server.id}>
                         <input type="radio" name="something" onClick={() => this.handleSelect(server)}/>
                         <img src={server.img_url} />
-                        <div className="s-list-item-info">
-                            <p>{server.server_name}</p>
+                        <div className="s-list-item-info-with-img">
+                            <div>{server.server_name}</div>
                         </div>
                         <div className="currServer">
 

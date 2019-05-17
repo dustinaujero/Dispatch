@@ -204,10 +204,11 @@
 }
 .server-list .server-list-main ul li:hover .s-list-item-info{
     display: block;
-    position: absolute;
 }
-
-.server-list .server-list-main .s-list-item-info {
+.server-list .server-list-main ul li:hover .s-list-item-info-with-img{
+    display: block;
+}
+.s-list-item-info {
     display: none;
     position: absolute;
     width: auto;
@@ -219,13 +220,30 @@
     border-radius: 5px;
     font-size: 14px;
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
+    z-index: 10;
+}
+.s-list-item-info-with-img {
+    display: none;
+    position: absolute;
+    width: auto;
+    bottom: 15px;
+    left: 65px;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.2px;
     z-index: 10;
 }
 .server-list .server-list-main .s-list-item-info div {
     white-space: nowrap;
 }
-
+.server-list .server-list-main .s-list-item-info-with-img div {
+    white-space: nowrap;
+}
 .server-list .server-list-main button {
     background-color: transparent;
     border-radius: 50%;
