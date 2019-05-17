@@ -3,6 +3,7 @@
     height: 700px;
     align-items: flex-end;
     justify-content: center;
+    position: relative;
     width: 1300px;
     margin-bottom: 200px;
 }
