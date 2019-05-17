@@ -59,7 +59,7 @@
 #right-triangle {
     position: absolute;
     z-index: 1;
-    padding-bottom: 500px; 
+    padding-bottom: 525px; 
     left: calc(52%);
 }
 #bomb {
