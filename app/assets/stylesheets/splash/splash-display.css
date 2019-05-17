@@ -82,6 +82,31 @@
     padding-bottom: 400px; 
     animation: hover 5s infinite 0.5s linear;
 }
+#righttop-dot {
+    position: absolute;
+    padding-bottom: 570px; 
+    left: 91%;
+} 
+#rightmid-dot {
+    position: absolute;
+    padding-bottom: 480px; 
+    left: 63%;
+}
+#rightbot-dot {
+    position: absolute;
+    padding-bottom: 100px; 
+    left: 97%;
+}
+#lefttop-dot {
+    position: absolute;
+    padding-bottom: 560px; 
+    left: 25%;
+}
+#leftbot-dot {
+    position: absolute;
+    padding-bottom: 200px; 
+    left: 9%;
+}
 
 @keyframes hover{
     0%{
