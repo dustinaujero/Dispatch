@@ -22,7 +22,7 @@
     z-index: 5;
     padding-bottom: 166px; 
     height: 200px;
-    left: calc(50% + 320px);
+    left: calc(50% + 280px);
 }
 #controller{
     position: absolute;
@@ -47,7 +47,7 @@
 #cd {
     position: absolute;
     z-index: 1;
-    left: calc(80%);
+    left: calc(83%);
 }
 #right-coin {
     position: absolute;
@@ -107,7 +107,16 @@
     padding-bottom: 200px; 
     left: 9%;
 }
-
+#left-square {
+    position: absolute;
+    padding-bottom: 560px; 
+    left: 73%;
+}
+#right-square {
+    position: absolute;
+    padding-bottom: 390px; 
+    left: 83%;
+}
 @keyframes hover{
     0%{
         transform: translateY(0);

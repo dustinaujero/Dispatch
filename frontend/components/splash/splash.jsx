@@ -98,9 +98,9 @@ class Splash extends React.Component {
                 <img src={window.dot} id="rightbot-dot" />
                 <img src={window.dot} id="leftbot-dot" />
                 <img src={window.dot} id="lefttop-dot" />
-                {/* <img src={window.square} id="right-triangle" />
-                <img src={window.square} id="right-triangle" />
-                <img src={window.x} id="right-triangle" /> */}
+                <img src={window.square} id="left-square" />
+                <img src={window.square} id="right-square" />
+                {/* <img src={window.x} id="right-triangle" /> */}
                 
                 {/* <img src={window.circle} id="right-triangle" /> */}
 
