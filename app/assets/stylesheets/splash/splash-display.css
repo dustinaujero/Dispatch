@@ -52,14 +52,14 @@
 #right-coin {
     position: absolute;
     z-index: 1;
-    padding-bottom: 500px; 
+    padding-bottom: 520px; 
     left: calc(55%);
     animation: hover 5s infinite 0s linear;
 }
 #right-triangle {
     position: absolute;
     z-index: 1;
-    padding-bottom: 525px; 
+    padding-bottom: 540px; 
     left: calc(52%);
 }
 #bomb {
@@ -99,8 +99,8 @@
 }
 #lefttop-dot {
     position: absolute;
-    padding-bottom: 560px; 
-    left: 25%;
+    padding-bottom: 575px; 
+    left: 26%;
 }
 #leftbot-dot {
     position: absolute;
@@ -126,6 +126,16 @@
     position: absolute;
     padding-bottom: 200px; 
     left: 92%;
+}
+#left-circle {
+    position: absolute;
+    padding-bottom: 520px; 
+    left: 23%;
+}
+#right-circle {
+    position: absolute;
+    padding-bottom: 270px; 
+    left: 94%;
 }
 @keyframes hover{
     0%{
