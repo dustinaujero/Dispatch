@@ -2,16 +2,10 @@
     width: 73px;
     height: 100vh;
     overflow: visible;
-
-
-
-
     display: flex;
     background-color: #202225;
-
     flex-direction: column;
     align-content: flex-end;
-
     margin: 0;
     flex-grow: 0;
     flex-shrink: 0;
@@ -50,7 +44,7 @@
 .server-list .server-list-header div {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     padding: 8px;
     margin: 9px 5px 20px;
     background-color: #7289DA;
@@ -63,34 +57,9 @@
     width: 45px;
     height: 45px;
 }
-.server-list .server-list-header #first{
-    position: relative;
-    left: 23.5px;
-    top: -5px;
-    z-index: 4;
-}   
-.server-list .server-list-header #sec{
-    position: relative;
-    left: -22px;
-    top: -5px;
-    z-index: 3;
-}
-.server-list .server-list-header #first:hover{
-    z-index: 3;
-}   
-.server-list .server-list-header #sec:hover{
-    z-index: 4;
+#server-img:hover{
     animation: shake 100ms infinite 0s ease-in-out;
 }
-
-
-
-
-
-
-
-
-
 .server-list .server-list-main {
     display: flex;
     flex-direction: column;
@@ -119,20 +88,10 @@
     border-radius: 14px;
     transition-duration: 0.5s;
 }
-
-
 .server-list .server-list-main ul {
     list-style: none;
     padding-left: 3px;
     overflow: visible;
-    /* overflow-y: scroll; */
-
-
-
-
-
-
-    
     z-index: 12;
     padding-right: 50px;
     margin-top: 5px;

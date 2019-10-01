@@ -11,6 +11,8 @@ class ServerIndex extends React.Component {
     componentDidMount() {
         this.props.fetchServers();
         this.props.clearLoading();
+        // $("#server-first").css("z-index", "4");
+        // $("#server-sec").css("z-index", "3");
     }
 
     goHome() {
@@ -69,9 +71,11 @@ class ServerIndex extends React.Component {
         return (
             <div className="server-list">
                 <div className="server-list-header">
-                    <div onClick={() => this.goHome()}>
-                        <img src={window.whiteFace} id="first"/>
-                        <img src={window.angryFace} id="sec"/>
+                    <div onClick={() => this.goHome()} id="server-img-div">
+                        <img src={window.whiteFace} id="server-img" 
+                            onMouseOver={(el)=> el.currentTarget.setAttribute("src", window.angryFace)}
+                            onMouseOut={(el)=> el.currentTarget.setAttribute("src", window.whiteFace)}
+                        />
                     </div>
                 </div>
                 <div className="server-list-main">
