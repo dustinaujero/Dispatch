@@ -86,7 +86,7 @@ class ServerIndex extends React.Component {
                                 <div>+</div>
                             </button>
                             <div className="s-list-item-info">
-                                Add-Server
+                                <div>Add-Server</div>
                             </div>
                         </li>
                     </ul>
