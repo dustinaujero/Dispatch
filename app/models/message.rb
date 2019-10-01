@@ -5,7 +5,7 @@ class Message < ApplicationRecord
     belongs_to :channel, class_name: :Channel, foreign_key: :channel_id 
     belongs_to :user,  class_name: :User, foreign_key: :user_id
 
-    has_one_attached :photo, optional: true
+    # has_one_attached :photo, optional: true
     # after_create_commit { MessageBroadcastJob.perform_later(self)}
 
 end
