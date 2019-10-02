@@ -91,10 +91,7 @@ class ChannelShow extends React.Component {
             }
             return (
                 <li key={message.id} className="message">
-                    {/* <img src="" alt=""/> */}
-                    {/* <div className="message-image"> */}
                     <img src={window.whiteFace} />
-                    {/* </div> */}
                     <div className="message-info">
                         <div className="user-info">
                             <div>{this.props.users[message.user_id].username.split("#")[0]}</div>
@@ -123,8 +120,7 @@ class ChannelShow extends React.Component {
                 </div>
                 </>
             );
-        }
-        else {
+        } else {
             return (
                 <>
                 <div className="chatroom-container">
