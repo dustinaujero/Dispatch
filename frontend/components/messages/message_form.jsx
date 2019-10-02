@@ -23,7 +23,6 @@ class MessageForm extends React.Component {
             App.cable.subscriptions.subscriptions[0].typing(this.state);
         }
     }
-
     handleSubmit(e) {
         e.preventDefault();
         App.cable.subscriptions.subscriptions[0].speak(this.state);

@@ -15,21 +15,42 @@ import DMShow from '../channels/dms/dms_show_container';
 import DMHeader from '../channels/dms/dms_header';
 import Wumpus from '../ui/wumpus';
 import QSDiv from '../quickswitcher/qs_div';
+import MessageUploadContainer from '../messages/message_upload_container';
+
 class Main extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            drag: true
+        }
+    }
 
-
+    handleDragOver(e) {
+        e.preventDefault();
+    }
+    handleDragLeave(e) {
+        e.preventDefault();
+    }
+    handleDrop(e) {
+        e.preventDefault();
+        if (App.cable.subscriptions.subscriptions.length > 0) {
+            const file = e.dataTransfer.items[0].getAsFile();
+            debugger
+        }
+    }
     render() {
         return (
             <>
             {this.props.loading ? <Loading /> : <></>}
+            {this.state.drag ? <MessageUploadContainer/> : <></>}
             <Route path="/channels/servers" component={ServerModal} />
             <Route path="/channels/channels/:serverId" component={ChannelModal} />
-            <div className="main-page">
-
-
+            <div className="main-page" 
+                onDragOver={this.handleDragOver}
+                onDragLeave={this.handleDragLeave}
+                onDrop={this.handleDrop}
+            >
                 <ServerIndexContainer />
-
-
                 <div className="secondary"> 
                     <div className="secondary-header">
                         <Switch>
@@ -51,8 +72,6 @@ class Main extends React.Component {
                     </div>
                     <UserProfile />
                 </div>
-
-
                 <div className="third">
                     <div className="third-header">
                         <Switch>
@@ -89,7 +108,6 @@ class Main extends React.Component {
                     </div>
                 </div>
             </div>
-            
             </>
         );
     }
