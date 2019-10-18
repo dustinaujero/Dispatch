@@ -21,34 +21,29 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            drag: true
+            drag: false
         }
     }
 
     handleDragOver(e) {
         e.preventDefault();
-    }
-    handleDragLeave(e) {
-        e.preventDefault();
+        this.setState({drag: true});
     }
     handleDrop(e) {
         e.preventDefault();
-        if (App.cable.subscriptions.subscriptions.length > 0) {
-            const file = e.dataTransfer.items[0].getAsFile();
-            debugger
-        }
+        debugger
     }
     render() {
         return (
             <>
             {this.props.loading ? <Loading /> : <></>}
-            {this.state.drag ? <MessageUploadContainer/> : <></>}
+            {this.state.drag ? <MessageUploadContainer main={this}/> : <></>}
             <Route path="/channels/servers" component={ServerModal} />
             <Route path="/channels/channels/:serverId" component={ChannelModal} />
             <div className="main-page" 
-                onDragOver={this.handleDragOver}
-                onDragLeave={this.handleDragLeave}
-                onDrop={this.handleDrop}
+                onDragOver={this.handleDragOver.bind(this)}
+                onDrop={this.handleDrop.bind(this)}
+                onDropCapture={this.handleDrop.bind(this)}
             >
                 <ServerIndexContainer />
                 <div className="secondary"> 

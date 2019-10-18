@@ -1,14 +1,40 @@
 .upload-modal {
     position: absolute;
     z-index: 50;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0,0,0,0.6);
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+}
+.upload-border {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgb(97,113,211);
+    padding: 10px;
 }
 .upload-form {
-    background-color: blue;
-    width: 400px;
-    height: 350px;
+    border-radius: 8px;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: rgb(245,245,254);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.upload-form-title {
+    font-size: 24px;
+    font-weight: 500;
+}
+.upload-form-desc {
+    font-size: 10px;
 }
